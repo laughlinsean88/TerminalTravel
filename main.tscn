@@ -1,5 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://48ruapiiod4a"]
 
+<<<<<<< Updated upstream
 [ext_resource type="ArrayMesh" uid="uid://21cntqbluqv7" path="res://Room Model/Room.obj" id="1_cywu6"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="PackedScene" uid="uid://bsbpnvl0blmcu" path="res://Items/World Items/WorldItem_Goo.tscn" id="3_ivr6v"]
@@ -19,6 +20,19 @@ adjustment_enabled = true
 adjustment_brightness = 1.2
 adjustment_contrast = 1.1
 adjustment_saturation = 1.2
+=======
+[ext_resource type="ArrayMesh" uid="uid://ber50wqeqbw08" path="res://Items/Models/room.obj" id="2_6y06f"]
+[ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
+[ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
+[ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/Models/luggage.obj" id="4_bn4p5"]
+[ext_resource type="ArrayMesh" uid="uid://dva5qt84e4cve" path="res://Items/Models/bottle.obj" id="5_pos54"]
+[ext_resource type="ArrayMesh" uid="uid://bh0sq7g1pk7og" path="res://Items/Models/book.obj" id="6_1rxuy"]
+[ext_resource type="ArrayMesh" uid="uid://dfp1wwyxrh201" path="res://Items/Models/briefcase.obj" id="7_3iswh"]
+[ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
+[ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/Models/recycleBin.obj" id="9_s85qn"]
+[ext_resource type="ArrayMesh" uid="uid://dwnufc3tnlns8" path="res://Items/Models/bomb.obj" id="10_xih8i"]
+[ext_resource type="ArrayMesh" uid="uid://dx5yyebcbohbo" path="res://Items/Models/banana.obj" id="11_h2t3q"]
+>>>>>>> Stashed changes
 
 [node name="Main" type="Node3D"]
 
@@ -33,6 +47,7 @@ shape = SubResource("ConcavePolygonShape3D_sw5mn")
 
 [node name="Player" parent="." instance=ExtResource("2_i7qy0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 0, 0.124819)
+collision_mask = 256
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76765, 2.48391)

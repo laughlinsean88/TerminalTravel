@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7ek6etyfclm7"
+path="res://.godot/imported/deodorant.obj-c72bf84426c2aa3515d66dfe751787cd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/deodorant.obj-c72bf84426c2aa3515d66dfe751787cd.mesh"]
+
+source_file="res://Items/Models/deodorant.obj"
+dest_files=["res://.godot/imported/deodorant.obj-c72bf84426c2aa3515d66dfe751787cd.mesh", "res://.godot/imported/deodorant.obj-c72bf84426c2aa3515d66dfe751787cd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
