@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=10 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="ArrayMesh" uid="uid://ber50wqeqbw08" path="res://Items/World Items/room.obj" id="2_6y06f"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
@@ -6,6 +6,9 @@
 [ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/World Items/luggage.obj" id="4_bn4p5"]
 [ext_resource type="ArrayMesh" uid="uid://dva5qt84e4cve" path="res://Items/World Items/bottle.obj" id="5_pos54"]
 [ext_resource type="ArrayMesh" uid="uid://bh0sq7g1pk7og" path="res://Items/World Items/book.obj" id="6_1rxuy"]
+[ext_resource type="ArrayMesh" uid="uid://dfp1wwyxrh201" path="res://Items/World Items/briefcase.obj" id="7_3iswh"]
+[ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/World Items/securityBox.obj" id="8_2xm52"]
+[ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/World Items/recycleBin.obj" id="9_s85qn"]
 
 [node name="Main" type="Node3D"]
 
@@ -39,9 +42,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24647, 0, -7.66786)
 mesh = ExtResource("4_bn4p5")
 
 [node name="Bottle" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17345, 0.366224, -7.90574)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40716, 0.366224, -7.90574)
 mesh = ExtResource("5_pos54")
 
 [node name="Book" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38197, 0.0256331, -7.77433)
 mesh = ExtResource("6_1rxuy")
+
+[node name="Briefcase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451681, 0.157653, -8.07831)
+mesh = ExtResource("7_3iswh")
+
+[node name="SecurityBox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1656, 0.341798, -8.58579)
+mesh = ExtResource("8_2xm52")
+
+[node name="RecycleBin" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0619, -0.544071, -6.28672)
+mesh = ExtResource("9_s85qn")
