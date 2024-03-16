@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=13 format=3 uid="uid://48ruapiiod4a"]
 
-[ext_resource type="ArrayMesh" uid="uid://ber50wqeqbw08" path="res://Items/Models/room.obj" id="2_6y06f"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
 [ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/Models/luggage.obj" id="4_bn4p5"]
@@ -8,7 +7,13 @@
 [ext_resource type="ArrayMesh" uid="uid://di6iw6jmri5nk" path="res://Items/Models/luggageXL.obj" id="6_dnyb8"]
 [ext_resource type="ArrayMesh" uid="uid://dfp1wwyxrh201" path="res://Items/Models/briefcase.obj" id="7_3iswh"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
+[ext_resource type="Texture2D" uid="uid://buadp68afixjp" path="res://Items/Images/Tiles074_1K-JPG_Color.jpg" id="9_kylms"]
 [ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/Models/recycleBin.obj" id="9_s85qn"]
+[ext_resource type="ArrayMesh" uid="uid://cwm8mnl7b2sjl" path="res://Items/Models/floor.obj" id="10_ssn3h"]
+[ext_resource type="ArrayMesh" uid="uid://ci1jmqimgbyyt" path="res://Items/Models/walls.obj" id="11_tcuxe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcq48"]
+albedo_texture = ExtResource("9_kylms")
 
 [node name="Main" type="Node3D"]
 
@@ -16,14 +21,11 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 1.28591, 0.124819)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.27431, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.16374, 0)
 light_color = Color(0.94902, 0.784314, 0.635294, 1)
-light_energy = 3.0
+light_energy = 16.0
 shadow_enabled = true
-omni_range = 23.501
-
-[node name="Room" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_6y06f")
+omni_range = 35.771
 
 [node name="Conveyor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11984, 0, -0.315404)
@@ -38,17 +40,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, 0, 0.713083)
 mesh = ExtResource("5_txtus")
 
 [node name="LuggageXl" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.145, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523913, -0.125444, 1.11447)
 mesh = ExtResource("6_dnyb8")
 
 [node name="Luggage" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63, 3.145, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280498, -0.08499, 0.402057)
 mesh = ExtResource("4_bn4p5")
 
 [node name="Briefcase" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55598, 3.301, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520409, -0.125346, 0.876259)
 mesh = ExtResource("7_3iswh")
 
 [node name="RecycleBin" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104031, 0.0599437, 1.60698)
+transform = Transform3D(0.938529, 0, -0.3452, 0, 1, 0, 0.3452, 0, 0.938529, -2.31235, 0.0599437, -2.28988)
 mesh = ExtResource("9_s85qn")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288167, 0, 0.346141)
+material_override = SubResource("StandardMaterial3D_qcq48")
+mesh = ExtResource("10_ssn3h")
+
+[node name="Walls" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0414882, 0, 0.346141)
+mesh = ExtResource("11_tcuxe")
