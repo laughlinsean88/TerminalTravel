@@ -1,20 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=9 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="ArrayMesh" uid="uid://ber50wqeqbw08" path="res://Items/Models/room.obj" id="2_6y06f"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
 [ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/Models/luggage.obj" id="4_bn4p5"]
-[ext_resource type="ArrayMesh" uid="uid://dva5qt84e4cve" path="res://Items/Models/bottle.obj" id="5_pos54"]
-[ext_resource type="ArrayMesh" uid="uid://bh0sq7g1pk7og" path="res://Items/Models/book.obj" id="6_1rxuy"]
+[ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
+[ext_resource type="ArrayMesh" uid="uid://di6iw6jmri5nk" path="res://Items/Models/luggageXL.obj" id="6_dnyb8"]
 [ext_resource type="ArrayMesh" uid="uid://dfp1wwyxrh201" path="res://Items/Models/briefcase.obj" id="7_3iswh"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
-[ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/Models/recycleBin.obj" id="9_s85qn"]
-[ext_resource type="ArrayMesh" uid="uid://dwnufc3tnlns8" path="res://Items/Models/bomb.obj" id="10_xih8i"]
-[ext_resource type="ArrayMesh" uid="uid://dx5yyebcbohbo" path="res://Items/Models/banana.obj" id="11_h2t3q"]
-[ext_resource type="ArrayMesh" uid="uid://didrnhgj2efbn" path="res://Items/Models/gun.obj" id="12_vpqxa"]
-[ext_resource type="ArrayMesh" uid="uid://cj1fsnihwv7pd" path="res://Items/Models/knife.obj" id="13_dp2nw"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yrjlw"]
 
 [node name="Main" type="Node3D"]
 
@@ -22,69 +15,35 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 1.28591, 0.124819)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59304, 5.4027, -11.2906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.27431, 0)
 light_color = Color(0.94902, 0.784314, 0.635294, 1)
 light_energy = 3.0
 shadow_enabled = true
-omni_range = 12.0
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76765, -2.97512)
-light_color = Color(0.94902, 0.784314, 0.635294, 1)
-light_energy = 3.0
-shadow_enabled = true
-omni_range = 12.0
+omni_range = 23.501
 
 [node name="Room" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06704, 0, -9.26268)
 mesh = ExtResource("2_6y06f")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Room"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/RigidBody3D"]
-transform = Transform3D(24.19, 0, 0, 0, 24.19, 0, 0, 0, 24.19, 0, -12.3109, 0)
-shape = SubResource("BoxShape3D_yrjlw")
-
 [node name="Conveyor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13282, -0.719259, -8.39802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11984, 0, -0.315404)
 mesh = ExtResource("3_ts3jm")
 
-[node name="Luggage" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24647, 0, -7.66786)
-mesh = ExtResource("4_bn4p5")
-
-[node name="Bottle" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40716, 0.366224, -7.90574)
-mesh = ExtResource("5_pos54")
-
-[node name="Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38197, 0.0256331, -7.77433)
-mesh = ExtResource("6_1rxuy")
-
-[node name="Briefcase" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451681, 0.157653, -8.07831)
-mesh = ExtResource("7_3iswh")
-
 [node name="SecurityBox" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1656, 0.341798, -8.58579)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140416, -9.53674e-07, 1.36133)
 mesh = ExtResource("8_2xm52")
 
-[node name="RecycleBin" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0619, -0.544071, -6.28672)
-mesh = ExtResource("9_s85qn")
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, 0, 0.713083)
+mesh = ExtResource("5_txtus")
 
-[node name="Bomb" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2332, 1.58506, -8.42654)
-mesh = ExtResource("10_xih8i")
+[node name="LuggageXl" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.145, -11)
+mesh = ExtResource("6_dnyb8")
 
-[node name="Banana" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.47547, 1.25798, -9.02811)
-mesh = ExtResource("11_h2t3q")
+[node name="Luggage" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63, 3.145, -11)
+mesh = ExtResource("4_bn4p5")
 
-[node name="Gun" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99434, 0.983993, -8.98211)
-mesh = ExtResource("12_vpqxa")
-
-[node name="Knife" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44038, 2.38419e-07, -4.95905)
-mesh = ExtResource("13_dp2nw")
+[node name="Briefcase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55598, 3.301, -11)
+mesh = ExtResource("7_3iswh")
