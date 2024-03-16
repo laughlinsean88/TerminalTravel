@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=19 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
@@ -7,13 +7,25 @@
 [ext_resource type="ArrayMesh" uid="uid://di6iw6jmri5nk" path="res://Items/Models/luggageXL.obj" id="6_dnyb8"]
 [ext_resource type="ArrayMesh" uid="uid://dfp1wwyxrh201" path="res://Items/Models/briefcase.obj" id="7_3iswh"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
+[ext_resource type="Texture2D" uid="uid://wfm1kkapwh8l" path="res://Items/Images/7299445.png" id="9_ic3kj"]
 [ext_resource type="Texture2D" uid="uid://buadp68afixjp" path="res://Items/Images/Tiles074_1K-JPG_Color.jpg" id="9_kylms"]
 [ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/Models/recycleBin.obj" id="9_s85qn"]
 [ext_resource type="ArrayMesh" uid="uid://cwm8mnl7b2sjl" path="res://Items/Models/floor.obj" id="10_ssn3h"]
 [ext_resource type="ArrayMesh" uid="uid://ci1jmqimgbyyt" path="res://Items/Models/walls.obj" id="11_tcuxe"]
+[ext_resource type="Texture2D" uid="uid://bopkxutno1fwl" path="res://Items/Images/green-cross-medical-symbol-vector-20783585.jpg" id="12_ml2ws"]
+[ext_resource type="ArrayMesh" uid="uid://ddwdguc77u2q2" path="res://Items/Models/meds.obj" id="13_xt2if"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxqv"]
+albedo_texture = ExtResource("9_ic3kj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcq48"]
 albedo_texture = ExtResource("9_kylms")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjhvn"]
+albedo_texture = ExtResource("9_kylms")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xefa4"]
+albedo_texture = ExtResource("12_ml2ws")
 
 [node name="Main" type="Node3D"]
 
@@ -54,12 +66,19 @@ mesh = ExtResource("7_3iswh")
 [node name="RecycleBin" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.938529, 0, -0.3452, 0, 1, 0, 0.3452, 0, 0.938529, -2.31235, 0.0599437, -2.28988)
 mesh = ExtResource("9_s85qn")
+surface_material_override/0 = SubResource("StandardMaterial3D_daxqv")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288167, 0, 0.346141)
 material_override = SubResource("StandardMaterial3D_qcq48")
 mesh = ExtResource("10_ssn3h")
+surface_material_override/0 = SubResource("StandardMaterial3D_mjhvn")
 
 [node name="Walls" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0414882, 0, 0.346141)
 mesh = ExtResource("11_tcuxe")
+
+[node name="Meds" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18653, 1, -5.04285)
+mesh = ExtResource("13_xt2if")
+surface_material_override/0 = SubResource("StandardMaterial3D_xefa4")
