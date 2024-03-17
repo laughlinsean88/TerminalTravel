@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cysy0swfdnh2" path="res://Items/Icons/gun.png" id="1_cc0sk"]
 [ext_resource type="Script" path="res://Item.gd" id="2_32w0c"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_trbc2"]
+[ext_resource type="PackedScene" uid="uid://djtjjtcrdpv7x" path="res://Items/Models/WorldItem_gun.tscn" id="3_g58yc"]
 
 [resource]
 script = ExtResource("2_32w0c")
 display_name = "Gun"
 icon = ExtResource("1_cc0sk")
 max_stack_size = 12
-world_item_scene = ExtResource("3_trbc2")
+world_item_scene = ExtResource("3_g58yc")

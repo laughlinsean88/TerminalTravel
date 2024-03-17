@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://p6rwnwx5nibu" path="res://Items/Icons/charger.png" id="1_e7c43"]
 [ext_resource type="Script" path="res://Item.gd" id="2_dgmgd"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_a2lg6"]
+[ext_resource type="PackedScene" uid="uid://coi3g2geieuvq" path="res://Items/Models/WorldItem_charger.tscn" id="3_yvuba"]
 
 [resource]
 script = ExtResource("2_dgmgd")
 display_name = "Charger"
 icon = ExtResource("1_e7c43")
 max_stack_size = 12
-world_item_scene = ExtResource("3_a2lg6")
+world_item_scene = ExtResource("3_yvuba")

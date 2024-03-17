@@ -1,27 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcf6s810mhdfc"]
+[gd_scene load_steps=6 format=3 uid="uid://dcf6s810mhdfc"]
 
 [ext_resource type="Script" path="res://WorldItem.gd" id="1_agx5s"]
+[ext_resource type="Texture2D" uid="uid://dy7sjum0jl8i" path="res://Items/Images/iconphone.png" id="2_6o15y"]
 [ext_resource type="ArrayMesh" uid="uid://be3u5j5vk82vv" path="res://Items/Models/phone.obj" id="2_wjnds"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866gx"]
-albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
-metallic = 0.74
-roughness = 0.33
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smylc"]
+albedo_texture = ExtResource("2_6o15y")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_roos3"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tpgtc"]
+points = PackedVector3Array(0.224347, 0.215959, 1.00376, 0.222283, 0.215959, 1.01797, 0.224347, 0.181007, 1.00376, 0.224347, 0.215959, 0.208902, 0.222283, 0.181007, 1.01797, 0.216529, 0.215959, 1.03005, 0.224347, 0.181007, 0.208902, 0.222283, 0.215959, 0.194694, 0.216529, 0.181007, 1.03005, 0.207877, 0.215959, 1.03805, 0.222283, 0.181007, 0.194694, 0.216529, 0.215959, 0.182614, 0.207877, 0.181007, 1.03805, 0.197687, 0.215959, 1.04094, 0.216529, 0.181007, 0.182614, 0.207877, 0.215959, 0.174617, 0.197687, 0.181007, 1.04094, -0.197731, 0.215959, 1.04094, 0.207877, 0.181007, 0.174617, 0.197687, 0.215959, 0.171809, -0.197731, 0.181007, 1.04094, -0.207921, 0.215959, 1.03805, 0.197687, 0.181007, 0.171809, -0.197731, 0.215959, 0.171809, -0.207921, 0.181007, 1.03805, -0.216573, 0.215959, 1.03005, -0.197731, 0.181007, 0.171809, -0.207921, 0.215959, 0.174617, -0.216573, 0.181007, 1.03005, -0.222327, 0.215959, 1.01797, -0.207921, 0.181007, 0.174617, -0.216573, 0.215959, 0.182614, -0.222327, 0.181007, 1.01797, -0.224347, 0.215959, 1.00376, -0.216573, 0.181007, 0.182614, -0.222327, 0.215959, 0.194694, -0.224347, 0.181007, 1.00376, -0.224347, 0.215959, 0.208902, -0.222327, 0.181007, 0.194694, -0.224347, 0.181007, 0.208902)
 
-[node name="WorldItem_Iron" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+[node name="WorldItem_Phone" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 1793
 script = ExtResource("1_agx5s")
-item_name = "Iron"
-interact_prompt = "Pickup Iron"
+item_name = "Phone"
+interact_prompt = "Pickup Phone"
+can_interact = false
 
-[node name="Iron" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, -0.293013)
+[node name="Phone" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_smylc")
 mesh = ExtResource("2_wjnds")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.208239, 0, 0.3, -9.10243e-09, 0.000372171, 0.0510547, -0.119496)
-shape = SubResource("BoxShape3D_roos3")
+shape = SubResource("ConvexPolygonShape3D_tpgtc")

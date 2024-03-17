@@ -1,28 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://x0byhxwnpslp"]
+[gd_scene load_steps=4 format=3 uid="uid://x0byhxwnpslp"]
 
 [ext_resource type="Script" path="res://WorldItem.gd" id="1_nsoe3"]
 [ext_resource type="ArrayMesh" uid="uid://chf3c6jg78lh" path="res://Items/Models/trousers.obj" id="2_ndqmb"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866gx"]
-albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
-metallic = 0.74
-roughness = 0.33
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1f3xr"]
+points = PackedVector3Array(1, 0.150562, 0.709275, 0.910141, 0.206516, 1.94393, 1, 0.125053, 0.709275, 1, 0.206122, 0.0320482, 0.792482, 0.214453, 0.608437, 0.361198, 0.206516, 2.03529, 0.361198, 0.180998, 2.03529, 0.910141, 0.180998, 1.92477, 0.870791, 0.21419, 0.150028, -1, 0.125053, 0.709275, 1, 0.125053, 0.273252, 1, 0.197914, -0.0109087, -1, 0.206122, 0.0320482, 0.155051, 0.214453, 0.608437, -0.361394, 0.206516, 2.03529, -0.361394, 0.180998, 2.03529, 0.117854, 0.21419, 0.150028, -1, 0.150562, 0.709275, -1, 0.125053, 0.273252, -0.910337, 0.180998, 1.92477, -0.910337, 0.206516, 1.94393, 1, 0.138083, 0.0169225, 1, 0.174032, -0.025026, -1, 0.197914, -0.0109087, -0.937745, 0.206516, 0.726619, -1, 0.138083, 0.0169225, 1, 0.154325, -0.0147405, -1, 0.174032, -0.025026, -1, 0.154325, -0.0147405)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_roos3"]
-size = Vector3(2.21234, 2.01453, 1)
-
-[node name="WorldItem_Iron" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+[node name="WorldItem_Trousers" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 1793
 script = ExtResource("1_nsoe3")
-item_name = "Iron"
-interact_prompt = "Pickup Iron"
+item_name = "Trousers"
+interact_prompt = "Pickup Trousers"
 
-[node name="Iron" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, -0.260195)
+[node name="Trousers" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_ndqmb")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.208239, 0, 0.3, -9.10243e-09, 0.0212187, 0.0510547, 0.0326829)
-shape = SubResource("BoxShape3D_roos3")
+shape = SubResource("ConvexPolygonShape3D_1f3xr")

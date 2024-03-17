@@ -1,28 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://djtjjtcrdpv7x"]
+[gd_scene load_steps=4 format=3 uid="uid://djtjjtcrdpv7x"]
 
 [ext_resource type="Script" path="res://WorldItem.gd" id="1_oc7g2"]
 [ext_resource type="ArrayMesh" uid="uid://didrnhgj2efbn" path="res://Items/Models/gun.obj" id="2_mvqpx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866gx"]
-albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
-metallic = 0.74
-roughness = 0.33
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5chq5"]
+points = PackedVector3Array(0.182675, -0.00917247, -0.711566, -0.0090309, -0.0314886, -0.648274, 0.182675, 0.00916283, -0.711566, 0.199544, -0.00917247, -0.711566, 0.50062, -0.0337837, -0.65418, -0.0401998, -0.04263, -0.605061, -0.0090309, 0.031479, -0.648274, 0.50062, 0.033774, -0.65418, 0.199544, 0.00916283, -0.711566, 1.06702, -0.0314886, -0.648274, -0.00288649, -0.04263, -0.541908, -0.0323797, -0.04263, -0.477226, -0.068129, -0.0211734, -0.00180799, -0.0401998, 0.0426287, -0.605061, 1.06702, 0.031479, -0.648274, 1.07317, -0.0220414, -0.592833, 1.07317, -0.0220414, -0.551426, 1.05183, -0.0314886, -0.541908, -0.0221018, -0.04263, -0.404069, -0.068129, 0.0211638, -0.00180799, 0.176419, -0.0211734, -0.00180799, -0.0323797, 0.0426287, -0.477226, -0.00288649, 0.0426287, -0.541908, 1.05183, 0.031479, -0.541908, 1.07317, 0.0220318, -0.551426, 1.07317, 0.0220318, -0.592833, -0.0221018, 0.0426287, -0.404069, 1.03094, -0.0314886, -0.475628, 0.176419, 0.0211638, -0.00180799, 1.03094, 0.031479, -0.475628)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_roos3"]
-size = Vector3(1.29584, 1, 1)
-
-[node name="WorldItem_Iron" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+[node name="WorldItem_Gun" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 1793
 script = ExtResource("1_oc7g2")
-item_name = "Iron"
-interact_prompt = "Pickup Iron"
+item_name = "Gun"
+interact_prompt = "Pickup Gun"
 
-[node name="Iron" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.148268, 0, 0)
+[node name="Gun" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_mvqpx")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.208239, 0, 0.3, -9.10243e-09, -0.000973701, 0.0510547, -0.119496)
-shape = SubResource("BoxShape3D_roos3")
+shape = SubResource("ConvexPolygonShape3D_5chq5")

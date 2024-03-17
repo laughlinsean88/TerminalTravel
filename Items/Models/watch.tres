@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://c2noiuvtbyuq6" path="res://Items/Icons/watch.png" id="1_gf25r"]
 [ext_resource type="Script" path="res://Item.gd" id="2_lmhur"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_vw3v6"]
+[ext_resource type="PackedScene" uid="uid://w8jlq7bck34n" path="res://Items/Models/WorldItem_watch.tscn" id="3_eiiqc"]
 
 [resource]
 script = ExtResource("2_lmhur")
 display_name = "Watch"
 icon = ExtResource("1_gf25r")
 max_stack_size = 12
-world_item_scene = ExtResource("3_vw3v6")
+world_item_scene = ExtResource("3_eiiqc")

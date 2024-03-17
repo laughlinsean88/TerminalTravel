@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=37 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/Models/luggage.obj" id="4_bn4p5"]
@@ -16,6 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://inw1u5ridqv5" path="res://Items/Images/illegalItems.png" id="15_cnj0o"]
 [ext_resource type="PackedScene" uid="uid://bcqyddlkucrh" path="res://Items/Models/WorldItem_banana.tscn" id="15_r1txu"]
 [ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
+[ext_resource type="PackedScene" uid="uid://w8811v0i4iyg" path="res://Items/Models/WorldItem_book.tscn" id="17_bd6ph"]
+[ext_resource type="PackedScene" uid="uid://coi3g2geieuvq" path="res://Items/Models/WorldItem_charger.tscn" id="17_bpysh"]
+[ext_resource type="PackedScene" uid="uid://jppxaa3y10mg" path="res://Items/Models/WorldItem_bottle.tscn" id="18_3es7q"]
+[ext_resource type="PackedScene" uid="uid://bh3c0l3sayi5m" path="res://Items/Models/WorldItem_deodorant.tscn" id="20_hvs7m"]
+[ext_resource type="PackedScene" uid="uid://blcypsgmdnrrr" path="res://Items/Models/WorldItem_meds.tscn" id="21_aleyv"]
+[ext_resource type="PackedScene" uid="uid://x0byhxwnpslp" path="res://Items/Models/WorldItem_trousers.tscn" id="22_0hkyn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcq48"]
 albedo_texture = ExtResource("9_kylms")
@@ -207,4 +213,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01207, -0.277997, 0.551798
 shape = SubResource("ConcavePolygonShape3D_ji2og")
 
 [node name="WorldItem_Banana" parent="." instance=ExtResource("15_r1txu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11942, 1.56496, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11942, 1.22921, 1.24505)
+
+[node name="WorldItem_Charger" parent="." instance=ExtResource("17_bpysh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13659, 1.79156, 0)
+
+[node name="WorldItem_Bottle" parent="." instance=ExtResource("18_3es7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9075, 1.75901, 2.91432)
+
+[node name="WorldItem_Book" parent="." instance=ExtResource("17_bd6ph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8199, 2.03712, -1.65502)
+
+[node name="WorldItem_Deodorant" parent="." instance=ExtResource("20_hvs7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78929, 1.71989, 3.60092)
+
+[node name="WorldItem_Meds" parent="." instance=ExtResource("21_aleyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08177, 1.5878, -4.03814)
+
+[node name="WorldItem_Trousers" parent="." instance=ExtResource("22_0hkyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0639, 1.39213, 4.47564)
