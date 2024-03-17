@@ -20,7 +20,7 @@ item_name = "Iron"
 interact_prompt = "Pickup Iron"
 
 [node name="Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+layers = 4
 mesh = ExtResource("2_3xnpf")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_866gx")

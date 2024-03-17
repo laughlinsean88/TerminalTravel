@@ -8,21 +8,24 @@ albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
 metallic = 0.74
 roughness = 0.33
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4i4mg"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4xpuq"]
 points = PackedVector3Array(-0.0710832, 0.611676, -0.122032, 0.225925, 0.673086, -0.578346, 0.225925, 0.622879, -0.578346, 0.192402, 0.673086, 0.425792, 0.00269192, 0.726513, -0.292828, 0.0418402, 0.555932, 0.141232, 0.00837864, 0.706532, 0.325347, 0.00134441, 0.582403, -0.355377, 0.192402, 0.622879, 0.425792, 0.0418402, 0.740033, 0.0910099, -0.073315, 0.684876, 0.0841035, -0.0468919, 0.670754, -0.335915, -2.53713e-05, 0.61079, 0.278997, 0.108732, 0.572691, -0.4779, 0.0591471, 0.655766, -0.514433, 0.108732, 0.723274, -0.427678, -0.053906, 0.584026, 0.0775573, 0.142194, 0.622879, 0.442568, 0.0585865, 0.555932, -0.360784, -0.0243606, 0.725248, 0.0755356, 0.225925, 0.673086, -0.628568, 0.192402, 0.606156, -0.595017, -0.0756442, 0.625472, 0.102088, -0.0270326, 0.582935, -0.309858, 0.0585865, 0.572691, 0.275125, 0.0745546, 0.686219, -0.506013, 0.0585865, 0.740033, -0.344008, -0.0698319, 0.683959, -0.121769, -0.0266737, 0.568759, 0.0798059, 0.0920169, 0.689809, 0.409017, -0.0446111, 0.610801, -0.331048, -0.025498, 0.711968, -0.306317)
 
 [node name="WorldItem_Banna" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+collision_layer = 4
+collision_mask = 1793
 script = ExtResource("1_yoq36")
 item_name = "Iron"
 interact_prompt = "Pickup Iron"
 
-[node name="Iron" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.156803, -0.114072)
+[node name="Banna" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156803, -0.114072)
+layers = 4
 mesh = ExtResource("2_4dp1a")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.156803, -0.114072)
-shape = SubResource("ConvexPolygonShape3D_4i4mg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156803, -0.114072)
+shape = SubResource("ConvexPolygonShape3D_4xpuq")
