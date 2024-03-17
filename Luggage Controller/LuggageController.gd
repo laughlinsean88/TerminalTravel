@@ -1,4 +1,4 @@
-class_name PlayerController
+class_name LuggageController
 extends CharacterBody3D
 
 @export var gravity_modifier : float = 1.5

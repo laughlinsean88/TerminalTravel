@@ -18,7 +18,7 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_fsrsb"]
 font_size = 18
 
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
+[node name="Luggage" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_qeirk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -54,6 +54,7 @@ script = ExtResource("3_l2x4b")
 starter_items = Array[Resource("res://Item.gd")]([ExtResource("4_0116y"), ExtResource("5_ypc10"), ExtResource("6_tndfi"), ExtResource("6_tndfi"), ExtResource("6_tndfi"), ExtResource("5_ypc10")])
 
 [node name="InventoryWindow" type="Panel" parent="Inventory"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
