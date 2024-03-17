@@ -10,7 +10,10 @@ func _process(_delta):
 		if object.can_interact == false:
 			return
 		
-		interact_prompt_label.text = "[E] " + object.interact_prompt
+		interact_prompt_label.text = object.interact_prompt
 		
 		if Input.is_action_just_pressed("interact"):
 			object._interact()
+			
+		if Input.is_action_just_pressed("inventory"):
+			object._open()

@@ -3,7 +3,7 @@ extends Node
 
 var slots : Array[InventorySlotLarge]
 @onready var window : Panel = get_node("LargeInventoryWindow")
-@onready var info_text = $"../InfoText"
+#@onready var info_text = $"../InfoText"
 
 @export var starter_items : Array[Item]
 @export var inRange = false
@@ -17,13 +17,13 @@ func _ready ():
 		child.inventory = self
 	
 	GlobalSignals.on_give_player_item.connect(on_give_player_item)
+	GlobalSignals.on_large_suitcase_open.connect(open_suitcase)
 	
 	for item in starter_items:
 		add_item(item)
 
-func _process (_delta):
-	if inRange and Input.is_action_just_pressed("inventory"):
-		toggle_window(!window.visible)
+func open_suitcase():
+	toggle_window(!window.visible)
 
 func toggle_window (open : bool):
 	window.visible = open

@@ -24,6 +24,7 @@ func _ready ():
 		child.inventory = self
 	
 	GlobalSignals.on_give_player_item.connect(on_give_player_item)
+	GlobalSignals.on_briefcase_open.connect(open_suitcase)
 	
 	for item in starter_small_items:
 		add_small_item(item)
@@ -31,9 +32,8 @@ func _ready ():
 	for item in starter_medium_items:
 		add_medium_item(item)
 
-func _process (_delta):
-	if inRange and Input.is_action_just_pressed("inventory"):
-		toggle_window(!window.visible)
+func open_suitcase():
+	toggle_window(!window.visible)
 
 func toggle_window (open : bool):
 	window.visible = open

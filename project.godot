@@ -65,5 +65,6 @@ inventory={
 [layer_names]
 
 3d_physics/layer_1="player"
+3d_physics/layer_2="luggage"
 3d_physics/layer_9="floor"
 3d_physics/layer_10="walls"

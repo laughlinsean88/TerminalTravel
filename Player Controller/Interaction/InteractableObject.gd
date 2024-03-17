@@ -6,3 +6,6 @@ extends Node3D
 
 func _interact():
 	print("Override this function.")
+
+func _open():
+	print("Override this function.")

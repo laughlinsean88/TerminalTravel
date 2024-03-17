@@ -3,7 +3,7 @@ extends Node
 
 var slots : Array[InventorySlotMedium]
 @onready var window : Panel = get_node("MediumInventoryWindow")
-@onready var info_text = $"../InfoText"
+#@onready var info_text = $"../InfoText"
 
 
 @export var starter_items : Array[Item]
@@ -18,13 +18,13 @@ func _ready ():
 		child.inventory = self
 	
 	GlobalSignals.on_give_player_item.connect(on_give_player_item)
+	GlobalSignals.on_medium_suitcase_open.connect(open_suitcase)
 	
 	for item in starter_items:
 		add_item(item)
 
-func _process (_delta):
-	if inRange and Input.is_action_just_pressed("inventory"):
-		toggle_window(!window.visible)
+func open_suitcase():
+	toggle_window(!window.visible)
 
 func toggle_window (open : bool):
 	window.visible = open

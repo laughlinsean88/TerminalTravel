@@ -49,19 +49,19 @@ func _on_pressed():
 	if item == null:
 		return
 	
-	var remove_after_use = item._on_use(inventory.get_parent())
-	
-	if remove_after_use:
-		remove_item()
-
+	#var remove_after_use = item._on_use(inventory.get_parent())
+	#
+	#if remove_after_use:
+		#remove_item()
+#
 func drop_item():
 	if item == null:
 		return
 	
-	var world_item = item.world_item_scene.instantiate()
-	add_child(world_item)
-	world_item.position = inventory.get_parent().position + Vector3(0, 1.5, 0)  - inventory.get_parent().basis.z
-	remove_item()
+	#var world_item = item.world_item_scene.instantiate()
+	#add_child(world_item)
+	#world_item.position = inventory.get_parent().position + Vector3(0, 1.5, 0)  - inventory.get_parent().basis.z
+	#remove_item()
 	
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
