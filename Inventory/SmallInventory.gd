@@ -8,7 +8,6 @@ var medium_slots : Array[InventorySlotMedium]
 
 @export var starter_small_items : Array[Item]
 @export var starter_medium_items : Array[Item]
-@export var inRange = false
 
 func _ready ():
 	toggle_window(false)
