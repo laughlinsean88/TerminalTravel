@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=25 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
@@ -16,6 +16,8 @@
 [ext_resource type="ArrayMesh" uid="uid://ddwdguc77u2q2" path="res://Items/Models/meds.obj" id="13_xt2if"]
 [ext_resource type="Texture2D" uid="uid://doigpl844wbmv" path="res://Items/Images/illegalItems.png" id="15_cnj0o"]
 [ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
+[ext_resource type="Texture2D" uid="uid://dy7sjum0jl8i" path="res://Items/Images/iconphone.png" id="17_8kjbv"]
+[ext_resource type="ArrayMesh" uid="uid://be3u5j5vk82vv" path="res://Items/Models/phone.obj" id="18_2via2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxqv"]
 albedo_texture = ExtResource("9_ic3kj")
@@ -31,6 +33,9 @@ albedo_texture = ExtResource("12_ml2ws")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yubk5"]
 albedo_texture = ExtResource("15_cnj0o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smd6x"]
+albedo_texture = ExtResource("17_8kjbv")
 
 [node name="Main" type="Node3D"]
 
@@ -95,3 +100,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xefa4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.844541, 0, 4.95228)
 material_override = SubResource("StandardMaterial3D_yubk5")
 mesh = ExtResource("16_oqc6e")
+
+[node name="Phone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+material_override = SubResource("StandardMaterial3D_smd6x")
+mesh = ExtResource("18_2via2")
