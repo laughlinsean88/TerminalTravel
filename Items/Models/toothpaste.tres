@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dwa5gyxmstte0" path="res://Items/Icons/toothpaste.png" id="1_p62gc"]
 [ext_resource type="Script" path="res://Item.gd" id="2_losfc"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_pq614"]
+[ext_resource type="PackedScene" uid="uid://xqqjxppibj85" path="res://Items/Models/WorldItem_toothpaste.tscn" id="3_nccml"]
 
 [resource]
 script = ExtResource("2_losfc")
 display_name = "Toothpaste"
 icon = ExtResource("1_p62gc")
 max_stack_size = 12
-world_item_scene = ExtResource("3_pq614")
+world_item_scene = ExtResource("3_nccml")

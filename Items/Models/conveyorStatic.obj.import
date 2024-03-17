@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dftbh32kyltmo"
+path="res://.godot/imported/conveyorStatic.obj-633274b697997a36e7b1e173674a114e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/conveyorStatic.obj-633274b697997a36e7b1e173674a114e.mesh"]
+
+source_file="res://Items/Models/conveyorStatic.obj"
+dest_files=["res://.godot/imported/conveyorStatic.obj-633274b697997a36e7b1e173674a114e.mesh", "res://.godot/imported/conveyorStatic.obj-633274b697997a36e7b1e173674a114e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

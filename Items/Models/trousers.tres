@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://1g6bw7i5y4v0" path="res://Items/Icons/trousers.png" id="1_bhdhc"]
 [ext_resource type="Script" path="res://Item.gd" id="2_weo7i"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_y3nng"]
+[ext_resource type="PackedScene" uid="uid://x0byhxwnpslp" path="res://Items/Models/WorldItem_trousers.tscn" id="3_qlena"]
 
 [resource]
 script = ExtResource("2_weo7i")
 display_name = "Trousers"
 icon = ExtResource("1_bhdhc")
 max_stack_size = 12
-world_item_scene = ExtResource("3_y3nng")
+world_item_scene = ExtResource("3_qlena")

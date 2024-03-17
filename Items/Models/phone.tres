@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://nmwqjcq7o0ww" path="res://Items/Icons/phone.png" id="1_cgjcd"]
 [ext_resource type="Script" path="res://Item.gd" id="2_xwp62"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_1jviw"]
+[ext_resource type="PackedScene" uid="uid://dcf6s810mhdfc" path="res://Items/Models/WorldItem_phone.tscn" id="3_3cp35"]
 
 [resource]
 script = ExtResource("2_xwp62")
 display_name = "Phone"
 icon = ExtResource("1_cgjcd")
 max_stack_size = 12
-world_item_scene = ExtResource("3_1jviw")
+world_item_scene = ExtResource("3_3cp35")

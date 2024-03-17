@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cjt27nbwwh3fb" path="res://Items/Icons/bottle.png" id="1_ud5o2"]
 [ext_resource type="Script" path="res://Item.gd" id="2_w1taf"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_4jkc4"]
+[ext_resource type="PackedScene" uid="uid://jppxaa3y10mg" path="res://Items/Models/WorldItem_bottle.tscn" id="3_6xl3n"]
 
 [resource]
 script = ExtResource("2_w1taf")
 display_name = "Water"
 icon = ExtResource("1_ud5o2")
 max_stack_size = 12
-world_item_scene = ExtResource("3_4jkc4")
+world_item_scene = ExtResource("3_6xl3n")

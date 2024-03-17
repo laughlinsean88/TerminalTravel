@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cdiedndmitkhc" path="res://Items/Icons/tshirt.png" id="1_2gkht"]
 [ext_resource type="Script" path="res://Item.gd" id="2_ry278"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_xa54u"]
+[ext_resource type="PackedScene" uid="uid://dms3jw2x5x1nj" path="res://Items/Models/WorldItem_tshirt.tscn" id="3_anyt4"]
 
 [resource]
 script = ExtResource("2_ry278")
 display_name = "T-Shirt"
 icon = ExtResource("1_2gkht")
 max_stack_size = 12
-world_item_scene = ExtResource("3_xa54u")
+world_item_scene = ExtResource("3_anyt4")
