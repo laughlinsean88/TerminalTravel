@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=36 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="Script" path="res://score.gd" id="1_ivo3p"]
@@ -6,14 +6,14 @@
 [ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
 [ext_resource type="Texture2D" uid="uid://buadp68afixjp" path="res://Items/Images/Tiles074_1K-JPG_Color.jpg" id="9_kylms"]
-[ext_resource type="PackedScene" path="res://briefcase.tscn" id="9_r204i"]
+[ext_resource type="PackedScene" uid="uid://of51g8grls66" path="res://briefcase.tscn" id="9_r204i"]
 [ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/Models/recycleBin.obj" id="9_s85qn"]
 [ext_resource type="ArrayMesh" uid="uid://cwm8mnl7b2sjl" path="res://Items/Models/floor.obj" id="10_ssn3h"]
-[ext_resource type="PackedScene" path="res://medium_suitcase.tscn" id="10_wo0my"]
+[ext_resource type="PackedScene" uid="uid://dkh2gsfi4ogsg" path="res://medium_suitcase.tscn" id="10_wo0my"]
 [ext_resource type="ArrayMesh" uid="uid://ci1jmqimgbyyt" path="res://Items/Models/walls.obj" id="11_tcuxe"]
-[ext_resource type="PackedScene" path="res://large_suitcase.tscn" id="11_ygwpj"]
+[ext_resource type="PackedScene" uid="uid://7x5fwlwrc2sq" path="res://large_suitcase.tscn" id="11_ygwpj"]
 [ext_resource type="Texture2D" uid="uid://inw1u5ridqv5" path="res://Items/Images/illegalItems.png" id="15_cnj0o"]
-[ext_resource type="PackedScene" path="res://conveyor_belt.tscn" id="15_hrvjl"]
+[ext_resource type="PackedScene" uid="uid://cy1sihcrwnhvu" path="res://conveyor_belt.tscn" id="15_hrvjl"]
 [ext_resource type="PackedScene" uid="uid://w8811v0i4iyg" path="res://Items/World Items/WorldItem_book.tscn" id="15_qjax0"]
 [ext_resource type="PackedScene" uid="uid://bcqyddlkucrh" path="res://Items/World Items/WorldItem_banana.tscn" id="15_r1txu"]
 [ext_resource type="PackedScene" uid="uid://jppxaa3y10mg" path="res://Items/World Items/WorldItem_bottle.tscn" id="16_ar84g"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://djtjjtcrdpv7x" path="res://Items/World Items/WorldItem_gun.tscn" id="20_cltiq"]
 [ext_resource type="PackedScene" uid="uid://dcf6s810mhdfc" path="res://Items/World Items/WorldItem_phone.tscn" id="21_homar"]
 [ext_resource type="PackedScene" uid="uid://w8jlq7bck34n" path="res://Items/World Items/WorldItem_watch.tscn" id="22_wivut"]
+[ext_resource type="PackedScene" uid="uid://d0k6dcr73c24e" path="res://path_3d.tscn" id="24_cg040"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ytnia"]
 
@@ -177,7 +178,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39569, 0.475358, -0.84351)
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.59722, 0.391948, -0.94797)
 
 [node name="RecycleBin" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.99367, 0, 0.158971, 0, 2, 0, -0.158971, 0, 1.99367, -10.7007, 0.368609, 27.0172)
+transform = Transform3D(1.49525, 0, 0.119228, 0, 1.5, 0, -0.119228, 0, 1.49525, -4.3977, 0.637374, 24.1901)
 material_override = SubResource("StandardMaterial3D_w04vm")
 mesh = ExtResource("9_s85qn")
 
@@ -193,3 +194,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0827198, -1.90735e-06, -6.429)
 shape = SubResource("ConcavePolygonShape3D_rs0aj")
+
+[node name="Path3D" parent="." instance=ExtResource("24_cg040")]
+transform = Transform3D(0.998795, 0.0490763, 0, -0.0490763, 0.998795, 0, 0, 0, 1, -15.6885, 2.0115, 26.6875)
