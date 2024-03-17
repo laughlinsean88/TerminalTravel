@@ -95,30 +95,30 @@ mesh = SubResource("QuadMesh_ytnia")
 surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
 
 [node name="WorldItem_Charger" parent="." instance=ExtResource("17_0uxir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73638, 2.86935, -3.50773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21834, 2.86935, -2.93629)
 
 [node name="WorldItem_Bomb" parent="." instance=ExtResource("16_hqla5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53575, 2.38856, -1.5773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97311, 2.38856, -1.01867)
 collision_mask = 1792
 
 [node name="WorldItem_Banna" parent="." instance=ExtResource("15_r1txu")]
-transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.7923, 1.4578, 0.512323)
+transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.28498, 1.4578, 0.918077)
 
 [node name="WorldItem_Bottle" parent="." instance=ExtResource("16_ar84g")]
-transform = Transform3D(0.262762, 0, 0.964861, 0, 1, 0, -0.964861, 0, 0.262762, -7.86462, 2.42783, 3.06792)
+transform = Transform3D(0.262762, 0, 0.964861, 0, 1, 0, -0.964861, 0, 0.262762, -7.86462, 1.75299, 3.06792)
 
 [node name="WorldItem_Phone" parent="." instance=ExtResource("21_homar")]
-transform = Transform3D(0.156831, 0, -0.987625, 0, 1, 0, 0.987625, 0, 0.156831, -8.11353, 2.58048, 4.43508)
+transform = Transform3D(0.156831, 0, -0.987625, 0, 1, 0, 0.987625, 0, 0.156831, -8.11353, 1.66057, 4.28599)
 can_interact = true
 
 [node name="WorldItem_Watch" parent="." instance=ExtResource("22_wivut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03894, 3.06353, 5.50159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03894, 1.57839, 5.50159)
 
 [node name="WorldItem_Gun" parent="." instance=ExtResource("20_cltiq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6646, 3, 12.1056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6646, 1.92806, 12.1056)
 
 [node name="WorldItem_Book" parent="." instance=ExtResource("15_qjax0")]
-transform = Transform3D(-0.00223402, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00223402, -7.82002, 2.57249, 13.7503)
+transform = Transform3D(-0.00223402, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00223402, -7.82002, 1.91469, 13.7503)
 
 [node name="RoomInterior" type="StaticBody3D" parent="."]
 collision_layer = 1792

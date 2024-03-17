@@ -23,6 +23,6 @@ func _on_area_3d_body_entered(body):
 			body.queue_free()
 			print("Hit Briefcase")
 		if luggage_name == MEDIUM_CASE or luggage_name == LARGE_CASE: 
-			body.get_node("ColliderShape3D").disabled = true
+			body.get_node("CollisionShape3D").disabled = true
 			print("Hit Suitcase")
 		
