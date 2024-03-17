@@ -95,14 +95,14 @@ mesh = SubResource("QuadMesh_ytnia")
 surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
 
 [node name="WorldItem_Charger" parent="." instance=ExtResource("17_0uxir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21834, 2.86935, -2.93629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21834, 2.37663, -2.93629)
 
 [node name="WorldItem_Bomb" parent="." instance=ExtResource("16_hqla5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97311, 2.38856, -1.01867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97311, 1.95836, -1.01867)
 collision_mask = 1792
 
-[node name="WorldItem_Banna" parent="." instance=ExtResource("15_r1txu")]
-transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.28498, 1.4578, 0.918077)
+[node name="WorldItem_Banana" parent="." instance=ExtResource("15_r1txu")]
+transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.28498, 1.03013, 0.918077)
 
 [node name="WorldItem_Bottle" parent="." instance=ExtResource("16_ar84g")]
 transform = Transform3D(0.262762, 0, 0.964861, 0, 1, 0, -0.964861, 0, 0.262762, -7.86462, 1.75299, 3.06792)
