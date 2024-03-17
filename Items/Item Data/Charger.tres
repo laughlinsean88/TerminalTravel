@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://coxnhcct06m8j"]
+
+[ext_resource type="Texture2D" uid="uid://p6rwnwx5nibu" path="res://Items/Icons/charger.png" id="1_1olgn"]
+[ext_resource type="Script" path="res://Item.gd" id="2_bhm0w"]
+[ext_resource type="PackedScene" uid="uid://coi3g2geieuvq" path="res://Items/World Items/WorldItem_charger.tscn" id="3_hf5lr"]
+
+[resource]
+script = ExtResource("2_bhm0w")
+display_name = "Charger"
+icon = ExtResource("1_1olgn")
+size = "Small"
+max_stack_size = 1
+world_item_scene = ExtResource("3_hf5lr")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dvyjsjpfeba73"]
+
+[ext_resource type="Texture2D" uid="uid://6jivxf648dim" path="res://Items/Icons/book.png" id="1_pqdre"]
+[ext_resource type="Script" path="res://Item.gd" id="2_vwxhj"]
+[ext_resource type="PackedScene" uid="uid://w8811v0i4iyg" path="res://Items/World Items/WorldItem_book.tscn" id="3_byjsn"]
+
+[resource]
+script = ExtResource("2_vwxhj")
+display_name = "Book"
+icon = ExtResource("1_pqdre")
+size = "Medium"
+max_stack_size = 1
+world_item_scene = ExtResource("3_byjsn")

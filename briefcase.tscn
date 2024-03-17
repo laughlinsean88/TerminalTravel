@@ -19,4 +19,3 @@ mesh = ExtResource("2_x1ky1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.83143, 0)
 shape = SubResource("ConcavePolygonShape3D_a4clr")
-disabled = true

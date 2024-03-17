@@ -22,4 +22,3 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.404555, 0)
 shape = SubResource("ConcavePolygonShape3D_rprfc")
-disabled = true

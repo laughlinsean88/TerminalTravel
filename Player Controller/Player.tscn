@@ -30,14 +30,15 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_lt5te")
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098363, 2.11055, -1.21457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098363, 2.11055, -1.52213)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92742, 0)
 current = true
 
 [node name="InteractionController" type="RayCast3D" parent="Camera3D"]
-target_position = Vector3(0, 0, -2)
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 3, 0, 0, 0)
+target_position = Vector3(0, 0, -5)
 collision_mask = 6
 script = ExtResource("2_66uls")
 

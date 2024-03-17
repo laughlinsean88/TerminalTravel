@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://d15amm3dvcxkg"]
+
+[ext_resource type="Texture2D" uid="uid://dpr75bqunwc3k" path="res://Items/Icons/bomb.png" id="1_qnsde"]
+[ext_resource type="Script" path="res://Item.gd" id="2_x3wm7"]
+[ext_resource type="PackedScene" uid="uid://cmi3eg1xlg4ak" path="res://Items/World Items/WorldItem_bomb.tscn" id="3_7n6t1"]
+
+[resource]
+script = ExtResource("2_x3wm7")
+display_name = "Bomb"
+icon = ExtResource("1_qnsde")
+size = "Large"
+max_stack_size = 1
+world_item_scene = ExtResource("3_7n6t1")

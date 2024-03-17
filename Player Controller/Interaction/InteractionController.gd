@@ -37,16 +37,16 @@ func _process(_delta):
 	if holding_obj: 
 		holding_obj.set_linear_velocity((hand.global_position - holding_obj.global_position) * hold_power)
 		
-func hold(object : InteractableObject, is_obj_held : bool):
+func hold(object : InteractableObject, is_obj_held_condition : bool):
 	
-	if is_obj_held:
+	if is_obj_held_condition:
 		tempObj = object
 		object.global_position = hand.global_position
 		object.get_node("CollisionShape3D").disabled = true
 		print("hold")
 	
 	var heldObj = tempObj
-	if !is_obj_held:
+	if !is_obj_held_condition:
 		holding_obj = null
 		heldObj.get_node("CollisionShape3D").disabled = false
 		print("drop")
