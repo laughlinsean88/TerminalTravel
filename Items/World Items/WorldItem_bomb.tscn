@@ -17,9 +17,7 @@ item_name = "Bomb"
 interact_prompt = "Pickup Bomb"
 
 [node name="Bomb" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.563, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 mesh = ExtResource("2_weo8b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ykmix")
