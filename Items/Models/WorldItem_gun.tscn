@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://djtjjtcrdpv7x"]
+
+[ext_resource type="Script" path="res://WorldItem.gd" id="1_oc7g2"]
+[ext_resource type="ArrayMesh" uid="uid://didrnhgj2efbn" path="res://Items/Models/gun.obj" id="2_mvqpx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866gx"]
+albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
+metallic = 0.74
+roughness = 0.33
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_roos3"]
+size = Vector3(1.29584, 1, 1)
+
+[node name="WorldItem_Iron" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+script = ExtResource("1_oc7g2")
+item_name = "Iron"
+interact_prompt = "Pickup Iron"
+
+[node name="Iron" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.148268, 0, 0)
+mesh = ExtResource("2_mvqpx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.208239, 0, 0.3, -9.10243e-09, -0.000973701, 0.0510547, -0.119496)
+shape = SubResource("BoxShape3D_roos3")
