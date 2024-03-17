@@ -13,10 +13,10 @@
 [ext_resource type="Script" path="res://Suitcase.gd" id="10_w2dme"]
 [ext_resource type="ArrayMesh" uid="uid://ci1jmqimgbyyt" path="res://Items/Models/walls.obj" id="11_tcuxe"]
 [ext_resource type="Texture2D" uid="uid://inw1u5ridqv5" path="res://Items/Images/illegalItems.png" id="15_cnj0o"]
-[ext_resource type="PackedScene" path="res://Items/Models/WorldItem_banana.tscn" id="15_r1txu"]
-[ext_resource type="PackedScene" path="res://Items/Models/WorldItem_bomb.tscn" id="16_hqla5"]
+[ext_resource type="PackedScene" uid="uid://bcqyddlkucrh" path="res://Items/Models/WorldItem_banana.tscn" id="15_r1txu"]
+[ext_resource type="PackedScene" uid="uid://cmi3eg1xlg4ak" path="res://Items/Models/WorldItem_bomb.tscn" id="16_hqla5"]
 [ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
-[ext_resource type="PackedScene" path="res://Items/Models/WorldItem_book.tscn" id="17_bd6ph"]
+[ext_resource type="PackedScene" uid="uid://bh7w8jekf2odh" path="res://Items/Models/WorldItem_book.tscn" id="17_bd6ph"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcq48"]
 albedo_texture = ExtResource("9_kylms")
@@ -179,17 +179,21 @@ mesh = ExtResource("8_2xm52")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468274, -4.76837e-07, 3.27477)
 mesh = ExtResource("9_s85qn")
 
-[node name="WorldItem_Iron" parent="." instance=ExtResource("15_r1txu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83389, 2.56359, 8.71457)
+[node name="WorldItem_Banna" parent="." instance=ExtResource("15_r1txu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.20022, 1.38048, 8.37357)
 collision_layer = 4
 collision_mask = 1792
+item_name = "Banna"
+interact_prompt = "Pickup Banna"
 
-[node name="WorldItem_Iron2" parent="." instance=ExtResource("16_hqla5")]
+[node name="WorldItem_Bomb" parent="." instance=ExtResource("16_hqla5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.09852, 1.32675, 10.0554)
 collision_layer = 4
 collision_mask = 1792
+item_name = "Bomb"
+interact_prompt = "Pickup Bomb"
 
-[node name="WorldItem_Iron3" parent="." instance=ExtResource("17_bd6ph")]
+[node name="WorldItem_Book" parent="." instance=ExtResource("17_bd6ph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15016, 1.38135, 11.8014)
-collision_layer = 4
-collision_mask = 1792
+item_name = "Book"
+interact_prompt = "Pickup Book"

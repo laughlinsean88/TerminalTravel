@@ -17,7 +17,7 @@ script = ExtResource("1_4qvk3")
 item_name = "Iron"
 interact_prompt = "Pickup Iron"
 
-[node name="Iron" type="MeshInstance3D" parent="."]
+[node name="Bomb" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0095377, -0.0483301, -0.114072)
 mesh = ExtResource("2_bmje5")
 skeleton = NodePath("../..")

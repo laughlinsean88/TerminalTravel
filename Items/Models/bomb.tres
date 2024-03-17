@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cf6imso0cbgc6"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://d15amm3dvcxkg"]
 
 [ext_resource type="Texture2D" uid="uid://dpr75bqunwc3k" path="res://Items/Icons/bomb.png" id="1_s07m7"]
 [ext_resource type="Script" path="res://Item.gd" id="2_hshbc"]

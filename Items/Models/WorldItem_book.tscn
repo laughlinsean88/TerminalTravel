@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://w8811v0i4iyg"]
+[gd_scene load_steps=5 format=3 uid="uid://bh7w8jekf2odh"]
 
 [ext_resource type="Script" path="res://WorldItem.gd" id="1_xfjhv"]
 [ext_resource type="ArrayMesh" uid="uid://bh0sq7g1pk7og" path="res://Items/Models/book.obj" id="2_3xnpf"]
@@ -8,20 +8,23 @@ albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
 metallic = 0.74
 roughness = 0.33
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_roos3"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a3vcd"]
+points = PackedVector3Array(-0.288063, 0.00608044, -0.814223, 0.325052, 0.119138, -0.013419, 0.325052, -0.010481, -0.013419, 0.325052, 0.119138, -0.842981, -0.310081, 0.106171, -0.013419, 0.325052, -0.010481, -0.842981, -0.310081, 0.106171, -0.842981, -0.288063, 0.00608044, -0.0421772, -0.0767552, -0.010481, -0.013419, -0.0767552, -0.010481, -0.842981, 0.0787331, 0.119138, -0.013419, 0.0787331, 0.119138, -0.842981)
 
-[node name="WorldItem_Iron" type="RigidBody3D"]
+[node name="WorldItem_Book" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+collision_layer = 4
+collision_mask = 1792
 script = ExtResource("1_xfjhv")
 item_name = "Iron"
 interact_prompt = "Pickup Iron"
 
-[node name="Iron" type="MeshInstance3D" parent="."]
+[node name="Book" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = ExtResource("2_3xnpf")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.208239, 0, 0.3, -9.10243e-09, 0.000372171, 0.0510547, -0.119496)
-shape = SubResource("BoxShape3D_roos3")
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_a3vcd")
