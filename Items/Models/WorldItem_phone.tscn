@@ -13,6 +13,9 @@ points = PackedVector3Array(0.224347, 0.215959, 1.00376, 0.222283, 0.215959, 1.0
 [node name="WorldItem_Phone" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_agx5s")
 item_name = "Phone"
 interact_prompt = "Pickup Phone"

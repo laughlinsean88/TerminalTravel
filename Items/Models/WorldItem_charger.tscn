@@ -14,6 +14,9 @@ points = PackedVector3Array(0.540492, -9.85339e-06, -0.449561, 0.540365, 0.00095
 [node name="WorldItem_Charger" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_kwmks")
 item_name = "Charger"
 interact_prompt = "Pickup Charger"

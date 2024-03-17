@@ -9,6 +9,9 @@ points = PackedVector3Array(-0.163157, 0.230728, -0.584097, 0.173092, 0.231158, 
 [node name="WorldItem_Bottle" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_x1d0o")
 item_name = "Bottle"
 interact_prompt = "Pickup Bottle"

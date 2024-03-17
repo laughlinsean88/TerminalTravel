@@ -9,6 +9,9 @@ points = PackedVector3Array(0.182675, -0.00917247, -0.711566, -0.0090309, -0.031
 [node name="WorldItem_Gun" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_oc7g2")
 item_name = "Gun"
 interact_prompt = "Pickup Gun"

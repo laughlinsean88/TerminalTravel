@@ -9,6 +9,9 @@ points = PackedVector3Array(-0.07063, 0.002417, 0.0154452, -0.0692733, 0.002417,
 [node name="WorldItem_Deodorant" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_46861")
 item_name = "Deodorant"
 interact_prompt = "Pickup Deodorant"

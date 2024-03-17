@@ -219,10 +219,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11942, 1.22921, 1.24505)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13659, 1.79156, 0)
 
 [node name="WorldItem_Bottle" parent="." instance=ExtResource("18_3es7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9075, 1.75901, 2.91432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9075, 1.22879, 2.91432)
 
 [node name="WorldItem_Book" parent="." instance=ExtResource("17_bd6ph")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8199, 2.03712, -1.65502)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8199, 1.17707, -1.65502)
 
 [node name="WorldItem_Deodorant" parent="." instance=ExtResource("20_hvs7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78929, 1.71989, 3.60092)
@@ -231,4 +231,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78929, 1.71989, 3.60092)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08177, 1.5878, -4.03814)
 
 [node name="WorldItem_Trousers" parent="." instance=ExtResource("22_0hkyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0639, 1.39213, 4.47564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0639, 1.05458, 4.47564)

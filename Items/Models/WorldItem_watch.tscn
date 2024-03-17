@@ -9,6 +9,9 @@ points = PackedVector3Array(0.0794717, 0.677795, -0.000988469, 0.0779247, 0.6777
 [node name="WorldItem_Watch" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_vab2o")
 item_name = "Watch"
 interact_prompt = "Pickup Watch"

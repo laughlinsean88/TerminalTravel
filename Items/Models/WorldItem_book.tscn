@@ -9,6 +9,9 @@ points = PackedVector3Array(0.313106, 0.110022, -0.019939, -0.303638, 0.0996156,
 [node name="WorldItem_Book" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_xfjhv")
 item_name = "Book"
 interact_prompt = "Pickup Book"

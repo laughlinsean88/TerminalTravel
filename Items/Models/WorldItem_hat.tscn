@@ -9,6 +9,9 @@ points = PackedVector3Array(-0.138892, 0.0348497, -0.317784, -0.141728, 0.070608
 [node name="WorldItem_Hat" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 1793
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_n6idx")
 item_name = "Hat"
 interact_prompt = "Pickup Hat"
