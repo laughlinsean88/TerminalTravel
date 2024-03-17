@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpm3ta4rjqbjd"]
+
+[ext_resource type="Script" path="res://Levels/Menus/options_menu.gd" id="1_4h27d"]
+[ext_resource type="Texture2D" uid="uid://byblg0lxhprmh" path="res://Art/Default_Castle_in_the_background_through_valley_1.jpg" id="2_cc1x2"]
+[ext_resource type="AudioStream" uid="uid://dcmlm1x547t8" path="res://Audio/Music/Get to it.wav" id="3_45d8o"]
+[ext_resource type="PackedScene" uid="uid://gth4kwdrxx7o" path="res://Levels/Menus/settings_tab_container.tscn" id="3_t0kax"]
+
+[sub_resource type="SystemFont" id="SystemFont_1owr4"]
+font_names = PackedStringArray("Sylfaen")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84l3j"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4h27d")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.756863, 0.898039, 0.988235, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 113.0
+offset_top = 91.0
+offset_right = -114.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cc1x2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("SystemFont_1owr4")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="SettingsTabContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_t0kax")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_84l3j")
+text = "Exit
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_45d8o")
+volume_db = -25.0
+pitch_scale = 0.94

@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="KeybindingResource" load_steps=13 format=3 uid="uid://coxcd6jpy81o5"]
+
+[ext_resource type="Script" path="res://Levels/Menus/Resources/Settings/KeybindingResource.gd" id="1_k33y4"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_3gc4i"]
+device = -1
+keycode = 70
+unicode = 102
+
+[sub_resource type="InputEventKey" id="InputEventKey_ojgtf"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="InputEventKey" id="InputEventKey_6bv1e"]
+device = -1
+keycode = 69
+physical_keycode = 69
+key_label = 69
+unicode = 101
+
+[sub_resource type="InputEventKey" id="InputEventKey_uaydr"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_bixec"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_6poii"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id="InputEventKey_6600b"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="InputEventKey" id="InputEventKey_2up8i"]
+device = -1
+keycode = 96
+unicode = 96
+
+[sub_resource type="InputEventKey" id="InputEventKey_ygve8"]
+device = -1
+keycode = 4194325
+
+[sub_resource type="InputEventKey" id="InputEventKey_54qt6"]
+device = -1
+keycode = 4194306
+
+[sub_resource type="InputEventKey" id="InputEventKey_56v76"]
+device = -1
+keycode = 4194306
+
+[resource]
+script = ExtResource("1_k33y4")
+MOVE_LEFT_DEFAULT_KEY = SubResource("InputEventKey_bixec")
+MOVE_RIGHT_DEFAULT_KEY = SubResource("InputEventKey_6poii")
+JUMP_DEFAULT_KEY = SubResource("InputEventKey_uaydr")
+ATTACK_DEFAULT_KEY = SubResource("InputEventKey_3gc4i")
+SHIELD_DEFAULT_KEY = SubResource("InputEventKey_ygve8")
+INTERACT_DEFAULT_KEY = SubResource("InputEventKey_6bv1e")
+TAB_RIGHT_DEFAULT_KEY = SubResource("InputEventKey_56v76")
+TAB_LEFT_DEFAULT_KEY = SubResource("InputEventKey_54qt6")
+SELECT_DEFAULT_KEY = SubResource("InputEventKey_2up8i")
+PAUSE_DEFAULT_KEY = SubResource("InputEventKey_6600b")
+CANCEL_DEFAULT_KEY = SubResource("InputEventKey_ojgtf")

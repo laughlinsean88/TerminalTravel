@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*res://Global Signals/GlobalSignals.gd"
+SaveManager="*res://Scripts/Autoloads/SaveManager.gd"
+CollectableSignalBus="*res://Scripts/Autoloads/CollectableSignalBus.gd"
+GameManager="*res://Scripts/Autoloads/GameManager.gd"
+SettingsSignalBus="*res://Scripts/Autoloads/SettingsSignalBus.gd"
+SignalBus="*res://Scripts/Autoloads/SignalBus.gd"
+SettingsContainer="*res://Scripts/Autoloads/SettingsDataContainer.gd"
 
 [input]
 

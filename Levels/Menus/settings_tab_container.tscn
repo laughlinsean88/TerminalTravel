@@ -1,0 +1,349 @@
+[gd_scene load_steps=14 format=3 uid="uid://gth4kwdrxx7o"]
+
+[ext_resource type="PackedScene" uid="uid://kxs2ne0wk5lf" path="res://Levels/Menus/UI/audio_slider.tscn" id="1_8howc"]
+[ext_resource type="Script" path="res://Levels/Menus/settings_tab_container.gd" id="1_c8k1g"]
+[ext_resource type="Texture2D" uid="uid://bl1qnivf6ufw4" path="res://Art/Ukinght Inventory Box 1.png" id="2_lhy1r"]
+[ext_resource type="Script" path="res://Levels/Menus/CheckButton.gd" id="2_ukiuu"]
+[ext_resource type="PackedScene" uid="uid://cgoel1gbi6aym" path="res://Levels/Menus/window_mode.tscn" id="3_equ2i"]
+[ext_resource type="PackedScene" uid="uid://c3dg2pjf5g74" path="res://Levels/Menus/resolution_mode.tscn" id="4_rhwmn"]
+[ext_resource type="PackedScene" uid="uid://djnaxwigsiqk7" path="res://Levels/Menus/UI/keybinding_button.tscn" id="6_72txg"]
+
+[sub_resource type="Gradient" id="Gradient_j3guh"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7vs45"]
+gradient = SubResource("Gradient_j3guh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5pm5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px22p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="SystemFont" id="SystemFont_ublj7"]
+font_names = PackedStringArray("Sylfaen")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3t4j"]
+
+[node name="SettingsTabContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8k1g")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0.243137, 0.392157)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_top = 74.0
+offset_right = -92.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_7vs45")
+expand_mode = 1
+
+[node name="Border" type="TextureRect" parent="."]
+modulate = Color(0.505882, 0.262745, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 29.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lhy1r")
+expand_mode = 1
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_r5pm5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_px22p")
+tab_alignment = 1
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="AudioSettingsLabel" type="Label" parent="TabContainer/Sound"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -432.0
+offset_top = 15.0
+offset_right = 432.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.694118, 0.290196, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_ublj7")
+theme_override_font_sizes/font_size = 20
+text = "Audio Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="AudioSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="AudioSlider2" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="AudioSlider3" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="AudioSlider4" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+layout_mode = 2
+bus_name = "Ambience"
+
+[node name="AudioSlider5" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+layout_mode = 2
+bus_name = "Speech"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Sound"]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 23.0
+offset_right = 677.0
+offset_bottom = 47.0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_ukiuu")
+
+[node name="MuteLabel" type="Label" parent="TabContainer/Sound"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 237.0
+offset_top = 31.0
+offset_right = 339.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_ublj7")
+theme_override_font_sizes/font_size = 20
+text = "Mute Off"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Graphics"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -432.0
+offset_top = 15.0
+offset_right = 432.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.694118, 0.290196, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_ublj7")
+theme_override_font_sizes/font_size = 20
+text = "		       Windows & Resolution"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="WindowMode" parent="TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("3_equ2i")]
+layout_mode = 2
+
+[node name="ResolutionMode" parent="TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("4_rhwmn")]
+layout_mode = 2
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Controls"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -432.0
+offset_top = 15.0
+offset_right = 432.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.694118, 0.290196, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_ublj7")
+theme_override_font_sizes/font_size = 20
+text = "Key Rebinding"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = -24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_o3t4j")
+
+[node name="HotKeyRebindButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "move_left"
+
+[node name="HotKeyRebindButton2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "move_right"
+
+[node name="HotKeyRebindButton3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+
+[node name="HotKeyRebindButton4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "attack"
+
+[node name="HotKeyRebindButton5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "shield"
+
+[node name="HotKeyRebindButton6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="HotKeyRebindButton7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "tab_right"
+
+[node name="HotKeyRebindButton8" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "tab_left"
+
+[node name="HotKeyRebindButton9" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "select"
+
+[node name="HotKeyRebindButton10" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "pause"
+
+[node name="HotKeyRebindButton11" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "cancel"
+
+[node name="HotKeyRebindButton12" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "d_pad"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_o3t4j")
+
+[node name="Accessibility" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "A1"
+
+[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "A2"
+
+[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "A3"
+
+[node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "A4"

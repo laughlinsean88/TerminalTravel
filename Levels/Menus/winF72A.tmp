@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgoel1gbi6aym"]
+
+[ext_resource type="PackedScene" uid="uid://dgm81l6ivr3gm" path="res://Levels/Menus/options_display_button.tscn" id="1_v6mea"]
+[ext_resource type="Script" path="res://Levels/Menus/window_mode.gd" id="2_x6xti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1igo"]
+
+[node name="WindowMode" instance=ExtResource("1_v6mea")]
+script = ExtResource("2_x6xti")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer" index="0"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_o1igo")
+
+[node name="Label" parent="HBoxContainer" index="1"]
+text = "Window Mode"
+
+[node name="Borderless CheckBox" type="CheckBox" parent="HBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Borderless-label" type="Label" parent="HBoxContainer" index="5"]
+layout_mode = 2
+text = "Borderless"

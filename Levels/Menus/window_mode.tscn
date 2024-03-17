@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgoel1gbi6aym"]
+
+[ext_resource type="PackedScene" uid="uid://dgm81l6ivr3gm" path="res://Levels/Menus/options_display_button.tscn" id="1_v6mea"]
+[ext_resource type="Script" path="res://Levels/Menus/window_mode.gd" id="2_x6xti"]
+
+[node name="WindowMode" instance=ExtResource("1_v6mea")]
+script = ExtResource("2_x6xti")
+
+[node name="HBoxContainer" parent="." index="0"]
+layout_mode = 0
+
+[node name="Label" parent="HBoxContainer" index="1"]
+custom_minimum_size = Vector2(150, 0)
+text = "Window Mode"
