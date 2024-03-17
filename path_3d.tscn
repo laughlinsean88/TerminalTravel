@@ -16,7 +16,7 @@ curve = SubResource("Curve3D_uwovd")
 script = ExtResource("1_wak68")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(0.999975, 0, -0.00675389, 0, 1, 0, 0.0067539, 0, 0.999975, 1.262, 1.17993e-05, -3.54454)
+transform = Transform3D(0.995069, 0, -0.0991616, 0, 1, 0, 0.0991616, 0, 0.995069, 1.45194, -0.00296975, -3.53402)
 progress = 2.0
 rotation_mode = 1
 
