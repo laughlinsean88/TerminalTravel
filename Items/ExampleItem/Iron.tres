@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2twxtxeqy64" path="res://Items/Icons/Iron.png" id="1_56j5m"]
 [ext_resource type="Script" path="res://Item.gd" id="1_vefs4"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/World Items/WorldItem_Iron.tscn" id="3_0jywy"]
+[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_0jywy"]
 
 [resource]
 script = ExtResource("1_vefs4")

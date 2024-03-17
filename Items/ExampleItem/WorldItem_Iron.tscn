@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5n18oub1kqxy"]
 
-[ext_resource type="ArrayMesh" uid="uid://8evg4gju7nl8" path="res://Items/Models/Iron.obj" id="1_0b0my"]
+[ext_resource type="ArrayMesh" uid="uid://8evg4gju7nl8" path="res://Items/ExampleItem/Iron.obj" id="1_0b0my"]
 [ext_resource type="Script" path="res://WorldItem.gd" id="1_22c0x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866gx"]
