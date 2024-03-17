@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://8evg4gju7nl8"
+path="res://.godot/imported/Iron.obj-8ea43818af3d41d9872e6ab973e49f78.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Iron.obj-8ea43818af3d41d9872e6ab973e49f78.mesh"]
+
+source_file="res://Items/ExampleItem/Iron.obj"
+dest_files=["res://.godot/imported/Iron.obj-8ea43818af3d41d9872e6ab973e49f78.mesh", "res://.godot/imported/Iron.obj-8ea43818af3d41d9872e6ab973e49f78.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

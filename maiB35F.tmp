@@ -1,0 +1,97 @@
+[gd_scene load_steps=22 format=3 uid="uid://48ruapiiod4a"]
+
+[ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
+[ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
+[ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/Models/luggage.obj" id="4_bn4p5"]
+[ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
+[ext_resource type="ArrayMesh" uid="uid://di6iw6jmri5nk" path="res://Items/Models/luggageXL.obj" id="6_dnyb8"]
+[ext_resource type="ArrayMesh" uid="uid://dfp1wwyxrh201" path="res://Items/Models/briefcase.obj" id="7_3iswh"]
+[ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
+[ext_resource type="Texture2D" uid="uid://wfm1kkapwh8l" path="res://Items/Images/7299445.png" id="9_ic3kj"]
+[ext_resource type="Texture2D" uid="uid://buadp68afixjp" path="res://Items/Images/Tiles074_1K-JPG_Color.jpg" id="9_kylms"]
+[ext_resource type="ArrayMesh" uid="uid://c6p3lot1oqms1" path="res://Items/Models/recycleBin.obj" id="9_s85qn"]
+[ext_resource type="ArrayMesh" uid="uid://cwm8mnl7b2sjl" path="res://Items/Models/floor.obj" id="10_ssn3h"]
+[ext_resource type="ArrayMesh" uid="uid://ci1jmqimgbyyt" path="res://Items/Models/walls.obj" id="11_tcuxe"]
+[ext_resource type="Texture2D" uid="uid://bopkxutno1fwl" path="res://Items/Images/green-cross-medical-symbol-vector-20783585.jpg" id="12_ml2ws"]
+[ext_resource type="ArrayMesh" uid="uid://ddwdguc77u2q2" path="res://Items/Models/meds.obj" id="13_xt2if"]
+[ext_resource type="Texture2D" uid="uid://doigpl844wbmv" path="res://Items/Images/illegalItems.png" id="15_cnj0o"]
+[ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxqv"]
+albedo_texture = ExtResource("9_ic3kj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcq48"]
+albedo_texture = ExtResource("9_kylms")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjhvn"]
+albedo_texture = ExtResource("9_kylms")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xefa4"]
+albedo_texture = ExtResource("12_ml2ws")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yubk5"]
+albedo_texture = ExtResource("15_cnj0o")
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_i7qy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 1.28591, 0.124819)
+collision_mask = 768
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.16374, 0)
+light_color = Color(0.94902, 0.784314, 0.635294, 1)
+light_energy = 16.0
+shadow_enabled = true
+omni_range = 35.771
+
+[node name="Conveyor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11984, 0, -0.315404)
+mesh = ExtResource("3_ts3jm")
+
+[node name="SecurityBox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140416, -9.53674e-07, 1.36133)
+mesh = ExtResource("8_2xm52")
+
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, 0, 0.713083)
+mesh = ExtResource("5_txtus")
+
+[node name="LuggageXl" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523913, -0.125444, 1.11447)
+mesh = ExtResource("6_dnyb8")
+
+[node name="Luggage" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280498, -0.08499, 0.402057)
+mesh = ExtResource("4_bn4p5")
+
+[node name="Briefcase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520409, -0.125346, 0.876259)
+mesh = ExtResource("7_3iswh")
+
+[node name="RecycleBin" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.938529, 0, -0.3452, 0, 1, 0, 0.3452, 0, 0.938529, -2.31235, 0.0599437, -2.28988)
+mesh = ExtResource("9_s85qn")
+surface_material_override/0 = SubResource("StandardMaterial3D_daxqv")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288167, 0, 0.346141)
+layers = 256
+material_override = SubResource("StandardMaterial3D_qcq48")
+mesh = ExtResource("10_ssn3h")
+surface_material_override/0 = SubResource("StandardMaterial3D_mjhvn")
+
+[node name="Walls" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0414882, 0, 0.346141)
+layers = 512
+mesh = ExtResource("11_tcuxe")
+
+[node name="Meds" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141132, 3.28933, -12.0021)
+mesh = ExtResource("13_xt2if")
+surface_material_override/0 = SubResource("StandardMaterial3D_xefa4")
+
+[node name="Sign" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.844541, 0, 4.95228)
+material_override = SubResource("StandardMaterial3D_yubk5")
+mesh = ExtResource("16_oqc6e")
