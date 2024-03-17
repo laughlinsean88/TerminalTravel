@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhypr3oisqd1g"]
+
+[ext_resource type="Script" path="res://WorldItem.gd" id="1_mpqjk"]
+[ext_resource type="ArrayMesh" uid="uid://ddagvulbfvd2r" path="res://Items/Models/polo.obj" id="2_1721l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866gx"]
+albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
+metallic = 0.74
+roughness = 0.33
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_roos3"]
+size = Vector3(2.21234, 2.01453, 1)
+
+[node name="WorldItem_Iron" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43468, 1.26731, -3.78875)
+script = ExtResource("1_mpqjk")
+item_name = "Iron"
+interact_prompt = "Pickup Iron"
+
+[node name="Iron" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = ExtResource("2_1721l")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.208239, 0, 0.3, -9.10243e-09, 0.0212187, 0.0510547, 0.0326829)
+shape = SubResource("BoxShape3D_roos3")
