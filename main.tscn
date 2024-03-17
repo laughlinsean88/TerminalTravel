@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=35 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="Script" path="res://score.gd" id="1_ivo3p"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://djtjjtcrdpv7x" path="res://Items/World Items/WorldItem_gun.tscn" id="20_cltiq"]
 [ext_resource type="PackedScene" uid="uid://dcf6s810mhdfc" path="res://Items/World Items/WorldItem_phone.tscn" id="21_homar"]
 [ext_resource type="PackedScene" uid="uid://w8jlq7bck34n" path="res://Items/World Items/WorldItem_watch.tscn" id="22_wivut"]
+[ext_resource type="Material" uid="uid://daciiiy2ckx5o" path="res://Items/Models/recycleBin.material" id="23_octkf"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ytnia"]
 
@@ -175,6 +176,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.59722, 0.391948, -0.
 [node name="RecycleBin" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468274, -4.76837e-07, 3.27477)
 mesh = ExtResource("9_s85qn")
+surface_material_override/0 = ExtResource("23_octkf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 512
