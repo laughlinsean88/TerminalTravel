@@ -1,5 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://48ruapiiod4a"]
 
+[ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
@@ -18,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cmi3eg1xlg4ak" path="res://Items/World Items/WorldItem_bomb.tscn" id="16_hqla5"]
 [ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
 [ext_resource type="PackedScene" uid="uid://coi3g2geieuvq" path="res://Items/World Items/WorldItem_charger.tscn" id="17_0uxir"]
-[ext_resource type="AudioStream" uid="uid://mywufsn8reob" path="res://Audio/There's Nothing To Decide.mp3" id="19_vuax6"]
 [ext_resource type="PackedScene" uid="uid://djtjjtcrdpv7x" path="res://Items/World Items/WorldItem_gun.tscn" id="20_cltiq"]
 [ext_resource type="PackedScene" uid="uid://dcf6s810mhdfc" path="res://Items/World Items/WorldItem_phone.tscn" id="21_homar"]
 [ext_resource type="PackedScene" uid="uid://w8jlq7bck34n" path="res://Items/World Items/WorldItem_watch.tscn" id="22_wivut"]
@@ -57,7 +57,7 @@ data = PackedVector3Array(-9.5503, 4.2188, 11.1044, -6.6921, 4.2188, 7.8861, -9.
 [node name="Main" type="Node3D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_vuax6")
+stream = ExtResource("1_ef5ab")
 volume_db = -25.0
 autoplay = true
 
@@ -88,11 +88,11 @@ mesh = SubResource("QuadMesh_ytnia")
 surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
 
 [node name="WorldItem_Bomb" parent="." instance=ExtResource("16_hqla5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.62731, 3.99, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53575, 3.99, -2.43866)
 collision_mask = 1792
 
 [node name="WorldItem_Banna" parent="." instance=ExtResource("15_r1txu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7923, 3.75, -1)
+transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.7923, 3.75, -0.415866)
 
 [node name="WorldItem_Book" parent="." instance=ExtResource("15_qjax0")]
 transform = Transform3D(-0.00223402, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00223402, -7.82002, 2.57249, 13.8128)
@@ -101,13 +101,14 @@ transform = Transform3D(-0.00223402, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.0022
 transform = Transform3D(0.262762, 0, 0.964861, 0, 1, 0, -0.964861, 0, 0.262762, -7.86462, 2.42783, 8.94658)
 
 [node name="WorldItem_Charger" parent="." instance=ExtResource("17_0uxir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73638, 4.4045, -5.88545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73638, 4.4045, -4.09539)
 
 [node name="WorldItem_Gun" parent="." instance=ExtResource("20_cltiq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6646, 3, 12.1056)
 
 [node name="WorldItem_Phone" parent="." instance=ExtResource("21_homar")]
 transform = Transform3D(0.156831, 0, -0.987625, 0, 1, 0, 0.987625, 0, 0.156831, -8.11353, 2.58048, 7.23949)
+can_interact = true
 
 [node name="WorldItem_Watch" parent="." instance=ExtResource("22_wivut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03894, 3.06353, 10.4773)
