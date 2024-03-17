@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://26xc3ljqbldg"]
+[gd_scene load_steps=4 format=3 uid="uid://dkh2gsfi4ogsg"]
 
 [ext_resource type="Script" path="res://Suitcase.gd" id="1_ud0ai"]
 [ext_resource type="ArrayMesh" uid="uid://cog3a5ilusdwk" path="res://Items/Models/luggage.obj" id="2_tk2th"]
