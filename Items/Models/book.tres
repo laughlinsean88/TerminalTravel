@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://6jivxf648dim" path="res://Items/Icons/book.png" id="1_pqdre"]
 [ext_resource type="Script" path="res://Item.gd" id="2_vwxhj"]
-[ext_resource type="PackedScene" uid="uid://c5n18oub1kqxy" path="res://Items/ExampleItem/WorldItem_Iron.tscn" id="3_r2jrv"]
+[ext_resource type="PackedScene" uid="uid://w8811v0i4iyg" path="res://Items/Models/WorldItem_book.tscn" id="3_byjsn"]
 
 [resource]
 script = ExtResource("2_vwxhj")
 display_name = "Book"
 icon = ExtResource("1_pqdre")
 max_stack_size = 12
-world_item_scene = ExtResource("3_r2jrv")
+world_item_scene = ExtResource("3_byjsn")
