@@ -28,3 +28,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_866gx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_xjxtm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

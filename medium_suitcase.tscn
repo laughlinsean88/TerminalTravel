@@ -12,6 +12,7 @@ collision_layer = 2
 script = ExtResource("1_ud0ai")
 luggage_name = "Medium Suitcase"
 interact_prompt = "Suitcase: [TAB] to Open"
+is_luggage = true
 
 [node name="Luggage" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)

@@ -23,18 +23,18 @@ func _process(_delta):
 		
 		interact_prompt_label.text = object.interact_prompt
 		
-		if Input.is_action_just_pressed("interact"):
-			object._interact()
-			
+		#if Input.is_action_just_pressed("interact"):
+			#object._interact()
+			#
 		if Input.is_action_just_pressed("inventory"):
 			object._open()
-		
-		if Input.is_action_just_pressed("pick_up"):
+			
+		if Input.is_action_just_pressed("pick_up") and !object.is_luggage:
 				is_obj_held = true
 				holding_obj = object
 				hold(object, is_obj_held)
 			
-	if holding_obj: 
+	if holding_obj and !holding_obj.is_luggage: 
 		holding_obj.set_linear_velocity((hand.global_position - holding_obj.global_position) * hold_power)
 		
 func hold(object : InteractableObject, is_obj_held_condition : bool):
