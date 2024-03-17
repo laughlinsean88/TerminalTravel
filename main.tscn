@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=29 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://dt8diaa2rl5n2" path="res://Items/Models/conveyor.obj" id="3_ts3jm"]
@@ -18,6 +18,9 @@
 [ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
 [ext_resource type="Texture2D" uid="uid://dy7sjum0jl8i" path="res://Items/Images/iconphone.png" id="17_8kjbv"]
 [ext_resource type="ArrayMesh" uid="uid://be3u5j5vk82vv" path="res://Items/Models/phone.obj" id="18_2via2"]
+[ext_resource type="ArrayMesh" uid="uid://l1r2v774fuwp" path="res://Items/Models/stopstand.obj" id="19_afqmc"]
+[ext_resource type="Texture2D" uid="uid://dnnutf02cf1t0" path="res://Items/Images/stop.png" id="19_ayy2m"]
+[ext_resource type="ArrayMesh" uid="uid://7ik8idhhxujg" path="res://Items/Models/stopbutton.obj" id="20_ri06u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxqv"]
 albedo_texture = ExtResource("9_ic3kj")
@@ -36,6 +39,9 @@ albedo_texture = ExtResource("15_cnj0o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smd6x"]
 albedo_texture = ExtResource("17_8kjbv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0rds"]
+albedo_texture = ExtResource("19_ayy2m")
 
 [node name="Main" type="Node3D"]
 
@@ -63,19 +69,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, 0, 0.713083)
 mesh = ExtResource("5_txtus")
 
 [node name="LuggageXl" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523913, -0.125444, 1.11447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239735, -0.125444, 0.800539)
 mesh = ExtResource("6_dnyb8")
 
 [node name="Luggage" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280498, -0.08499, 0.402057)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280498, -0.08499, 0.807148)
 mesh = ExtResource("4_bn4p5")
 
 [node name="Briefcase" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520409, -0.125346, 0.876259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656101, -0.125346, 0.876259)
 mesh = ExtResource("7_3iswh")
 
 [node name="RecycleBin" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.938529, 0, -0.3452, 0, 1, 0, 0.3452, 0, 0.938529, -2.31235, 0.0599437, -2.28988)
+transform = Transform3D(0.938529, 0, -0.3452, 0, 1, 0, 0.3452, 0, 0.938529, -2.04293, 0.0599437, -0.688348)
 mesh = ExtResource("9_s85qn")
 surface_material_override/0 = SubResource("StandardMaterial3D_daxqv")
 
@@ -92,7 +98,7 @@ layers = 512
 mesh = ExtResource("11_tcuxe")
 
 [node name="Meds" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141132, 3.28933, -12.0021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64129, 3.28933, -9.47575)
 mesh = ExtResource("13_xt2if")
 surface_material_override/0 = SubResource("StandardMaterial3D_xefa4")
 
@@ -105,3 +111,12 @@ mesh = ExtResource("16_oqc6e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 material_override = SubResource("StandardMaterial3D_smd6x")
 mesh = ExtResource("18_2via2")
+
+[node name="Stopbutton" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.60394, 0.0526569, -5.73535)
+material_override = SubResource("StandardMaterial3D_d0rds")
+mesh = ExtResource("20_ri06u")
+
+[node name="Stopstand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60394, 0.0526569, -5.73535)
+mesh = ExtResource("19_afqmc")
