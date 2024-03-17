@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0k6dcr73c24e"]
+
+[ext_resource type="PackedScene" uid="uid://bxeeoga0mji2c" path="res://Items/Animation/npcOne.glb" id="1_xc0gj"]
+
+[sub_resource type="Curve3D" id="Curve3D_uwovd"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.17318, 1.90735e-05, -1.27971, 0, 0, 0, 0, 0, 0, -0.17318, 1.90735e-05, -15.0315, 0, 0, 0, 0, 0, 0, 1.40749, 1.90735e-05, -22.1444, 0, 0, 0, 0, 0, 0, 1.56554, 1.90735e-05, -28.6251, 0, 0, 0, 0, 0, 0, -0.963516, 1.90735e-05, -33.051, 0, 0, 0, 0, 0, 0, -5.86356, 1.90735e-05, -29.5735, 0, 0, 0, 0, 0, 0, -15.5056, 1.90735e-05, -29.8897),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[node name="Path3D" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3647, 2.28429, 26.6967)
+curve = SubResource("Curve3D_uwovd")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999998, -0.17318, 1.90735e-05, -1.27971)
+
+[node name="npcOne" parent="PathFollow3D" instance=ExtResource("1_xc0gj")]
+transform = Transform3D(-3, 0, -0.00209472, 0, 3, 0, 0.00209472, 0, -3, 0.189228, -1.98559, 2.11084)
