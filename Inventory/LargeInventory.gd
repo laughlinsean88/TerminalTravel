@@ -1,16 +1,17 @@
-class_name Inventory
+class_name LargeInventory
 extends Node
 
-var slots : Array[InventorySlot]
-@onready var window : Panel = get_node("InventoryWindow")
-@onready var info_text : Label = get_node("InventoryWindow/InfoText")
+var slots : Array[InventorySlotLarge]
+@onready var window : Panel = get_node("LargeInventoryWindow")
+@onready var info_text = $"../InfoText"
 
 @export var starter_items : Array[Item]
+@export var inRange = false
 
 func _ready ():
 	toggle_window(false)
 	
-	for child in get_node("InventoryWindow/SlotContainer").get_children():
+	for child in get_node("LargeInventoryWindow/SlotContainerLarge").get_children():
 		slots.append(child)
 		child.set_item(null)
 		child.inventory = self
@@ -20,8 +21,8 @@ func _ready ():
 	for item in starter_items:
 		add_item(item)
 
-func _process (delta):
-	if Input.is_action_just_pressed("inventory"):
+func _process (_delta):
+	if inRange and Input.is_action_just_pressed("inventory"):
 		toggle_window(!window.visible)
 
 func toggle_window (open : bool):
@@ -55,7 +56,7 @@ func remove_item (item : Item):
 	
 	slot.remove_item()
 
-func get_slot_to_add (item : Item) -> InventorySlot:
+func get_slot_to_add (item : Item) -> InventorySlotLarge:
 	for slot in slots:
 		if slot.item == item and slot.quantity < item.max_stack_size:
 			return slot
@@ -66,7 +67,7 @@ func get_slot_to_add (item : Item) -> InventorySlot:
 	
 	return null
 
-func get_slot_to_remove (item : Item) -> InventorySlot:
+func get_slot_to_remove (item : Item) -> InventorySlotLarge:
 	for slot in slots:
 		if slot.item == item:
 			return slot

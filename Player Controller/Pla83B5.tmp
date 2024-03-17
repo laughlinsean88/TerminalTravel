@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cf1pwgl0y0mi6"]
+[gd_scene load_steps=12 format=3 uid="uid://cf1pwgl0y0mi6"]
 
 [ext_resource type="Script" path="res://Player Controller/PlayerController.gd" id="1_krxqb"]
 [ext_resource type="Script" path="res://Player Controller/Interaction/InteractionController.gd" id="2_66uls"]
-[ext_resource type="Script" path="res://Player Controller/LuggageSystem.gd" id="3_8gt0g"]
-[ext_resource type="Script" path="res://Inventory/SmallInventory.gd" id="3_a38y0"]
+[ext_resource type="Script" path="res://Player Controller/SmallInventory.gd" id="3_vcoem"]
+[ext_resource type="PackedScene" uid="uid://n7ekj3yl42y2" path="res://Inventory/InventorySlot.tscn" id="4_w1ngo"]
 [ext_resource type="PackedScene" uid="uid://mjcxtg3kd7fm" path="res://Inventory/InventorySlotMedium.tscn" id="5_gsqkx"]
-[ext_resource type="Resource" uid="uid://dpysu3dp2e11o" path="res://Items/ExampleItem/Iron.tres" id="5_h1kbk"]
-[ext_resource type="PackedScene" uid="uid://n7ekj3yl42y2" path="res://Inventory/InventorySlotSmall.tscn" id="5_pm4gw"]
-[ext_resource type="Script" path="res://Inventory/MediumInventory.gd" id="7_rv332"]
+[ext_resource type="Script" path="res://Player Controller/MediumInventory.gd" id="5_ppx05"]
+[ext_resource type="Script" path="res://Player Controller/LargeInventory.gd" id="6_5dycl"]
 [ext_resource type="PackedScene" uid="uid://c2mti6b66qxeh" path="res://Inventory/InventorySlotLarge.tscn" id="7_skrxc"]
-[ext_resource type="Script" path="res://Inventory/LargeInventory.gd" id="9_nkao1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
 radius = 0.3
@@ -54,25 +52,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SmallInventory" type="Node" parent="."]
-script = ExtResource("3_a38y0")
-starter_small_items = Array[Resource("res://Item.gd")]([ExtResource("5_h1kbk"), ExtResource("5_h1kbk"), ExtResource("5_h1kbk")])
-starter_medium_items = Array[Resource("res://Item.gd")]([ExtResource("5_h1kbk")])
+script = ExtResource("3_vcoem")
+starter_items = null
 inRange = true
 
-[node name="SmallInventoryWindow" type="Panel" parent="SmallInventory"]
+[node name="InventoryWindow" type="Panel" parent="SmallInventory"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -219.0
-offset_top = -85.0
-offset_right = 122.0
-offset_bottom = 183.0
+offset_left = -280.0
+offset_top = -184.0
+offset_right = 61.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SlotContainerSmall" type="GridContainer" parent="SmallInventory/SmallInventoryWindow"]
+[node name="SlotContainerSmall" type="GridContainer" parent="SmallInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,19 +87,19 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlot" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot" parent="SmallInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot2" parent="SmallInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot3" parent="SmallInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot4" parent="SmallInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="SlotContainerMedium" type="GridContainer" parent="SmallInventory/SmallInventoryWindow"]
+[node name="SlotContainerMedium" type="GridContainer" parent="SmallInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -117,19 +115,17 @@ grow_vertical = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="InventorySlotMedium" parent="SmallInventory/SmallInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
+[node name="InventorySlotMedium" parent="SmallInventory/InventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
 layout_mode = 2
 
-[node name="InfoText" type="Label" parent="SmallInventory/SmallInventoryWindow"]
+[node name="InfoText" type="Label" parent="SmallInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 108.0
-offset_top = -35.0
-offset_right = -108.0
-offset_bottom = -4.0
+offset_top = -36.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Small Luggage"
@@ -137,24 +133,25 @@ label_settings = SubResource("LabelSettings_fsrsb")
 horizontal_alignment = 1
 
 [node name="MediumInventory" type="Node" parent="."]
-script = ExtResource("7_rv332")
-starter_items = Array[Resource("res://Item.gd")]([ExtResource("5_h1kbk")])
+script = ExtResource("5_ppx05")
+starter_items = null
+inRange = null
 
-[node name="MediumInventoryWindow" type="Panel" parent="MediumInventory"]
+[node name="InventoryWindow" type="Panel" parent="MediumInventory"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -274.0
+offset_left = -280.0
 offset_top = -184.0
-offset_right = 187.0
+offset_right = 181.0
 offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SlotContainerSmall" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
+[node name="SlotContainerSmall" type="GridContainer" parent="MediumInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -171,25 +168,25 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlot" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot" parent="MediumInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot2" parent="MediumInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot3" parent="MediumInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot4" parent="MediumInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot5" parent="MediumInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot6" parent="MediumInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="SlotContainerMedium" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
+[node name="SlotContainerMedium" type="GridContainer" parent="MediumInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -206,11 +203,11 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlotMedium" parent="MediumInventory/MediumInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
+[node name="InventorySlotMedium" parent="MediumInventory/InventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
 custom_minimum_size = Vector2(202, 96)
 layout_mode = 2
 
-[node name="SlotContainerLarge" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
+[node name="SlotContainerLarge" type="GridContainer" parent="MediumInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -227,15 +224,28 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlotLarge" parent="MediumInventory/MediumInventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
+[node name="InventorySlotLarge" parent="MediumInventory/InventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
 custom_minimum_size = Vector2(202, 202)
 layout_mode = 2
 
-[node name="LargeInventory" type="Node" parent="."]
-script = ExtResource("9_nkao1")
-starter_items = Array[Resource("res://Item.gd")]([ExtResource("5_h1kbk")])
+[node name="InfoText" type="Label" parent="MediumInventory/InventoryWindow"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Medium Luggage"
+label_settings = SubResource("LabelSettings_fsrsb")
+horizontal_alignment = 1
 
-[node name="LargeInventoryWindow" type="Panel" parent="LargeInventory"]
+[node name="LargeInventory" type="Node" parent="."]
+script = ExtResource("6_5dycl")
+
+[node name="InventoryWindow" type="Panel" parent="LargeInventory"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -249,7 +259,7 @@ offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SlotContainerSmall" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+[node name="SlotContainerSmall" type="GridContainer" parent="LargeInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -266,25 +276,25 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlot" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot" parent="LargeInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot2" parent="LargeInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot3" parent="LargeInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot4" parent="LargeInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot5" parent="LargeInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+[node name="InventorySlot6" parent="LargeInventory/InventoryWindow/SlotContainerSmall" instance=ExtResource("4_w1ngo")]
 layout_mode = 2
 
-[node name="SlotContainerMedium" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+[node name="SlotContainerMedium" type="GridContainer" parent="LargeInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -301,11 +311,11 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlotMedium" parent="LargeInventory/LargeInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
+[node name="InventorySlotMedium" parent="LargeInventory/InventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
 custom_minimum_size = Vector2(202, 96)
 layout_mode = 2
 
-[node name="SlotContainerMedium2" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+[node name="SlotContainerMedium2" type="GridContainer" parent="LargeInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -322,11 +332,11 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlotMedium" parent="LargeInventory/LargeInventoryWindow/SlotContainerMedium2" instance=ExtResource("5_gsqkx")]
+[node name="InventorySlotMedium" parent="LargeInventory/InventoryWindow/SlotContainerMedium2" instance=ExtResource("5_gsqkx")]
 custom_minimum_size = Vector2(202, 96)
 layout_mode = 2
 
-[node name="SlotContainerLarge" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+[node name="SlotContainerLarge" type="GridContainer" parent="LargeInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -343,11 +353,11 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlotLarge" parent="LargeInventory/LargeInventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
+[node name="InventorySlotLarge" parent="LargeInventory/InventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
 custom_minimum_size = Vector2(202, 202)
 layout_mode = 2
 
-[node name="SlotContainerLarge2" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+[node name="SlotContainerLarge2" type="GridContainer" parent="LargeInventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -364,12 +374,20 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="InventorySlotLarge" parent="LargeInventory/LargeInventoryWindow/SlotContainerLarge2" instance=ExtResource("7_skrxc")]
+[node name="InventorySlotLarge" parent="LargeInventory/InventoryWindow/SlotContainerLarge2" instance=ExtResource("7_skrxc")]
 custom_minimum_size = Vector2(202, 202)
 layout_mode = 2
 
-[node name="LuggageSystem" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("3_8gt0g")
+[node name="InfoText" type="Label" parent="LargeInventory/InventoryWindow"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Large Luggage"
+label_settings = SubResource("LabelSettings_fsrsb")
+horizontal_alignment = 1

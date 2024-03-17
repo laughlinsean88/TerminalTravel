@@ -1,11 +1,11 @@
-class_name InventorySlot
+class_name InventorySlotLarge
 extends Node
 
 var item : Item
 var quantity : int
 @onready var icon : TextureRect = get_node("Icon")
 @onready var quantity_text : Label = get_node("QuantityText")
-var inventory : Inventory
+var inventory : LargeInventory
 
 func set_item (new_item : Item):
 	item = new_item
@@ -36,14 +36,14 @@ func update_quantity_text ():
 	else:
 		quantity_text.text = str(quantity)
 
-func _on_mouse_entered():
-	if item == null:
-		inventory.info_text.text = ""
-	else:
-		inventory.info_text.text = item.display_name
-
-func _on_mouse_exited():
-	inventory.info_text.text = ""
+#func _on_mouse_entered():
+	#if item == null:
+		#luggage_system.info_text.text = ""
+	#else:
+		#luggage_system.info_text.text = item.display_name
+#
+#func _on_mouse_exited():
+	#luggage_system.info_text.text = ""
 
 func _on_pressed():
 	if item == null:
