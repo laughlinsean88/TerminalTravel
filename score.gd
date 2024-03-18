@@ -1,14 +1,14 @@
 class_name Score
 extends Node3D
 
-@export var item_name : String
-
-var decreaseRate = 1.0  # Happiness decrease rate per second
-var score
+var decreaseRate = 5.0  # Happiness decrease rate per second
+var scoreLabel
 var happiness
+var scoreValue = 0
 
 func _ready():
-	score = 0
+	scoreLabel = $Score
+	scoreLabel.text = "Score " + str(scoreValue)
 	happiness = 1000
 	set_process_input(true)
 	
@@ -16,10 +16,14 @@ func _process(delta):
 	# Update happiness based on decrease rate
 	decreaseHappiness(decreaseRate * delta)
 	
-# Function to handle sending luggage
+func _input(event):
+	if event is InputEventKey and event.is_action_pressed("score") and event.pressed:
+		sendLuggage()
+
 func sendLuggage():
 	var size = 1 # var size = luggage.getSize()  -   need to implement getSize() function
-	score += size
+	increaseScore(size)
+	scoreLabel.text = "Score " + str(scoreValue)
 	increaseHappiness(size) 
 
 # Function to increase happiness
@@ -33,3 +37,5 @@ func decreaseHappiness(amount: float):
 	if happiness <= 0:
 		print("you lose")
 
+func increaseScore(amount: int):
+	scoreValue += amount

@@ -88,6 +88,21 @@ bus = &"Music"
 [node name="ScoreSystem" type="Node3D" parent="."]
 script = ExtResource("1_ivo3p")
 
+[node name="Score" type="Label" parent="ScoreSystem"]
+offset_left = 500.0
+offset_top = 11.0
+offset_right = 598.0
+offset_bottom = 34.0
+text = "SCORE"
+
+[node name="ProgressBar" type="ProgressBar" parent="ScoreSystem"]
+offset_left = 528.0
+offset_top = 43.0
+offset_right = 532.0
+offset_bottom = 70.0
+step = 0.1
+show_percentage = false
+
 [node name="Player" parent="." instance=ExtResource("2_i7qy0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 3.8093, 9.8169)
 collision_mask = 3858
