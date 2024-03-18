@@ -19,9 +19,6 @@ axis_lock_angular_z = true
 script = ExtResource("1_vab2o")
 item_name = "Watch"
 interact_prompt = "Pickup Watch"
-can_interact = null
-is_luggage = null
-has_picked_up = null
 
 [node name="Watch" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0166148, 0.999862, 0, -0.999862, 0.0166148, 0, 0.198702, 0.483772)

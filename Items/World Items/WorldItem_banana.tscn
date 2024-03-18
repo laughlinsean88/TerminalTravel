@@ -14,9 +14,6 @@ axis_lock_angular_z = true
 script = ExtResource("1_e8hua")
 item_name = "Banana"
 interact_prompt = "Pickup Banana"
-can_interact = null
-is_luggage = null
-has_picked_up = null
 
 [node name="Banana" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.588705, 0.0938023)

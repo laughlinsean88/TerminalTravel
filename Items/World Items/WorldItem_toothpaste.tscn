@@ -14,9 +14,6 @@ axis_lock_angular_z = true
 script = ExtResource("1_h77st")
 item_name = "Toothpaste"
 interact_prompt = "Pickup Toothpaste"
-can_interact = null
-is_luggage = null
-has_picked_up = null
 
 [node name="Toothpaste" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.315559)

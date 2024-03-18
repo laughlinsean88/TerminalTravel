@@ -38,6 +38,7 @@ func _interact (type : int):
 			queue_free()
 		if item.size == "Large" and MediumInventory.large_full == false:
 			GlobalSignals.on_give_med_invent_large_item.emit(item, 1)
+			print("Large item added")
 			queue_free()
 		if MediumInventory.small_full == true : 
 			print("Small Section Full: M")
@@ -57,6 +58,7 @@ func _interact (type : int):
 			queue_free()
 		if item.size == "Large" and LargeInventory.large_full == false:
 			GlobalSignals.on_give_large_invent_large_item.emit(item, 1)
+			print("Large item added")
 			queue_free()
 		if LargeInventory.small_full == true : 
 			print("Small Section Full: L")

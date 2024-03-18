@@ -9,5 +9,5 @@ script = ExtResource("2_fu8nn")
 display_name = "Medicine"
 icon = ExtResource("1_28aym")
 size = "Small"
-max_stack_size = 12
+max_stack_size = 1
 world_item_scene = ExtResource("3_2bmdv")

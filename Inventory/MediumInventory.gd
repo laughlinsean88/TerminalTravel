@@ -37,7 +37,7 @@ func _ready ():
 		child.inventory = self
 	
 	for child in get_node("MediumInventoryWindow/SlotContainerLarge").get_children():
-		medium_slots.append(child)
+		large_slots.append(child)
 		child.set_item(null)
 		child.inventory = self
 	
@@ -175,6 +175,7 @@ func add_large_item (item : Item):
 		return
 		
 	large_count += 1
+	print("doublce check: Large item added")
 	
 	if large_count >= max_large_slots: 
 		large_full = true

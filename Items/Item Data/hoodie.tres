@@ -9,5 +9,5 @@ script = ExtResource("2_w64jo")
 display_name = "Hoodie"
 icon = ExtResource("1_xopht")
 size = "Large"
-max_stack_size = 12
+max_stack_size = 1
 world_item_scene = ExtResource("3_6v204")

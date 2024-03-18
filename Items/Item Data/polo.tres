@@ -9,5 +9,5 @@ script = ExtResource("2_ofqyl")
 display_name = "Polo"
 icon = ExtResource("1_q4xxc")
 size = "Large"
-max_stack_size = 12
+max_stack_size = 1
 world_item_scene = ExtResource("3_cqy5b")

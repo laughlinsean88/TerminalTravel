@@ -36,10 +36,10 @@ func _ready ():
 		child.inventory = self
 	
 	for child in get_node("LargeInventoryWindow/SlotContainerLarge").get_children():
-		medium_slots.append(child)
+		large_slots.append(child)
 		child.set_item(null)
 		child.inventory = self
-	
+		
 	GlobalSignals.on_give_large_invent_small_item.connect(on_give_player_small_item)
 	GlobalSignals.on_give_large_invent_medium_item.connect(on_give_player_medium_item)
 	GlobalSignals.on_give_large_invent_large_item.connect(on_give_player_large_item)
@@ -174,6 +174,7 @@ func add_large_item (item : Item):
 		return
 		
 	large_count += 1
+	print("doublce check: Large item added")
 	
 	if large_count >= max_large_slots: 
 		large_full = true

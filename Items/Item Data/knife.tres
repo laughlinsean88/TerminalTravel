@@ -9,5 +9,5 @@ script = ExtResource("2_atujf")
 display_name = "Knife"
 icon = ExtResource("1_vn5sc")
 size = "Medium"
-max_stack_size = 12
+max_stack_size = 1
 world_item_scene = ExtResource("3_vh2dh")

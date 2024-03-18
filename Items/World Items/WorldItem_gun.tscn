@@ -19,9 +19,6 @@ axis_lock_angular_z = true
 script = ExtResource("1_oc7g2")
 item_name = "Gun"
 interact_prompt = "Pickup Gun"
-can_interact = null
-is_luggage = null
-has_picked_up = null
 
 [node name="Gun" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.154331, 0, 0.988019, 0, 1, 0, -0.988019, 0, -0.154331, 0.339795, 0.0118681, 0.420072)

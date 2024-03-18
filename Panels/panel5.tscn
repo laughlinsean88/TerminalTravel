@@ -21,6 +21,6 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
 
 [node name="WorldItem_Charger" parent="." instance=ExtResource("2_5t55n")]
-can_interact = null
-is_luggage = null
-has_picked_up = null
+can_interact = true
+is_luggage = false
+has_picked_up = false

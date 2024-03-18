@@ -22,5 +22,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
 
 [node name="WorldItem_Phone" parent="." instance=ExtResource("2_bhuw8")]
 collision_mask = 1795
-is_luggage = null
-has_picked_up = null
+is_luggage = false
+has_picked_up = false

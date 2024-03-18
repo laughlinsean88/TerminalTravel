@@ -151,6 +151,7 @@ horizontal_alignment = 1
 script = ExtResource("7_rv332")
 
 [node name="MediumInventoryWindow" type="Panel" parent="MediumInventory"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -245,7 +246,6 @@ layout_mode = 2
 script = ExtResource("9_nkao1")
 
 [node name="LargeInventoryWindow" type="Panel" parent="LargeInventory"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -301,10 +301,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -166.0
-offset_right = -109.0
-offset_bottom = -70.0
+offset_left = -315.0
+offset_top = -167.0
+offset_right = 99.0
+offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
@@ -315,24 +315,7 @@ columns = 2
 custom_minimum_size = Vector2(202, 96)
 layout_mode = 2
 
-[node name="SlotContainerMedium2" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = -166.0
-offset_right = 101.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 2
-
-[node name="InventorySlotMedium" parent="LargeInventory/LargeInventoryWindow/SlotContainerMedium2" instance=ExtResource("5_gsqkx")]
+[node name="InventorySlotMedium2" parent="LargeInventory/LargeInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
 custom_minimum_size = Vector2(202, 96)
 layout_mode = 2
 
@@ -343,9 +326,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -312.0
+offset_left = -315.0
 offset_top = -62.0
-offset_right = -110.0
+offset_right = 99.0
 offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -357,23 +340,6 @@ columns = 2
 custom_minimum_size = Vector2(202, 202)
 layout_mode = 2
 
-[node name="SlotContainerLarge2" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = -61.0
-offset_right = 101.0
-offset_bottom = 141.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 2
-
-[node name="InventorySlotLarge" parent="LargeInventory/LargeInventoryWindow/SlotContainerLarge2" instance=ExtResource("7_skrxc")]
+[node name="InventorySlotLarge2" parent="LargeInventory/LargeInventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
 custom_minimum_size = Vector2(202, 202)
 layout_mode = 2
