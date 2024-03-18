@@ -42,9 +42,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92742, 0)
 current = true
 
 [node name="InteractionController" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 3, 0, 0, 0)
-target_position = Vector3(0, 0, -5)
-collision_mask = 6
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 4, 0, 0, 0)
+target_position = Vector3(0, 0, -4)
+collision_mask = 22
 script = ExtResource("2_66uls")
 
 [node name="InteractionPrompt" type="Label" parent="Camera3D/InteractionController"]

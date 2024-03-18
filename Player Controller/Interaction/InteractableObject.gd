@@ -6,7 +6,7 @@ extends Node3D
 @export var is_luggage = false
 @export var has_picked_up = false
 
-func _interact():
+func _interact(type : int):
 	print("Override this function.")
 
 func _open():

@@ -18,14 +18,22 @@ func _open ():
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Item"):
-		body._interact()
+		var type = 0
 		if luggage_name == BRIEFCASE: 
 			body.queue_free()
+			type = 1
 			print("Hit: Briefcase")
-		if luggage_name == MEDIUM_CASE or luggage_name == LARGE_CASE:
+		if luggage_name == MEDIUM_CASE:
 			body.set_collision_mask_value(1, false)
+			type = 2
+			print("Hit: " + str(luggage_name))
+		if luggage_name == LARGE_CASE:
+			body.set_collision_mask_value(1, false)
+			type = 3
 			print("Hit: " + str(luggage_name))
 		if luggage_name == TRASH:
 			body.queue_free()
+			type = 4
 			print("Trash")
+		body._interact(type)
 		

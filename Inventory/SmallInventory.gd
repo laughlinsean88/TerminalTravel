@@ -29,8 +29,8 @@ func _ready ():
 		child.set_item(null)
 		child.inventory = self
 	
-	GlobalSignals.on_give_player_small_item.connect(on_give_player_small_item)
-	GlobalSignals.on_give_player_medium_item.connect(on_give_player_medium_item)
+	GlobalSignals.on_give_small_invent_small_item.connect(on_give_player_small_item)
+	GlobalSignals.on_give_small_invent_medium_item.connect(on_give_player_medium_item)
 	GlobalSignals.on_briefcase_open.connect(open_suitcase)
 	
 	for item in starter_small_items:
