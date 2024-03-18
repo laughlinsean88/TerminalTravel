@@ -30,9 +30,11 @@ func _process(_delta):
 			object._open()
 			
 		if Input.is_action_just_pressed("pick_up") and !object.is_luggage:
-				is_obj_held = true
-				holding_obj = object
-				hold(object, is_obj_held)
+			if object.is_queued_for_deletion(): return
+			
+			is_obj_held = true
+			holding_obj = object
+			hold(object, is_obj_held)
 			
 	if holding_obj and !holding_obj.is_luggage: 
 		holding_obj.set_linear_velocity((hand.global_position - holding_obj.global_position) * hold_power)
@@ -42,7 +44,7 @@ func hold(object : InteractableObject, is_obj_held_condition : bool):
 	if is_obj_held_condition:
 		tempObj = object
 		object.global_position = hand.global_position
-		object.has_picked_up = true
+		object.held()
 		object.get_node("CollisionShape3D").disabled = true
 		print("hold")
 	

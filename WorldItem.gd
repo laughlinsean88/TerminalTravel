@@ -3,9 +3,10 @@ extends InteractableObject
 
 @export var item_name : String
 
-func _held():
+func held():
 	has_picked_up = true
 	GlobalSignals.on_pick_up.emit()
+	("stop conveyor movment")
 	
 func _interact ():
 	var item = load("res://Items/Item Data/" + item_name + ".tres")
