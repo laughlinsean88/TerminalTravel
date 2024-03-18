@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqoo2ogaelr28"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_r1rvr"]
+[ext_resource type="PackedScene" uid="uid://bgg8q0arnfbc1" path="res://Items/World Items/WorldItem_hat.tscn" id="2_ojui8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ytnia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eiilm"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="PathFollow3D"]
+script = ExtResource("1_r1rvr")
+
+[node name="BlackPanel" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999805, 0.0191972, 8.39136e-10, -1.61958e-08, 7.9978e-07, 1, 0.0191972, -0.999805, 7.99951e-07, -0.0555086, 1.54972e-06, -1.85205)
+rotation_order = 5
+mesh = SubResource("QuadMesh_ytnia")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
+
+[node name="WorldItem_Hat" parent="." instance=ExtResource("2_ojui8")]
+collision_mask = 1795

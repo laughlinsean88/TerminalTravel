@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=52 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
+[ext_resource type="PackedScene" uid="uid://rdq23efftxn0" path="res://Panels/panel.tscn" id="1_fdt3l"]
 [ext_resource type="Script" path="res://score.gd" id="1_ivo3p"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
@@ -17,14 +18,27 @@
 [ext_resource type="PackedScene" uid="uid://w8811v0i4iyg" path="res://Items/World Items/WorldItem_book.tscn" id="15_qjax0"]
 [ext_resource type="PackedScene" uid="uid://bcqyddlkucrh" path="res://Items/World Items/WorldItem_banana.tscn" id="15_r1txu"]
 [ext_resource type="PackedScene" uid="uid://jppxaa3y10mg" path="res://Items/World Items/WorldItem_bottle.tscn" id="16_ar84g"]
-[ext_resource type="PackedScene" uid="uid://cmi3eg1xlg4ak" path="res://Items/World Items/WorldItem_bomb.tscn" id="16_hqla5"]
 [ext_resource type="ArrayMesh" uid="uid://tw1h8545gc62" path="res://Items/Models/sign.obj" id="16_oqc6e"]
 [ext_resource type="PackedScene" uid="uid://coi3g2geieuvq" path="res://Items/World Items/WorldItem_charger.tscn" id="17_0uxir"]
 [ext_resource type="PackedScene" uid="uid://djtjjtcrdpv7x" path="res://Items/World Items/WorldItem_gun.tscn" id="20_cltiq"]
 [ext_resource type="PackedScene" uid="uid://dcf6s810mhdfc" path="res://Items/World Items/WorldItem_phone.tscn" id="21_homar"]
-[ext_resource type="PackedScene" uid="uid://w8jlq7bck34n" path="res://Items/World Items/WorldItem_watch.tscn" id="22_wivut"]
 [ext_resource type="PackedScene" uid="uid://d0k6dcr73c24e" path="res://path_3d.tscn" id="24_cg040"]
+[ext_resource type="PackedScene" uid="uid://dx4harqrprrs4" path="res://Panels/panel2.tscn" id="25_aivqi"]
 [ext_resource type="Script" path="res://Path3D_Conveyor.gd" id="25_p7yc3"]
+[ext_resource type="PackedScene" uid="uid://bwslg2yis7osm" path="res://Panels/panel3.tscn" id="26_xarsv"]
+[ext_resource type="PackedScene" uid="uid://dw3pecvq2ddq2" path="res://Panels/panel4.tscn" id="27_wjqks"]
+[ext_resource type="PackedScene" uid="uid://dtfxpt81uawm5" path="res://Panels/panel5.tscn" id="28_j537y"]
+[ext_resource type="PackedScene" uid="uid://d044sc7v6o8m1" path="res://Panels/panel6.tscn" id="29_hx1cv"]
+[ext_resource type="PackedScene" uid="uid://dmf7oe0vuqrrh" path="res://Panels/panel7.tscn" id="30_krkyo"]
+[ext_resource type="PackedScene" uid="uid://cqoo2ogaelr28" path="res://Panels/panel8.tscn" id="31_lw0fg"]
+[ext_resource type="PackedScene" uid="uid://bk12wtgw6wv1u" path="res://Panels/panel9.tscn" id="32_2rrw0"]
+[ext_resource type="PackedScene" uid="uid://3tgr34n0qo3o" path="res://Panels/panel10.tscn" id="33_8oeyh"]
+[ext_resource type="PackedScene" uid="uid://dccs3l8ec4iho" path="res://Panels/panel11.tscn" id="34_vc2j1"]
+[ext_resource type="PackedScene" uid="uid://dkfvkmmyyllq4" path="res://Panels/panel12.tscn" id="35_raf2e"]
+[ext_resource type="PackedScene" uid="uid://2jhbdvfgae4j" path="res://Panels/panel13.tscn" id="36_6qoq7"]
+[ext_resource type="PackedScene" uid="uid://b5h5nhfsijrqn" path="res://Panels/panel14.tscn" id="37_w1m3v"]
+[ext_resource type="PackedScene" uid="uid://kixx6fu8eytg" path="res://Panels/panel16.tscn" id="38_1epgl"]
+[ext_resource type="PackedScene" uid="uid://bk8t1pmlbqcra" path="res://Panels/panel17.tscn" id="39_dxjk5"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ytnia"]
 
@@ -61,17 +75,10 @@ data = PackedVector3Array(-9.5503, 4.2188, 11.1044, -6.6921, 4.2188, 7.8861, -9.
 
 [sub_resource type="Curve3D" id="Curve3D_euhi7"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.958, 1.1, 19.409, 0, 0, 0, 0, 0, 0, -8.481, 1.1, -9.556, 0, 0, 0, 0, 0, 0, -33.514, 1.1, -10.022),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.074, 1.1, 18, 0, 0, 0, 0, 0, 0, -8.37387, 1.09998, -9.36209, 0, 0, 0, 0, 0, 0, -31.5595, 1.09998, -10.3311),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eiilm"]
-transparency = 1
-albedo_color = Color(0, 0, 0, 0)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_chekb"]
-data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
 
 [node name="Main" type="Node3D"]
 
@@ -110,26 +117,23 @@ mesh = SubResource("QuadMesh_ytnia")
 surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
 
 [node name="WorldItem_Charger" parent="." instance=ExtResource("17_0uxir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21834, 2.37663, -2.93629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21834, 2.37663, 20.5536)
 
 [node name="WorldItem_Banana" parent="." instance=ExtResource("15_r1txu")]
-transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.28498, 1.03013, 0.918077)
+transform = Transform3D(0.557687, 0, -0.830051, 0, 1, 0, 0.830051, 0, 0.557687, -8.28498, 1.03013, 24.408)
 
 [node name="WorldItem_Bottle" parent="." instance=ExtResource("16_ar84g")]
-transform = Transform3D(0.262762, 0, 0.964861, 0, 1, 0, -0.964861, 0, 0.262762, -7.86462, 1.75299, 3.06792)
+transform = Transform3D(0.262762, 0, 0.964861, 0, 1, 0, -0.964861, 0, 0.262762, -7.86462, 1.75299, 26.5579)
 
 [node name="WorldItem_Phone" parent="." instance=ExtResource("21_homar")]
-transform = Transform3D(0.156831, 0, -0.987625, 0, 1, 0, 0.987625, 0, 0.156831, -8.11353, 1.66057, 4.28599)
+transform = Transform3D(0.156831, 0, -0.987625, 0, 1, 0, 0.987625, 0, 0.156831, -8.11353, 1.66057, 27.7759)
 can_interact = true
 
-[node name="WorldItem_Watch" parent="." instance=ExtResource("22_wivut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03894, 1.57839, 5.50159)
-
 [node name="WorldItem_Gun" parent="." instance=ExtResource("20_cltiq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6646, 1.92806, 12.1056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6646, 1.92806, 35.5955)
 
 [node name="WorldItem_Book" parent="." instance=ExtResource("15_qjax0")]
-transform = Transform3D(-0.00223402, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00223402, -7.82002, 1.91469, 13.7503)
+transform = Transform3D(-0.00223402, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00223402, -7.82002, 1.91469, 37.2402)
 
 [node name="RoomInterior" type="StaticBody3D" parent="."]
 collision_layer = 1792
@@ -212,24 +216,9 @@ transform = Transform3D(0.998795, 0.0490763, 0, -0.0490763, 0.998795, 0, 0, 0, 1
 [node name="Path3D_Conveyor" type="Path3D" parent="."]
 curve = SubResource("Curve3D_euhi7")
 script = ExtResource("25_p7yc3")
+panel = Array[PackedScene]([ExtResource("1_fdt3l"), ExtResource("25_aivqi"), ExtResource("26_xarsv"), ExtResource("27_wjqks"), ExtResource("28_j537y"), ExtResource("29_hx1cv"), ExtResource("30_krkyo"), ExtResource("31_lw0fg"), ExtResource("32_2rrw0"), ExtResource("33_8oeyh"), ExtResource("34_vc2j1"), ExtResource("35_raf2e"), ExtResource("36_6qoq7"), ExtResource("37_w1m3v"), ExtResource("38_1epgl"), ExtResource("39_dxjk5")])
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D_Conveyor"]
-transform = Transform3D(0.999827, 0, 0.0180531, 0, 1, 0, -0.0180531, 0, 0.999827, -7.958, 1.1, 23.0787)
+[node name="Timer" type="Timer" parent="Path3D_Conveyor"]
+wait_time = 3.0
 
-[node name="BlackPanel" type="MeshInstance3D" parent="Path3D_Conveyor/PathFollow3D"]
-transform = Transform3D(2, 3.72529e-08, 8.14188e-16, 0, -8.74228e-08, 1, 3.72529e-08, -2, -4.37114e-08, 0.0197878, -0.079007, -4.29792)
-mesh = SubResource("QuadMesh_ytnia")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Path3D_Conveyor/PathFollow3D/BlackPanel"]
-collision_layer = 1024
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D_Conveyor/PathFollow3D/BlackPanel/StaticBody3D"]
-transform = Transform3D(1, 1.86265e-09, 1.11022e-16, 0, 1, 2.84217e-14, -4.44089e-16, -1.77636e-14, 1, 0, 0, 0.0188118)
-shape = SubResource("ConcavePolygonShape3D_chekb")
-
-[node name="WorldItem_Bomb" parent="Path3D_Conveyor/PathFollow3D" instance=ExtResource("16_hqla5")]
-transform = Transform3D(1, 0, -0.00406385, 0, 1, 0, 0.00406382, 0, 1, 0.0437565, 0.0591664, -4.17424)
-collision_mask = 1792
+[connection signal="timeout" from="Path3D_Conveyor/Timer" to="Path3D_Conveyor" method="_on_timer_timeout"]

@@ -17,6 +17,7 @@ item_name = "Deodorant"
 interact_prompt = "Pickup Deodorant"
 
 [node name="Deodorant" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = ExtResource("2_niiq2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

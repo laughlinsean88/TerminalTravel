@@ -3,13 +3,13 @@ extends Node3D
 
 @export var item_name : String
 
-var decreaseRate = 5.0  # Happiness decrease rate per second
+var decreaseRate = 1.0  # Happiness decrease rate per second
 var score
 var happiness
 
 func _ready():
 	score = 0
-	happiness = 100
+	happiness = 1000
 	set_process_input(true)
 	
 func _process(delta):
