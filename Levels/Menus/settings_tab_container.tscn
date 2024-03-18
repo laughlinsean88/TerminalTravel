@@ -260,6 +260,14 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_o3t4j")
 
 [node name="HotKeyRebindButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
 layout_mode = 2
+action_name = "move_forward"
+
+[node name="HotKeyRebindButton4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
+action_name = "move_back"
+
+[node name="HotKeyRebindButton5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+layout_mode = 2
 action_name = "move_left"
 
 [node name="HotKeyRebindButton2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]

@@ -47,7 +47,7 @@ func create_storage_dictionary() -> Dictionary:
 func create_keybinds_dictionary() -> Dictionary:
 	var keybinds_container_dict : Dictionary = {
 		KEYBINDING_PLAYER.MOVE_FORWARD : KEYBINDING_PLAYER.move_forward_key,
-		KEYBINDING_PLAYER.MOVE_BACKT : KEYBINDING_PLAYER.move_back_key,
+		KEYBINDING_PLAYER.MOVE_BACK : KEYBINDING_PLAYER.move_back_key,
 		KEYBINDING_PLAYER.MOVE_LEFT : KEYBINDING_PLAYER.move_left_key,
 		KEYBINDING_PLAYER.MOVE_RIGHT : KEYBINDING_PLAYER.move_right_key,
 		KEYBINDING_PLAYER.JUMP : KEYBINDING_PLAYER.jump_key,
