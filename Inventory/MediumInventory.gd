@@ -31,7 +31,7 @@ func _ready ():
 	
 	GlobalSignals.on_give_player_small_item.connect(on_give_player_small_item)
 	GlobalSignals.on_give_player_medium_item.connect(on_give_player_medium_item)
-	GlobalSignals.on_briefcase_open.connect(open_suitcase)
+	GlobalSignals.on_medium_suitcase_open.connect(open_suitcase)
 	
 	for item in starter_small_items:
 		add_small_item(item)
