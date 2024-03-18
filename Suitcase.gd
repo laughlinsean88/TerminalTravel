@@ -21,9 +21,12 @@ func _on_area_3d_body_entered(body):
 		body._interact()
 		if luggage_name == BRIEFCASE: 
 			body.queue_free()
-			print("Hit Briefcase")
-		if luggage_name == MEDIUM_CASE or luggage_name == LARGE_CASE: 
-			body.get_node("CollisionShape3D").set_deferred("disabled", true)
+			print("Hit: Briefcase")
+		if luggage_name == MEDIUM_CASE:
+			body.set_collision_mask_value(1, false)
+			print("Hit: " + str(luggage_name))
+		if luggage_name == LARGE_CASE: 
+			body.set_collision_mask_value(1, false)
 			print("Hit: " + str(luggage_name))
 		if luggage_name == TRASH:
 			body.queue_free()

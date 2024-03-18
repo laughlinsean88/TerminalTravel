@@ -10,7 +10,7 @@ func _physics_process(delta):
 	self.progress += move_speed * delta
 
 func check_item():
-	if item.is_queued_for_deletion(): return
+	if item == null or item.is_queued_for_deletion(): return
 	if item.has_picked_up == true:
 		move_speed = 0
 		
