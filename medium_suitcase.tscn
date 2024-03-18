@@ -33,3 +33,5 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.0222115, -1.29965, -0.0203485, -3.07298e-09, -0.0203514, 1.29984, -1.29981, -0.0222088, -0.000347724, -2.12718, 2.6512, -9.03861)
 shape = SubResource("CapsuleShape3D_ga5fm")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
