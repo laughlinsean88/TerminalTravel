@@ -22,6 +22,10 @@ SaveManager="*res://Scripts/Autoloads/SaveManager.gd"
 SettingsSignalBus="*res://Scripts/Autoloads/SettingsSignalBus.gd"
 SettingsContainer="*res://Scripts/Autoloads/SettingsDataContainer.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_forward={
