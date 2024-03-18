@@ -1,9 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=47 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="PackedScene" uid="uid://rdq23efftxn0" path="res://Panels/panel.tscn" id="1_fdt3l"]
-[ext_resource type="Script" path="res://score.gd" id="1_ivo3p"]
+[ext_resource type="Script" path="res://main.gd" id="1_vyxsf"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
+[ext_resource type="PackedScene" uid="uid://d2hh0il70ermd" path="res://score_system.tscn" id="3_vd7lb"]
 [ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
 [ext_resource type="Texture2D" uid="uid://buadp68afixjp" path="res://Items/Images/Tiles074_1K-JPG_Color.jpg" id="9_kylms"]
@@ -76,6 +77,7 @@ _data = {
 point_count = 3
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_vyxsf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ef5ab")
@@ -83,8 +85,7 @@ volume_db = -25.0
 autoplay = true
 bus = &"Music"
 
-[node name="ScoreSystem" type="Node3D" parent="."]
-script = ExtResource("1_ivo3p")
+[node name="ScoreSystem" parent="." instance=ExtResource("3_vd7lb")]
 
 [node name="Player" parent="." instance=ExtResource("2_i7qy0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 3.8093, 9.8169)
