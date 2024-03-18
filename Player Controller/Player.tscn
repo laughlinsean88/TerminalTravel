@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cf1pwgl0y0mi6"]
+[gd_scene load_steps=15 format=3 uid="uid://cf1pwgl0y0mi6"]
 
 [ext_resource type="Script" path="res://Player Controller/PlayerController.gd" id="1_krxqb"]
 [ext_resource type="Script" path="res://Player Controller/Interaction/InteractionController.gd" id="2_66uls"]
 [ext_resource type="Script" path="res://Inventory/SmallInventory.gd" id="3_a38y0"]
 [ext_resource type="PackedScene" path="res://Inventory/InventorySlotMedium.tscn" id="5_gsqkx"]
-[ext_resource type="Resource" uid="uid://dpysu3dp2e11o" path="res://Items/ExampleItem/Iron.tres" id="5_h1kbk"]
-[ext_resource type="PackedScene" path="res://Inventory/InventorySlotSmall.tscn" id="5_pm4gw"]
+[ext_resource type="PackedScene" uid="uid://cmbqa8h5cnjlg" path="res://Inventory/InventorySlotSmall.tscn" id="5_pm4gw"]
 [ext_resource type="Script" path="res://Inventory/MediumInventory.gd" id="7_rv332"]
 [ext_resource type="PackedScene" path="res://Inventory/InventorySlotLarge.tscn" id="7_skrxc"]
 [ext_resource type="Script" path="res://Inventory/LargeInventory.gd" id="9_nkao1"]
@@ -17,12 +16,17 @@ height = 2.86964
 [sub_resource type="LabelSettings" id="LabelSettings_cbwra"]
 font_size = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sajl6"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_fsrsb"]
 font_size = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qook5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihhl3"]
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
-collision_layer = 256
-collision_mask = 5
+collision_mask = 1813
 script = ExtResource("1_krxqb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -67,12 +71,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -219.0
+offset_left = -228.0
 offset_top = -85.0
 offset_right = 122.0
 offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sajl6")
 
 [node name="SlotContainerSmall" type="GridContainer" parent="SmallInventory/SmallInventoryWindow"]
 layout_mode = 1
@@ -123,6 +128,7 @@ theme_override_constants/v_separation = 10
 layout_mode = 2
 
 [node name="InfoText" type="Label" parent="SmallInventory/SmallInventoryWindow"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -140,7 +146,6 @@ horizontal_alignment = 1
 
 [node name="MediumInventory" type="Node" parent="."]
 script = ExtResource("7_rv332")
-starter_items = Array[Resource("res://Item.gd")]([ExtResource("5_h1kbk")])
 
 [node name="MediumInventoryWindow" type="Panel" parent="MediumInventory"]
 visible = false
@@ -149,12 +154,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -274.0
+offset_left = -282.0
 offset_top = -184.0
-offset_right = 187.0
+offset_right = 182.0
 offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qook5")
 
 [node name="SlotContainerSmall" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
 layout_mode = 1
@@ -235,7 +241,6 @@ layout_mode = 2
 
 [node name="LargeInventory" type="Node" parent="."]
 script = ExtResource("9_nkao1")
-starter_items = Array[Resource("res://Item.gd")]([ExtResource("5_h1kbk")])
 
 [node name="LargeInventoryWindow" type="Panel" parent="LargeInventory"]
 visible = false
@@ -250,6 +255,7 @@ offset_right = 280.0
 offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihhl3")
 
 [node name="SlotContainerSmall" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
 layout_mode = 1

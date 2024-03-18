@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://n7ekj3yl42y2"]
+[gd_scene load_steps=3 format=3 uid="uid://cmbqa8h5cnjlg"]
 
 [ext_resource type="Script" path="res://Inventory/InventorySlotSmall.gd" id="1_nvkqa"]
-[ext_resource type="Texture2D" uid="uid://ccjtljhtdisln" path="res://Items/Icons/Wood.png" id="2_0tqpa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r5f5u"]
 font_size = 32
@@ -25,7 +24,6 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_0tqpa")
 expand_mode = 1
 
 [node name="QuantityText" type="Label" parent="."]
@@ -41,7 +39,6 @@ offset_right = -6.0
 offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "52"
 label_settings = SubResource("LabelSettings_r5f5u")
 horizontal_alignment = 2
 vertical_alignment = 2

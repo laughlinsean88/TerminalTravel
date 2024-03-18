@@ -10,9 +10,9 @@ roughness = 0.33
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7aviw"]
 
-[node name="WorldItem_Charger" type="RigidBody3D"]
+[node name="WorldItem_Charger" type="RigidBody3D" groups=["Item"]]
 collision_layer = 4
-collision_mask = 1795
+collision_mask = 1811
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true

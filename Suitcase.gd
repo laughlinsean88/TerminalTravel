@@ -3,6 +3,7 @@ extends InteractableObject
 const BRIEFCASE : String = "Briefcase"
 const MEDIUM_CASE : String = "Medium Suitcase"
 const LARGE_CASE : String = "Large Suitcase"
+const TRASH : String = "Trash"
 
 @export var luggage_name : String
 
@@ -25,4 +26,7 @@ func _on_area_3d_body_entered(body):
 		if luggage_name == MEDIUM_CASE or luggage_name == LARGE_CASE: 
 			body.get_node("CollisionShape3D").disabled = true
 			print("Hit Suitcase")
+		if luggage_name == TRASH:
+			body.queue_free()
+			print("Trash")
 		

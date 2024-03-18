@@ -5,9 +5,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6orne"]
 
-[node name="WorldItem_Hoodie" type="RigidBody3D"]
+[node name="WorldItem_Hoodie" type="RigidBody3D" groups=["Item"]]
 collision_layer = 4
-collision_mask = 1793
+collision_mask = 1811
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
