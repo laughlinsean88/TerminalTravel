@@ -19,13 +19,12 @@ func _open ():
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Item"):
 		body._interact()
-		print("Hit Suitcase")
 		if luggage_name == BRIEFCASE: 
 			body.queue_free()
 			print("Hit Briefcase")
 		if luggage_name == MEDIUM_CASE or luggage_name == LARGE_CASE: 
-			body.get_node("CollisionShape3D").disabled = true
-			print("Hit Suitcase")
+			body.get_node("CollisionShape3D").set_deferred("disabled", true)
+			print("Hit: " + str(luggage_name))
 		if luggage_name == TRASH:
 			body.queue_free()
 			print("Trash")
