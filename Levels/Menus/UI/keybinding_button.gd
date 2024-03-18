@@ -30,14 +30,14 @@ func set_action_name() -> void:
 			label.text = "Attack"
 		"shield":
 			label.text = "Shield"
-		"interact":
-			label.text = "Interact"
+		"pick_up":
+			label.text = "Pick Up"
 		"tab_right":
 			label.text = "Tab Right"
 		"tab_left":
 			label.text = "Tab Left"
-		"select":
-			label.text = "Select"
+		"inventory":
+			label.text = "Inventory"
 		"pause":
 			label.text = "Pause"
 		"cancel":

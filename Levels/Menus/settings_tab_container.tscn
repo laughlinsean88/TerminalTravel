@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://gth4kwdrxx7o"]
+[gd_scene load_steps=13 format=3 uid="uid://gth4kwdrxx7o"]
 
 [ext_resource type="PackedScene" uid="uid://kxs2ne0wk5lf" path="res://Levels/Menus/UI/audio_slider.tscn" id="1_8howc"]
 [ext_resource type="Script" path="res://Levels/Menus/settings_tab_container.gd" id="1_c8k1g"]
-[ext_resource type="Texture2D" uid="uid://bl1qnivf6ufw4" path="res://Art/Ukinght Inventory Box 1.png" id="2_lhy1r"]
 [ext_resource type="Script" path="res://Levels/Menus/CheckButton.gd" id="2_ukiuu"]
 [ext_resource type="PackedScene" uid="uid://cgoel1gbi6aym" path="res://Levels/Menus/window_mode.tscn" id="3_equ2i"]
 [ext_resource type="PackedScene" uid="uid://c3dg2pjf5g74" path="res://Levels/Menus/resolution_mode.tscn" id="4_rhwmn"]
@@ -58,7 +57,6 @@ offset_top = 29.0
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_lhy1r")
 expand_mode = 1
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -124,14 +122,17 @@ layout_mode = 2
 bus_name = "Music"
 
 [node name="AudioSlider3" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+visible = false
 layout_mode = 2
 bus_name = "SFX"
 
 [node name="AudioSlider4" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+visible = false
 layout_mode = 2
 bus_name = "Ambience"
 
 [node name="AudioSlider5" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("1_8howc")]
+visible = false
 layout_mode = 2
 bus_name = "Speech"
 
@@ -268,41 +269,21 @@ action_name = "move_right"
 [node name="HotKeyRebindButton3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
 layout_mode = 2
 
-[node name="HotKeyRebindButton4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
-layout_mode = 2
-action_name = "attack"
-
-[node name="HotKeyRebindButton5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
-layout_mode = 2
-action_name = "shield"
-
 [node name="HotKeyRebindButton6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
 layout_mode = 2
-action_name = "interact"
-
-[node name="HotKeyRebindButton7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
-layout_mode = 2
-action_name = "tab_right"
-
-[node name="HotKeyRebindButton8" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
-layout_mode = 2
-action_name = "tab_left"
+action_name = "pick_up"
 
 [node name="HotKeyRebindButton9" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
 layout_mode = 2
-action_name = "select"
+action_name = "inventory"
 
-[node name="HotKeyRebindButton10" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+[node name="HotKeyRebindButton7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
 layout_mode = 2
 action_name = "pause"
 
-[node name="HotKeyRebindButton11" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
+[node name="HotKeyRebindButton8" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
 layout_mode = 2
 action_name = "cancel"
-
-[node name="HotKeyRebindButton12" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_72txg")]
-layout_mode = 2
-action_name = "d_pad"
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -333,17 +314,21 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "A1"
 
 [node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "A2"
 
 [node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "A3"
 
 [node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "A4"
