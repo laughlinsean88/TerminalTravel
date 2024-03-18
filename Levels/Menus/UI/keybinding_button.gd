@@ -20,6 +20,10 @@ func set_action_name() -> void:
 	label.text = "unassigned"
 	
 	match action_name:
+		"move_forward":
+			label.text = "Move Forward"
+		"move_back":
+			label.text = "Move Back"
 		"move_left":
 			label.text = "Move Left"
 		"move_right":
