@@ -8,5 +8,6 @@
 script = ExtResource("2_weo7i")
 display_name = "Trousers"
 icon = ExtResource("1_bhdhc")
+size = "Large"
 max_stack_size = 12
 world_item_scene = ExtResource("3_qlena")

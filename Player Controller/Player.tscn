@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://Inventory/InventorySlotMedium.tscn" id="5_gsqkx"]
 [ext_resource type="PackedScene" uid="uid://cmbqa8h5cnjlg" path="res://Inventory/InventorySlotSmall.tscn" id="5_pm4gw"]
 [ext_resource type="Script" path="res://Inventory/MediumInventory.gd" id="7_rv332"]
-[ext_resource type="PackedScene" path="res://Inventory/InventorySlotLarge.tscn" id="7_skrxc"]
+[ext_resource type="PackedScene" uid="uid://d2id83bi6d5c0" path="res://Inventory/InventorySlotLarge.tscn" id="7_skrxc"]
 [ext_resource type="Script" path="res://Inventory/LargeInventory.gd" id="9_nkao1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
@@ -26,6 +26,7 @@ font_size = 18
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihhl3"]
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_mask = 1813
 script = ExtResource("1_krxqb")
 
