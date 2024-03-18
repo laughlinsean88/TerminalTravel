@@ -9,9 +9,8 @@
 transparency = 1
 albedo_color = Color(0, 0, 0, 0)
 
-[node name="Panel" type="PathFollow3D" node_paths=PackedStringArray("item")]
+[node name="Panel" type="PathFollow3D"]
 script = ExtResource("1_fjw25")
-item = NodePath("WorldItem_Bomb")
 
 [node name="BlackPanel" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999805, 0.0191972, 8.39136e-10, -1.61958e-08, 7.9978e-07, 1, 0.0191972, -0.999805, 7.99951e-07, -0.0555086, 1.54972e-06, -1.85205)
@@ -23,6 +22,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
 [node name="WorldItem_Bomb" parent="." instance=ExtResource("2_41oxk")]
 transform = Transform3D(0.999934, -8.88154e-16, -0.011491, -1.01642e-08, 1, -8.84483e-07, 0.011491, 8.84542e-07, 0.999934, -0.0213766, 0.0591674, -0.365091)
 collision_mask = 1795
-can_interact = true
-is_luggage = false
-has_picked_up = false

@@ -2,7 +2,13 @@ class_name WorldItem
 extends InteractableObject
 
 @export var item_name : String
+var score_script
+var score_instance
 
+func _ready():
+	score_script = load("res://score.gd")
+	score_instance = score_script.new()
+	
 func held():
 	has_picked_up = true
 	GlobalSignals.on_pick_up.emit()
@@ -28,6 +34,8 @@ func _interact (type : int):
 			print("Medium Section Full: S")
 		elif SmallInventory.small_full == true and SmallInventory.medium_full == true:
 			print("SMALL INVENTORY FULL")
+			score_instance.updateScore(10)
+			
 	
 	if type == 2:
 		if item.size == "Small" and MediumInventory.small_full == false:
@@ -48,7 +56,8 @@ func _interact (type : int):
 			print("Large Section Full: M")
 		elif MediumInventory.small_full == true and MediumInventory.medium_full == true and MediumInventory.large_full == true:
 			print("MEDIUM INVENTORY FULL")
-	
+			score_instance.updateScore(25)
+			
 	if type == 3:
 		if item.size == "Small" and LargeInventory.small_full == false:
 			GlobalSignals.on_give_large_invent_small_item.emit(item, 1)
@@ -68,6 +77,7 @@ func _interact (type : int):
 			print("Large Section Full: L")
 		elif LargeInventory.small_full == true and LargeInventory.medium_full == true and LargeInventory.large_full == true:
 			print("LARGE INVENTORY FULL")
+			score_instance.updateScore(50)
 	
 	if type == 4:
 		print("TRASH")
