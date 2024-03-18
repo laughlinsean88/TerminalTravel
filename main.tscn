@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=46 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="PackedScene" uid="uid://rdq23efftxn0" path="res://Panels/panel.tscn" id="1_fdt3l"]
@@ -41,6 +41,9 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 0.5
 metallic_specular = 0.0
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_shbqi"]
+data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcq48"]
 albedo_texture = ExtResource("9_kylms")
 
@@ -74,14 +77,14 @@ point_count = 3
 
 [node name="Main" type="Node3D"]
 
-[node name="ScoreSystem" type="Node3D" parent="."]
-script = ExtResource("1_ivo3p")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ef5ab")
 volume_db = -25.0
 autoplay = true
 bus = &"Music"
+
+[node name="ScoreSystem" type="Node3D" parent="."]
+script = ExtResource("1_ivo3p")
 
 [node name="Player" parent="." instance=ExtResource("2_i7qy0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 3.8093, 9.8169)
@@ -107,6 +110,30 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
 transform = Transform3D(-3.0598e-07, 0, 7, 0, 7, 0, -7, 0, -3.0598e-07, -22.8589, 2.91619, -9.68868)
 mesh = SubResource("QuadMesh_ytnia")
 surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
+
+[node name="Border" type="StaticBody3D" parent="."]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -14.3142, 2.91619, 29.085)
+collision_layer = 512
+
+[node name="Border" type="MeshInstance3D" parent="Border"]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0.0113432, 0.459825, 0.211368)
+mesh = SubResource("QuadMesh_ytnia")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border"]
+transform = Transform3D(3, 0, -3.87569e-14, 0, 3, 0, 3.87569e-14, 0, 3, 0, 0.465981, 0.221502)
+shape = SubResource("ConcavePolygonShape3D_shbqi")
+
+[node name="Border2" type="MeshInstance3D" parent="Border"]
+transform = Transform3D(-0.0177502, 0, 2.99995, 0, 3, 0, -2.99995, 0, -0.0177502, 3.61614, 0.431296, 6.42072)
+mesh = SubResource("QuadMesh_ytnia")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_hvlvy")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Border"]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 3.60483, 0.405871, 6.39051)
+shape = SubResource("ConcavePolygonShape3D_shbqi")
 
 [node name="RoomInterior" type="StaticBody3D" parent="."]
 collision_layer = 1792
