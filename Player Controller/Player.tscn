@@ -38,7 +38,7 @@ shape = SubResource("CapsuleShape3D_lt5te")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098363, 1.7819, -1.64191)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92742, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.52376, 0)
 current = true
 
 [node name="InteractionController" type="RayCast3D" parent="Camera3D"]
