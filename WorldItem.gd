@@ -36,11 +36,16 @@ func _interact (type : int):
 		if item.size == "Medium" and MediumInventory.medium_full == false:
 			GlobalSignals.on_give_med_invent_medium_item.emit(item, 1)
 			queue_free()
+		if item.size == "Large" and MediumInventory.large_full == false:
+			GlobalSignals.on_give_med_invent_large_item.emit(item, 1)
+			queue_free()
 		if MediumInventory.small_full == true : 
 			print("Small Section Full: M")
 		if MediumInventory.medium_full == true : 
 			print("Medium Section Full: M")
-		elif MediumInventory.small_full == true and MediumInventory.medium_full == true:
+		if MediumInventory.large_full == true : 
+			print("Large Section Full: M")
+		elif MediumInventory.small_full == true and MediumInventory.medium_full == true and MediumInventory.large_full == true:
 			print("MEDIUM INVENTORY FULL")
 	
 	if type == 3:
@@ -50,12 +55,20 @@ func _interact (type : int):
 		if item.size == "Medium" and LargeInventory.medium_full == false:
 			GlobalSignals.on_give_large_invent_medium_item.emit(item, 1)
 			queue_free()
+		if item.size == "Large" and LargeInventory.large_full == false:
+			GlobalSignals.on_give_large_invent_large_item.emit(item, 1)
+			queue_free()
 		if LargeInventory.small_full == true : 
 			print("Small Section Full: L")
 		if LargeInventory.medium_full == true : 
 			print("Medium Section Full: L")
-		elif LargeInventory.small_full == true and LargeInventory.medium_full == true:
+		if LargeInventory.medium_full == true : 
+			print("Large Section Full: L")
+		elif LargeInventory.small_full == true and LargeInventory.medium_full == true and LargeInventory.large_full == true:
 			print("LARGE INVENTORY FULL")
+	
+	if type == 4:
+		print("TRASH")
 		
 	
 	

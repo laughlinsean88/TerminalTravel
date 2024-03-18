@@ -3,6 +3,7 @@ extends Node
 
 var small_slots : Array[InventorySlotSmall]
 var medium_slots : Array[InventorySlotMedium]
+
 @onready var window : Panel = get_node("SmallInventoryWindow")
 @onready var info_text = $SmallInventoryWindow/InfoText
 
@@ -11,6 +12,7 @@ var medium_slots : Array[InventorySlotMedium]
 
 static var small_full = false
 static var medium_full = false
+
 var small_count = 0
 var max_small_slots = 4
 var medium_count = 0
@@ -28,6 +30,7 @@ func _ready ():
 		medium_slots.append(child)
 		child.set_item(null)
 		child.inventory = self
+		
 	
 	GlobalSignals.on_give_small_invent_small_item.connect(on_give_player_small_item)
 	GlobalSignals.on_give_small_invent_medium_item.connect(on_give_player_medium_item)
@@ -38,6 +41,7 @@ func _ready ():
 		
 	for item in starter_medium_items:
 		add_medium_item(item)
+		
 
 func open_suitcase():
 	toggle_window(!window.visible)
@@ -64,7 +68,7 @@ func add_small_item (item : Item):
 	
 	if small_count >= max_small_slots: 
 		small_full = true
-		print("Max amount for small inventory")
+		print("Max amount for small section")
 	if slot.item == null:
 		slot.set_item(item)
 	elif slot.item == item:
@@ -113,7 +117,7 @@ func add_medium_item (item : Item):
 	
 	if medium_count >= max_medium_slots: 
 		medium_full = true
-	
+		print("Max amount for medium section")
 	if slot.item == null:
 		slot.set_item(item)
 	elif slot.item == item:
@@ -160,8 +164,9 @@ func get_number_of_small_item (item : Item) -> int:
 func get_number_of_medium_item (item : Item) -> int:
 	var total = 0
 	
-	for slot in small_slots:
+	for slot in medium_slots:
 		if slot.item == item:
 			total += slot.quantity
 	
 	return total
+

@@ -19,6 +19,9 @@ axis_lock_angular_z = true
 script = ExtResource("1_kwmks")
 item_name = "Charger"
 interact_prompt = "Pickup Charger"
+can_interact = null
+is_luggage = null
+has_picked_up = null
 
 [node name="Charger" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0355356, 0.314783)

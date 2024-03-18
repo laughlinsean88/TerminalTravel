@@ -19,6 +19,8 @@ script = ExtResource("1_agx5s")
 item_name = "Phone"
 interact_prompt = "Pickup Phone"
 can_interact = false
+is_luggage = null
+has_picked_up = null
 
 [node name="Phone" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0756133, -0.567254)

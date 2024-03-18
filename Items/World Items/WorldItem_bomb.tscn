@@ -15,6 +15,9 @@ axis_lock_angular_z = true
 script = ExtResource("1_cnvvj")
 item_name = "Bomb"
 interact_prompt = "Pickup Bomb"
+can_interact = null
+is_luggage = null
+has_picked_up = null
 
 [node name="Bomb" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_weo8b")

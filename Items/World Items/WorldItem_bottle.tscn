@@ -15,6 +15,9 @@ axis_lock_angular_z = true
 script = ExtResource("1_x1d0o")
 item_name = "Bottle"
 interact_prompt = "Pickup Bottle"
+can_interact = null
+is_luggage = null
+has_picked_up = null
 
 [node name="Bottle" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_pk8pp")

@@ -14,6 +14,9 @@ axis_lock_angular_z = true
 script = ExtResource("1_nsoe3")
 item_name = "Trousers"
 interact_prompt = "Pickup Trousers"
+can_interact = null
+is_luggage = null
+has_picked_up = null
 
 [node name="Trousers" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.733537)
