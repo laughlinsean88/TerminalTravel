@@ -11,7 +11,11 @@ var tempObj
 func _process(_delta):
 	var object = get_collider()
 	interact_prompt_label.text = ""
-	
+	if object:
+		if Input.is_action_just_pressed("pick_up") and object.is_in_group("Trash") and is_obj_held:
+				print("you shall die")
+				object._on_area_3d_body_entered(holding_obj)
+			
 	if is_obj_held and Input.is_action_just_pressed("pick_up"):
 		is_obj_held = false
 		holding_obj = null
@@ -20,12 +24,13 @@ func _process(_delta):
 	if object and object is InteractableObject:
 		if object.can_interact == false:
 			return
-		
+			
 		interact_prompt_label.text = object.interact_prompt
 		
 		#if Input.is_action_just_pressed("interact"):
 			#object._interact()
 			#
+
 		if Input.is_action_just_pressed("inventory"):
 			object._open()
 			
