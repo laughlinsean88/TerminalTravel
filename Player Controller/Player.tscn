@@ -1,36 +1,50 @@
-[gd_scene load_steps=11 format=3 uid="uid://cf1pwgl0y0mi6"]
+[gd_scene load_steps=15 format=3 uid="uid://cf1pwgl0y0mi6"]
 
 [ext_resource type="Script" path="res://Player Controller/PlayerController.gd" id="1_krxqb"]
 [ext_resource type="Script" path="res://Player Controller/Interaction/InteractionController.gd" id="2_66uls"]
-[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_ilfm3"]
-[ext_resource type="Resource" uid="uid://dugkdpfwm6ha2" path="res://Items/Item Data/Goo.tres" id="4_ciryc"]
-[ext_resource type="PackedScene" uid="uid://n7ekj3yl42y2" path="res://Inventory/InventorySlot.tscn" id="4_w1ngo"]
-[ext_resource type="Resource" uid="uid://dpysu3dp2e11o" path="res://Items/Item Data/Iron.tres" id="5_h1kbk"]
-[ext_resource type="Resource" uid="uid://bdgu11che6psx" path="res://Items/Item Data/Wood.tres" id="6_1f3o5"]
+[ext_resource type="Script" path="res://Inventory/SmallInventory.gd" id="3_a38y0"]
+[ext_resource type="PackedScene" uid="uid://5i8ioljc800k" path="res://Inventory/InventorySlotMedium.tscn" id="5_gsqkx"]
+[ext_resource type="PackedScene" uid="uid://cmbqa8h5cnjlg" path="res://Inventory/InventorySlotSmall.tscn" id="5_pm4gw"]
+[ext_resource type="Script" path="res://Inventory/MediumInventory.gd" id="7_rv332"]
+[ext_resource type="PackedScene" uid="uid://d2id83bi6d5c0" path="res://Inventory/InventorySlotLarge.tscn" id="7_skrxc"]
+[ext_resource type="Script" path="res://Inventory/LargeInventory.gd" id="9_nkao1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
 radius = 0.3
-height = 1.8
+height = 2.86964
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbwra"]
 font_size = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sajl6"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_fsrsb"]
 font_size = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qook5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihhl3"]
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_mask = 1813
 script = ExtResource("1_krxqb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_lt5te")
 
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098363, 1.7819, -1.64191)
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.52376, 0)
 current = true
 
 [node name="InteractionController" type="RayCast3D" parent="Camera3D"]
-target_position = Vector3(0, 0, -2)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 4, 0, 0, 0)
+target_position = Vector3(0, 0, -4)
+collision_mask = 22
 script = ExtResource("2_66uls")
 
 [node name="InteractionPrompt" type="Label" parent="Camera3D/InteractionController"]
@@ -49,94 +63,283 @@ label_settings = SubResource("LabelSettings_cbwra")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Inventory" type="Node" parent="."]
-script = ExtResource("3_ilfm3")
-starter_items = Array[Resource("res://Item.gd")]([ExtResource("4_ciryc"), ExtResource("5_h1kbk"), ExtResource("6_1f3o5"), ExtResource("6_1f3o5"), ExtResource("6_1f3o5"), ExtResource("5_h1kbk")])
+[node name="SmallInventory" type="Node" parent="."]
+script = ExtResource("3_a38y0")
 
-[node name="InventoryWindow" type="Panel" parent="Inventory"]
+[node name="SmallInventoryWindow" type="Panel" parent="SmallInventory"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -280.0
-offset_top = -184.0
-offset_right = 280.0
-offset_bottom = 184.0
+offset_left = -228.0
+offset_top = -85.0
+offset_right = 122.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sajl6")
 
-[node name="SlotContainer" type="GridContainer" parent="Inventory/InventoryWindow"]
+[node name="SlotContainerSmall" type="GridContainer" parent="SmallInventory/SmallInventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = -167.0
-offset_right = 260.0
-offset_bottom = 145.0
+offset_left = -154.5
+offset_top = -116.0
+offset_right = 49.5
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
-columns = 5
+columns = 2
 
-[node name="InventorySlot" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
+[node name="InventorySlot" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
+[node name="InventorySlot2" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
+[node name="InventorySlot3" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
+[node name="InventorySlot4" parent="SmallInventory/SmallInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
+[node name="SlotContainerMedium" type="GridContainer" parent="SmallInventory/SmallInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 55.5
+offset_top = -116.0
+offset_right = 152.5
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="InventorySlotMedium" parent="SmallInventory/SmallInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot9" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot10" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot11" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot12" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot13" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot14" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InventorySlot15" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("4_w1ngo")]
-layout_mode = 2
-
-[node name="InfoText" type="Label" parent="Inventory/InventoryWindow"]
+[node name="InfoText" type="Label" parent="SmallInventory/SmallInventoryWindow"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -36.0
-offset_bottom = -5.0
+offset_left = 108.0
+offset_top = -35.0
+offset_right = -108.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 17
+text = "Small Luggage"
 label_settings = SubResource("LabelSettings_fsrsb")
 horizontal_alignment = 1
+
+[node name="MediumInventory" type="Node" parent="."]
+script = ExtResource("7_rv332")
+
+[node name="MediumInventoryWindow" type="Panel" parent="MediumInventory"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -184.0
+offset_right = 182.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qook5")
+
+[node name="SlotContainerSmall" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.5
+offset_top = -165.5
+offset_right = -6.5
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="InventorySlot" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="MediumInventory/MediumInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="SlotContainerMedium" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.5
+offset_top = -164.5
+offset_right = 206.5
+offset_bottom = -68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="InventorySlotMedium" parent="MediumInventory/MediumInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
+custom_minimum_size = Vector2(202, 96)
+layout_mode = 2
+
+[node name="SlotContainerLarge" type="GridContainer" parent="MediumInventory/MediumInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.5
+offset_top = -59.5
+offset_right = 206.5
+offset_bottom = 142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="InventorySlotLarge" parent="MediumInventory/MediumInventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
+custom_minimum_size = Vector2(202, 202)
+layout_mode = 2
+
+[node name="LargeInventory" type="Node" parent="."]
+script = ExtResource("9_nkao1")
+
+[node name="LargeInventoryWindow" type="Panel" parent="LargeInventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = -184.0
+offset_right = 280.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihhl3")
+
+[node name="SlotContainerSmall" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 109.0
+offset_top = -167.0
+offset_right = 313.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="InventorySlot" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="LargeInventory/LargeInventoryWindow/SlotContainerSmall" instance=ExtResource("5_pm4gw")]
+layout_mode = 2
+
+[node name="SlotContainerMedium" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -167.0
+offset_right = 99.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="InventorySlotMedium" parent="LargeInventory/LargeInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
+custom_minimum_size = Vector2(202, 96)
+layout_mode = 2
+
+[node name="InventorySlotMedium2" parent="LargeInventory/LargeInventoryWindow/SlotContainerMedium" instance=ExtResource("5_gsqkx")]
+custom_minimum_size = Vector2(202, 96)
+layout_mode = 2
+
+[node name="SlotContainerLarge" type="GridContainer" parent="LargeInventory/LargeInventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -62.0
+offset_right = 99.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="InventorySlotLarge" parent="LargeInventory/LargeInventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
+custom_minimum_size = Vector2(202, 202)
+layout_mode = 2
+
+[node name="InventorySlotLarge2" parent="LargeInventory/LargeInventoryWindow/SlotContainerLarge" instance=ExtResource("7_skrxc")]
+custom_minimum_size = Vector2(202, 202)
+layout_mode = 2

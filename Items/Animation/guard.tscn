@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://hs67h7ehr0gq"]
+
+[ext_resource type="PackedScene" uid="uid://d32ut5cj3agwc" path="res://Items/Animation/guard.glb" id="1_y51f0"]
+
+[node name="guard" instance=ExtResource("1_y51f0")]

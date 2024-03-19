@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8gk4vr2nxnmw"]
+
+[ext_resource type="PackedScene" uid="uid://buumi737boeo4" path="res://Items/Animation/npcthree.glb" id="1_ywv5k"]
+
+[node name="npcthree" instance=ExtResource("1_ywv5k")]

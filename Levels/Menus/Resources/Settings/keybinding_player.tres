@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="KeybindingResource" load_steps=7 format=3 uid="uid://coxcd6jpy81o5"]
+
+[ext_resource type="Script" path="res://Levels/Menus/Resources/Settings/KeybindingResource.gd" id="1_k33y4"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ojgtf"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="InputEventKey" id="InputEventKey_uaydr"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_bixec"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_6poii"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id="InputEventKey_6600b"]
+device = -1
+keycode = 4194305
+
+[resource]
+script = ExtResource("1_k33y4")
+MOVE_LEFT_DEFAULT_KEY = SubResource("InputEventKey_bixec")
+MOVE_RIGHT_DEFAULT_KEY = SubResource("InputEventKey_6poii")
+JUMP_DEFAULT_KEY = SubResource("InputEventKey_uaydr")
+PAUSE_DEFAULT_KEY = SubResource("InputEventKey_6600b")
+CANCEL_DEFAULT_KEY = SubResource("InputEventKey_ojgtf")

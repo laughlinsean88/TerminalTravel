@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cs4mnc0rubhhb"]
+
+[ext_resource type="Texture2D" uid="uid://cplvmoey1bu0y" path="res://Items/Icons/meds.png" id="1_28aym"]
+[ext_resource type="Script" path="res://Item.gd" id="2_fu8nn"]
+[ext_resource type="PackedScene" uid="uid://blcypsgmdnrrr" path="res://Items/World Items/WorldItem_meds.tscn" id="3_2bmdv"]
+
+[resource]
+script = ExtResource("2_fu8nn")
+display_name = "Medicine"
+icon = ExtResource("1_28aym")
+size = "Small"
+max_stack_size = 1
+world_item_scene = ExtResource("3_2bmdv")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://3tgr34n0qo3o"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_cr3cl"]
+[ext_resource type="PackedScene" uid="uid://bhivvevb0rfhe" path="res://Items/World Items/WorldItem_knife.tscn" id="2_nrogk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ytnia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eiilm"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="PathFollow3D" node_paths=PackedStringArray("item")]
+script = ExtResource("1_cr3cl")
+item = NodePath("WorldItem_Knife")
+
+[node name="BlackPanel" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999805, 0.0191972, 8.39136e-10, -1.61958e-08, 7.9978e-07, 1, 0.0191972, -0.999805, 7.99951e-07, -0.0555086, 1.54972e-06, -1.85205)
+rotation_order = 5
+mesh = SubResource("QuadMesh_ytnia")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
+
+[node name="WorldItem_Knife" parent="." instance=ExtResource("2_nrogk")]
+transform = Transform3D(-0.976885, 0, -0.213763, 0, 1, 0, 0.213763, 0, -0.976885, -0.0786558, 0, -0.547595)
+collision_mask = 1795
+can_interact = true
+is_luggage = false
+has_picked_up = false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chf3c6jg78lh"
+path="res://.godot/imported/trousers.obj-3f24b8b11e91c49d4152cb6dc14aa9e9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trousers.obj-3f24b8b11e91c49d4152cb6dc14aa9e9.mesh"]
+
+source_file="res://Items/Models/trousers.obj"
+dest_files=["res://.godot/imported/trousers.obj-3f24b8b11e91c49d4152cb6dc14aa9e9.mesh", "res://.godot/imported/trousers.obj-3f24b8b11e91c49d4152cb6dc14aa9e9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
