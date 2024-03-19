@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ciip6qrow2r"]
+
+[ext_resource type="PackedScene" uid="uid://dnj2yp6aewmt7" path="res://Items/Animation/XL.glb" id="1_mgjrg"]
+
+[node name="XL" instance=ExtResource("1_mgjrg")]
