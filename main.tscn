@@ -100,7 +100,7 @@ max_run_speed = 10.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.16374, 0)
-light_color = Color(0.882353, 0.827451, 0.835294, 1)
+light_color = Color(0.866667, 0.847059, 0.745098, 1)
 light_energy = 16.0
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 0.8
@@ -225,7 +225,7 @@ panel = Array[PackedScene]([ExtResource("1_fdt3l"), ExtResource("25_aivqi"), Ext
 wait_time = 3.0
 
 [node name="Trash" parent="." instance=ExtResource("33_u4yuu")]
-transform = Transform3D(0.785155, 0, 0.6193, 0, 1, 0, -0.6193, 0, 0.785155, -5.03387, -0.445262, 9.34198)
+transform = Transform3D(0.785155, 0, 0.6193, 0, 1, 0, -0.6193, 0, 0.785155, -5.03387, -0.544859, 9.34198)
 is_luggage = true
 
 [connection signal="timeout" from="Path3D_Conveyor/Timer" to="Path3D_Conveyor" method="_on_timer_timeout"]
