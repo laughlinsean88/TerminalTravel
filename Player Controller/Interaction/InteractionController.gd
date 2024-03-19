@@ -46,11 +46,11 @@ func hold(object : InteractableObject, is_obj_held_condition : bool):
 		object.global_position = hand.global_position
 		object.held()
 		object.get_node("CollisionShape3D").disabled = true
-		print("hold")
+		#print("hold")
 	
 	var heldObj = tempObj
 	if !is_obj_held_condition:
 		holding_obj = null
 		heldObj.get_node("CollisionShape3D").disabled = false
-		print("drop")
+		#print("drop")
 	

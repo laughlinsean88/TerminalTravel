@@ -9,5 +9,6 @@ script = ExtResource("2_x3wm7")
 display_name = "Bomb"
 icon = ExtResource("1_qnsde")
 size = "Large"
+hazardous = true
 max_stack_size = 1
 world_item_scene = ExtResource("3_7n6t1")

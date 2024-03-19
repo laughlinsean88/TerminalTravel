@@ -11,16 +11,6 @@ var large_slots : Array[InventorySlotLarge]
 @export var starter_medium_items : Array[Item]
 @export var starter_large_items : Array[Item]
 
-static var small_full = false
-static var medium_full = false
-static var large_full = false
-
-var small_count = 0
-var max_small_slots = 6
-var medium_count = 0
-var max_medium_slots = 2
-var large_count = 0
-var max_large_slots = 2
 
 func _ready ():
 	toggle_window(false)
@@ -75,11 +65,6 @@ func add_small_item (item : Item):
 	if slot == null:
 		return
 		
-	small_count += 1
-	
-	if small_count >= max_small_slots: 
-		small_full = true
-		print("Max amount for medium section")
 	if slot.item == null:
 		slot.set_item(item)
 	elif slot.item == item:
@@ -91,9 +76,6 @@ func remove_small_item (item : Item):
 	if slot == null or slot.item == item:
 		return
 		
-	small_count -= 1
-	
-	if small_count < max_small_slots: small_full = false
 	slot.remove_item()
 
 func get_small_slot_to_add (item : Item) -> InventorySlotSmall:
@@ -124,11 +106,6 @@ func add_medium_item (item : Item):
 	if slot == null:
 		return
 		
-	medium_count += 1
-	
-	if medium_count >= max_medium_slots: 
-		medium_full = true
-	
 	if slot.item == null:
 		slot.set_item(item)
 	elif slot.item == item:
@@ -140,9 +117,6 @@ func remove_medium_item (item : Item):
 	if slot == null or slot.item == item:
 		return
 		
-	medium_count -= 1
-	if medium_count < max_small_slots: medium_full = false
-	
 	slot.remove_item()
 	
 func get_medium_slot_to_add (item : Item) -> InventorySlotMedium:
@@ -173,12 +147,6 @@ func add_large_item (item : Item):
 	if slot == null:
 		return
 		
-	large_count += 1
-	print("doublce check: Large item added")
-	
-	if large_count >= max_large_slots: 
-		large_full = true
-		print("Max amount for large section")
 	if slot.item == null:
 		slot.set_item(item)
 	elif slot.item == item:
@@ -190,9 +158,6 @@ func remove_large_item (item : Item):
 	if slot == null or slot.item == item:
 		return
 		
-	large_count -= 1
-	
-	if large_count < max_large_slots: large_full = false
 	slot.remove_item()
 
 func get_large_slot_to_add (item : Item) -> InventorySlotLarge:

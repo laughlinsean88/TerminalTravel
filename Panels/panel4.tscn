@@ -22,6 +22,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
 
 [node name="WorldItem_Bottle" parent="." instance=ExtResource("2_cnmo6")]
 collision_mask = 1795
-can_interact = true
-is_luggage = false
-has_picked_up = false

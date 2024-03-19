@@ -6,6 +6,7 @@ const LARGE_CASE : String = "Large Suitcase"
 const TRASH : String = "Trash"
 
 @export var luggage_name : String
+@export var trash_can : bool = false
 
 func _open ():
 	if luggage_name == BRIEFCASE and Input.is_action_just_pressed("inventory"):
@@ -17,24 +18,34 @@ func _open ():
 
 
 func _on_area_3d_body_entered(body):
+	
+	var type = 0
+	
 	if body.is_in_group("Item"):
-		var type = 0
-		if luggage_name == BRIEFCASE: 
-			body.queue_free()
-			type = 1
-			print("Hit: Briefcase")
-		if luggage_name == MEDIUM_CASE:
-			body.set_collision_mask_value(1, false)
-			type = 2
-			print("Hit: " + str(luggage_name))
-		if luggage_name == LARGE_CASE:
-			body.set_collision_mask_value(1, false)
-			type = 3
-			print("Hit: " + str(luggage_name))
-		if luggage_name == TRASH:
-			body.queue_free()
-			type = 4
-			print("Trash")
-		body._interact(type)
 		
+		if luggage_name == BRIEFCASE: 
+			body.set_collision_mask_value(1, false)
+			type = 1
+			body._interact(type)
+			body.queue_free()
+			print("Hit: " + str(luggage_name))
+			type = 0
+		if luggage_name == MEDIUM_CASE:
+			type = 2
+			body._interact(type)
+			body.queue_free()
+			print("Hit: " + str(luggage_name))
+			type = 0
+		if luggage_name == LARGE_CASE:
+			type = 3
+			body._interact(type)
+			body.queue_free()
+			print("Hit: " + str(luggage_name))
+			type = 0
+		if trash_can:
+			type = 4
+			body._interact(type)
+			body.queue_free()
+			print("Hit: " + str(luggage_name))
+			type = 0
 

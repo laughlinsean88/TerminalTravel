@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2hh0il70ermd"]
+[gd_scene load_steps=5 format=3 uid="uid://d2hh0il70ermd"]
 
 [ext_resource type="Script" path="res://score.gd" id="1_mmdfo"]
+[ext_resource type="AudioStream" uid="uid://cfhe741iicyud" path="res://Audio/Positive.wav" id="2_ttxny"]
+[ext_resource type="AudioStream" uid="uid://bekctsdgnw2th" path="res://Audio/Negative.wav" id="3_luxi7"]
+[ext_resource type="AudioStream" uid="uid://be118mb5poy04" path="res://Audio/Complete.wav" id="4_q3vld"]
 
 [node name="ScoreSystem" type="Node3D"]
 script = ExtResource("1_mmdfo")
@@ -13,9 +16,22 @@ offset_bottom = 34.0
 text = "SCORE"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 528.0
+custom_minimum_size = Vector2(200, 0)
+offset_left = 433.0
 offset_top = 43.0
-offset_right = 532.0
+offset_right = 633.0
 offset_bottom = 70.0
 step = 0.1
 show_percentage = false
+
+[node name="Positive" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ttxny")
+volume_db = -20.0
+
+[node name="Negative" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_luxi7")
+volume_db = -20.0
+
+[node name="Complete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q3vld")
+volume_db = -20.0

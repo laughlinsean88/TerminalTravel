@@ -16,6 +16,7 @@ item_name = "Polo"
 interact_prompt = "Pickup Polo"
 
 [node name="Polo" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 mesh = ExtResource("2_1721l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

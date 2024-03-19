@@ -4,6 +4,7 @@ extends Resource
 @export var display_name : String
 @export var icon : Texture2D
 @export var size : String
+@export var hazardous : bool = false
 @export var max_stack_size : int = 12
 @export var world_item_scene : PackedScene
 
