@@ -30,36 +30,33 @@ func smallInvent(_item : Item, count : int):
 	if small_invent_full_count >= small_max_count:
 		small_complete_case = true
 		GlobalSignals.on_score_update.emit(10)
-		#GlobalSignals.on_complete_case.emit(1)
-		print("SMALL INVENTORY COMPLETLEY FULL")
-		
-	print("Small Invent Count: " + str(small_invent_full_count))
+		GlobalSignals.on_complete_case.emit(1)
+	
+	else: print("Small Invent Count: " + str(small_invent_full_count))
 	
 func medInvent(_item : Item, count : int):
 	med_invent_full_count += count
 	if med_invent_full_count >= med_max_count:
 		med_complete_case = true
 		GlobalSignals.on_score_update.emit(25)
-		#GlobalSignals.on_complete_case.emit(2)
-		print("MEDIUM INVENTORY COMPLETLEY FULL")
+		GlobalSignals.on_complete_case.emit(2)
 		
-	print("Medium Invent Count: " + str(med_invent_full_count))
+	else: print("Medium Invent Count: " + str(med_invent_full_count))
 func largeInvent(_item : Item, count : int):
 	large_invent_full_count += count
 	if large_invent_full_count >= large_max_count:
 		large_complete_case = true
 		GlobalSignals.on_score_update.emit(50)
-		#GlobalSignals.on_complete_case.emit(3)
-		print("LARGE INVENTORY COMPLETLEY FULL")
-		
-	print("Large Invent Count: " + str(large_invent_full_count))
+		GlobalSignals.on_complete_case.emit(3)
+	
+	else: print("Large Invent Count: " + str(large_invent_full_count))
 func complete_case(case : int):
 	if case == 1:
-		pass
+		print("SMALL INVENTORY COMPLETLEY FULL")
 	if case == 2:
-		pass
+		print("MEDIUM INVENTORY COMPLETLEY FULL")
 	if case == 3:
-		pass
+		print("LARGE INVENTORY COMPLETLEY FULL")
 		
 	
 
