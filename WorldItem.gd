@@ -40,11 +40,12 @@ func _interact (type : int):
 			print("INVENTORY SMALL: Small Section Full")
 		if medium_full == true : 
 			print("INVENTORY SMALL: Medium Section Full")
-		if full_count == max_count and (small_full and medium_full):
+		if full_count >= max_count:
 			complete_case = true
 			GlobalSignals.on_score_update.emit(10)
 			GlobalSignals.on_complete_case.emit()
 			print("SMALL INVENTORY COMPLETLEY FULL")
+		else: print(full_count)
 			
 	
 	if type == 2:
@@ -89,11 +90,12 @@ func _interact (type : int):
 			print("INVENTORY MEDIUM: Medium Section Full")
 		if large_full == true : 
 			print("INVENTORY MEDIUM: Large Section Full")
-		if full_count == max_count and (small_full and medium_full and large_full):
+		if full_count >= max_count:
 			complete_case = true
 			print("MEDIUM INVENTORY COMPLETLEY FULL")
 			GlobalSignals.on_score_update.emit(25)
 			GlobalSignals.on_complete_case.emit()
+		else: print(full_count)
 			
 	if type == 3:
 		
@@ -137,10 +139,11 @@ func _interact (type : int):
 			print("INVENTORY LARGE: Medium Section Full")
 		if large_full == true : 
 			print("INVENTORY LARGE: Large Section Full")
-		if full_count == max_count and (small_full and medium_full and large_full):
+		if full_count >= max_count:
 			print("LARGE INVENTORY COMPLETLEY FULL")
 			GlobalSignals.on_score_update.emit(50)
 			GlobalSignals.on_complete_case.emit()
+		else: print(full_count)
 	
 	if type == 4:
 		if item.hazardous: GlobalSignals.on_score_update.emit(25)

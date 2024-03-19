@@ -163,12 +163,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288167, 0, 0.346141)
 shape = SubResource("ConcavePolygonShape3D_s2eok")
 
 [node name="Table" type="MeshInstance3D" parent="RoomInterior"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, -0.17773, 0.713083)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, -0.681474, 0.713083)
 mesh = ExtResource("5_txtus")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomInterior"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, -0.17773, 0.713083)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133997, -0.681474, 0.713083)
 shape = SubResource("ConcavePolygonShape3D_exnh3")
 
 [node name="Sign" type="MeshInstance3D" parent="RoomInterior"]
@@ -185,13 +185,13 @@ shape = SubResource("ConcavePolygonShape3D_0j2h2")
 collision_layer = 1536
 
 [node name="Briefcase" parent="." instance=ExtResource("9_r204i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889245, -1.38312, -0.84641)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889245, -1.88686, -0.84641)
 
 [node name="Medium Suitcase" parent="." instance=ExtResource("10_wo0my")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39569, 0.475358, -0.84351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39569, -0.0283861, -0.84351)
 
 [node name="Large Suitcase" parent="." instance=ExtResource("11_ygwpj")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.59722, 0.391948, -0.94797)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.59722, -0.111796, -0.94797)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.89512)
