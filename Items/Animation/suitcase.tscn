@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://36lhlpce3ymq"]
 
-[ext_resource type="PackedScene" path="res://Items/Animation/suitcase.glb" id="1_wkky6"]
+[ext_resource type="PackedScene" uid="uid://qyo0qlbxp26r" path="res://Items/Animation/suitcase.glb" id="1_wkky6"]
 
 [node name="suitcase" instance=ExtResource("1_wkky6")]
 

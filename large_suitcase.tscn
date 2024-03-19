@@ -112,7 +112,7 @@ luggage_name = "Large Suitcase"
 interact_prompt = "Large Suitcase: [TAB] to Open"
 is_luggage = true
 
-[node name="TopLuggageXL" type="MeshInstance3D" parent="."]
+[node name="AnimNode" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.48721, 0, 0, 0, 0.0524202, -1.44491, 0, 1.56674, 0.048344, 3.10091, 4.19197, -11.9949)
 mesh = SubResource("ArrayMesh_g6igc")
 skeleton = NodePath("")
@@ -120,7 +120,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_co4fr")
 script = ExtResource("2_xwis2")
 
 [node name="TopLuggageXL_001" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.48721, 2.37769e-07, 8.57048e-08, 8.81644e-08, -1.06301, 1.06255, 2.25573e-07, -1.15214, -0.980348, 3.11576, 4.1654, -12.821)
+transform = Transform3D(1.48721, -1.9465e-19, 1.07344e-17, 1.10424e-17, 0.0524181, -1.44491, -1.84666e-19, 1.56674, 0.048342, 3.11576, 4.1654, -12.821)
 mesh = SubResource("ArrayMesh_yluvk")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_fibyv")

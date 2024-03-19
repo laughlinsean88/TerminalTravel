@@ -10,7 +10,7 @@ data = PackedVector3Array(9.5554, 0.1203, -8.7597, 9.3783, 2.0051, -8.9112, 9.37
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apulm"]
 
 [node name="Trash" type="StaticBody3D"]
-transform = Transform3D(0.954662, 0, -0.297691, 0, 1, 0, 0.297691, 0, 0.954662, 0, -0.6264, 0.661515)
+transform = Transform3D(0.989689, 0, -0.143233, 0, 1, 0, 0.143233, 0, 0.989689, 0, -0.6264, 0.661515)
 collision_layer = 16
 collision_mask = 5
 script = ExtResource("1_b5t5t")

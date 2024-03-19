@@ -16,7 +16,6 @@ func _open ():
 	if luggage_name == LARGE_CASE and Input.is_action_just_pressed("inventory"):
 		GlobalSignals.on_large_suitcase_open.emit()
 
-
 func _on_area_3d_body_entered(body):
 	
 	var type = 0
@@ -28,24 +27,20 @@ func _on_area_3d_body_entered(body):
 			type = 1
 			body._interact(type)
 			body.queue_free()
-			print("Hit: " + str(luggage_name))
 			type = 0
 		if luggage_name == MEDIUM_CASE:
 			type = 2
 			body._interact(type)
 			body.queue_free()
-			print("Hit: " + str(luggage_name))
 			type = 0
 		if luggage_name == LARGE_CASE:
 			type = 3
 			body._interact(type)
 			body.queue_free()
-			print("Hit: " + str(luggage_name))
 			type = 0
 		if trash_can:
 			type = 4
 			body._interact(type)
 			body.queue_free()
-			print("Hit: " + str(luggage_name))
 			type = 0
 
