@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://36lhlpce3ymq"]
+
+[ext_resource type="PackedScene" path="res://Items/Animation/suitcase.glb" id="1_wkky6"]
+
+[node name="suitcase" instance=ExtResource("1_wkky6")]
+
+[node name="24hTop_002" parent="." index="2"]
+transform = Transform3D(1.48161, 0, 0, 0, 0.765714, 1.32259, 0, -1.2254, 0.826443, 8.22144, 3.37286, -10.7886)

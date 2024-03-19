@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4sdwibhur4dm"]
+
+[ext_resource type="PackedScene" path="res://Items/Animation/MClose.glb" id="1_a51wk"]
+
+[node name="MClose" instance=ExtResource("1_a51wk")]

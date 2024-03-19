@@ -3,5 +3,4 @@ extends MeshInstance3D
 @onready var anim = $"../AnimationPlayer"
 
 func _ready():
-	anim.play_backwards("closeXL")
-
+	anim.play_backwards("MClose")

@@ -14,5 +14,5 @@ albedo_color = Color(0, 0, 1, 1)
 surface_material_override/0 = SubResource("StandardMaterial3D_34yxe")
 
 [node name="TopLuggageXL_001" parent="." index="1"]
-transform = Transform3D(1.48721, -1.9463e-19, 1.07336e-17, 1.10416e-17, 0.0524153, -1.44491, -1.84646e-19, 1.56674, 0.0483395, 3.11576, 4.1654, -12.821)
+transform = Transform3D(1.48721, 2.37769e-07, 8.57048e-08, 8.81645e-08, -1.06301, 1.06255, 2.25573e-07, -1.15214, -0.980349, 3.11576, 4.1654, -12.821)
 surface_material_override/0 = SubResource("StandardMaterial3D_7olg1")
