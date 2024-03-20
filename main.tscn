@@ -196,13 +196,13 @@ shape = SubResource("ConcavePolygonShape3D_0j2h2")
 collision_layer = 1536
 
 [node name="Briefcase" parent="." instance=ExtResource("9_r204i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889245, -1.88686, -0.84641)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.67948, -1.88686, -0.84641)
 
 [node name="Medium Suitcase" parent="." instance=ExtResource("10_wo0my")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39569, -0.0283861, -0.84351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2697, -0.0283861, -0.84351)
 
 [node name="Large Suitcase" parent="." instance=ExtResource("11_ygwpj")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.59722, -0.111796, -0.94797)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.70531, -0.111796, -0.94797)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.89512)
@@ -303,9 +303,95 @@ horizontal_alignment = 1
 wait_time = 5.0
 autostart = true
 
+[node name="Popups" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.457
+anchor_right = 0.457
+offset_left = -130.464
+offset_top = 24.0
+offset_right = 126.536
+offset_bottom = 87.0
+
+[node name="Positive_Pay" type="Label" parent="Popups"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 354.0
+offset_top = -40.5
+offset_right = 777.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.372549, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_j0rtm")
+theme_override_font_sizes/font_size = 38
+text = "Positive
+
+"
+horizontal_alignment = 1
+
+[node name="Negative_Pay" type="Label" parent="Popups"]
+modulate = Color(1, 0.0901961, 0.0588235, 1)
+layout_mode = 0
+offset_left = 657.0
+offset_top = -5.0
+offset_right = 742.0
+offset_bottom = 20.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_3a652")
+theme_override_font_sizes/font_size = 21
+text = "Negative"
+
+[node name="Positive_Satisfaction" type="Label" parent="Popups"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -8.5
+offset_right = 257.0
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.372549, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_j0rtm")
+theme_override_font_sizes/font_size = 38
+text = "Positive
+
+"
+horizontal_alignment = 1
+
+[node name="Negative_Satisfaction" type="Label" parent="Popups"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 26.0
+offset_right = 222.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_3a652")
+theme_override_font_sizes/font_size = 21
+text = "Negative"
+
+[node name="Timer" type="Timer" parent="Popups"]
+wait_time = 5.0
+autostart = true
+
 [node name="guard" parent="." instance=ExtResource("37_vxbe6")]
 transform = Transform3D(3.02393, 0, -0.682526, 0, 3.1, 0, 0.682526, 0, 3.02393, -12.014, 0, -5.89366)
 
 [connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path3D_Conveyor/Timer" to="Path3D_Conveyor" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
+[connection signal="timeout" from="Popups/Timer" to="Popups" method="_on_timer_timeout"]

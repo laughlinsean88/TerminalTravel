@@ -17,12 +17,21 @@ var current_bar_value = 1000
 var happiness: int = 1000
 var end = false
 
+@onready var positive_pay = $"../Popups/Positive_Pay" as Label
+@onready var negative_pay = $"../Popups/Negative_Pay" as Label
+@onready var positive_satisfaction = $"../Popups/Positive_Satisfaction" as Label
+@onready var negative_satisfaction = $"../Popups/Negative_Satisfaction" as Label
 
 func _ready():
+	positive_pay.visible = false
+	negative_pay.visible = false
+	positive_satisfaction.visible = false
+	negative_satisfaction.visible = false
 	score_label = $Score
 	score_label.text = "Score: " + str(score_value)
 	GlobalSignals.on_score_update.connect(update_score)
 	GlobalSignals.on_complete_case.connect(complete_case)
+	GlobalSignals.on_satisfaction_update.connect(satisfaction)
 	start_progress_bar()
 	
 func _process(delta):
@@ -47,11 +56,42 @@ func update_score(amount: int):
 	if amount < 0: negative.play()
 
 	score_value += amount
-	score_label.text = "Score: " + str(score_value)
+	score_label.text = "Paycheck: $" + str(score_value)
+	update_pay_popup(amount)
+	
+func update_pay_popup(amount : int):
+	
+	if amount > 0: 
+		positive_pay.text = "+ " + str(amount)
+		positive_pay.visible = true
+	if amount < 0: 
+		negative_pay.text = str(amount)
+		negative_pay.visible = true
+	
+	await get_tree().create_timer(2.0).timeout
+	positive_pay.visible = false
+	negative_pay.visible = false
+	
+func satisfaction(value : int):
+	current_bar_value += value
+	update_statisfaction_popup(value)
+	
+func update_statisfaction_popup(value : int):
+	
+	if value > 0: 
+		positive_satisfaction.text = "+ " + str(value)
+		positive_satisfaction.visible = true
+	if value < 0: 
+		negative_satisfaction.text = str(value)
+		negative_satisfaction.visible = true
+	
+	await get_tree().create_timer(2.0).timeout
+	positive_satisfaction.visible = false
+	negative_satisfaction.visible = false
 
 func complete_case():
 	complete.play()
-	current_bar_value += 100
+	current_bar_value += 150
 	
 func reset_level():
 	reset.play()
