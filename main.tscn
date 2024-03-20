@@ -222,7 +222,7 @@ shape = SubResource("ConcavePolygonShape3D_rs0aj")
 transform = Transform3D(0.998795, 0.0490763, 0, -0.0490763, 0.998795, 0, 0, 0, 1, -15.6885, 2.0115, 26.6875)
 
 [node name="Timer" type="Timer" parent="Path3D"]
-wait_time = 13.0
+wait_time = 12.5
 autostart = true
 
 [node name="Path3D_Conveyor" type="Path3D" parent="."]
