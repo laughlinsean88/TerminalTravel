@@ -77,8 +77,8 @@ func _interact (type : int):
 	
 	if type == 4:
 		if item.hazardous: 
-			GlobalSignals.on_score_update.emit(25)
-			GlobalSignals.on_satisfaction_update.emit(50)
+			GlobalSignals.on_score_update.emit(50)
+			GlobalSignals.on_satisfaction_update.emit(25)
 		if !item.hazardous: 
 			GlobalSignals.on_score_update.emit(-50)
 			GlobalSignals.on_satisfaction_update.emit(-100)

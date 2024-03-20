@@ -90,11 +90,14 @@ func update_statisfaction_popup(value : int):
 	negative_satisfaction.visible = false
 
 func complete_case():
+	var bonus = 150
 	complete.play()
-	current_bar_value += 150
+	current_bar_value += bonus
+	update_statisfaction_popup(bonus)
 	
 func reset_level():
 	reset.play()
 	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_file("res://main.tscn")
+	main.toggle_menu()
+	GlobalSignals.on_gameover.emit(score_value)
 
