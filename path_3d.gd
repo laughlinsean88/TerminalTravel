@@ -14,7 +14,7 @@ func change_character():
 	if i == character.size(): i = 0
 	print("change traveler")
 	character[i].visible = true
-	$Timer.start
+	#$Timer.start
 
 func _on_timer_timeout():
 	$Timer.stop
