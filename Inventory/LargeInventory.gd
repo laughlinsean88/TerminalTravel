@@ -69,6 +69,9 @@ func reset_suitcase():
 		child.inventory = self
 		
 	print("RESET large inventory")
+	small_maxed = false
+	med_maxed = false
+	large_maxed = false
 	
 	
 func open_suitcase():
