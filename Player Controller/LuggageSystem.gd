@@ -33,6 +33,7 @@ func _ready():
 func smallInvent(_item : Item, count : int):
 	small_invent_full_count += count
 	if small_invent_full_count >= small_max_count:
+		briefcase.get_node("AnimNode").close_case()
 		small_complete_case = true
 		GlobalSignals.on_score_update.emit(10)
 		complete_case(1)
@@ -42,6 +43,7 @@ func smallInvent(_item : Item, count : int):
 func medInvent(_item : Item, count : int):
 	med_invent_full_count += count
 	if med_invent_full_count >= med_max_count:
+		medium_suitcase.get_node("AnimNode").close_case()
 		med_complete_case = true
 		GlobalSignals.on_score_update.emit(25)
 		complete_case(2)
@@ -50,6 +52,7 @@ func medInvent(_item : Item, count : int):
 func largeInvent(_item : Item, count : int):
 	large_invent_full_count += count
 	if large_invent_full_count >= large_max_count:
+		large_suitcase.get_node("AnimNode").close_case()
 		large_complete_case = true
 		GlobalSignals.on_score_update.emit(50)
 		complete_case(3)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://g4trmqrgr6nd"]
+
+[ext_resource type="Script" path="res://Player Controller/LuggageSystem.gd" id="1_rru1h"]
+
+[node name="LuggageSystem" type="Node3D"]
+script = ExtResource("1_rru1h")

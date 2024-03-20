@@ -22,7 +22,7 @@ func _on_area_3d_body_entered(body):
 	
 	if body.is_in_group("Item"):
 		
-		if luggage_name == BRIEFCASE: 
+		if luggage_name == BRIEFCASE:
 			body.set_collision_mask_value(1, false)
 			type = 1
 			body._interact(type)

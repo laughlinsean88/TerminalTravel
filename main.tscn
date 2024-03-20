@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_vyxsf"]
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="2_i7qy0"]
 [ext_resource type="PackedScene" uid="uid://d2hh0il70ermd" path="res://score_system.tscn" id="3_vd7lb"]
-[ext_resource type="Script" path="res://Player Controller/LuggageSystem.gd" id="4_w25aj"]
+[ext_resource type="PackedScene" uid="uid://g4trmqrgr6nd" path="res://luggage_system.tscn" id="4_0wjyb"]
 [ext_resource type="ArrayMesh" uid="uid://daswwb5ifreg0" path="res://Items/Models/table.obj" id="5_txtus"]
 [ext_resource type="ArrayMesh" uid="uid://kcor7v20a8tx" path="res://Items/Models/securityBox.obj" id="8_2xm52"]
 [ext_resource type="Texture2D" uid="uid://buadp68afixjp" path="res://Items/Images/Tiles074_1K-JPG_Color.jpg" id="9_kylms"]
@@ -96,8 +96,7 @@ bus = &"Music"
 
 [node name="ScoreSystem" parent="." instance=ExtResource("3_vd7lb")]
 
-[node name="LuggageSystem" type="Node3D" parent="."]
-script = ExtResource("4_w25aj")
+[node name="LuggageSystem" parent="." instance=ExtResource("4_0wjyb")]
 
 [node name="Player" parent="." instance=ExtResource("2_i7qy0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41704, 3.24291, 14.1562)

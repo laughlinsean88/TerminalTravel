@@ -12,12 +12,12 @@ func _interact (type : int):
 	
 	if type == 1:
 		
-		if item.size == "Small":
+		if item.size == "Small" and !SmallInventory.small_maxed:
 			GlobalSignals.on_give_small_invent_small_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
 			queue_free()
-		if item.size == "Medium":
+		if item.size == "Medium" and !SmallInventory.med_maxed:
 			GlobalSignals.on_give_small_invent_medium_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
@@ -25,17 +25,17 @@ func _interact (type : int):
 	
 	if type == 2:
 		
-		if item.size == "Small":
+		if item.size == "Small" and !MediumInventory.small_maxed:
 			GlobalSignals.on_give_med_invent_small_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
 			queue_free()
-		if item.size == "Medium":
+		if item.size == "Medium" and !MediumInventory.med_maxed:
 			GlobalSignals.on_give_med_invent_medium_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
 			queue_free()
-		if item.size == "Large":
+		if item.size == "Large" and !MediumInventory.large_maxed:
 			GlobalSignals.on_give_med_invent_large_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
@@ -43,17 +43,17 @@ func _interact (type : int):
 			
 	if type == 3:
 		
-		if item.size == "Small":
+		if item.size == "Small" and !LargeInventory.small_maxed:
 			GlobalSignals.on_give_large_invent_small_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
 			queue_free()
-		if item.size == "Medium":
+		if item.size == "Medium" and !LargeInventory.med_maxed:
 			GlobalSignals.on_give_large_invent_medium_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)
 			queue_free()
-		if item.size == "Large":
+		if item.size == "Large" and !LargeInventory.large_maxed:
 			GlobalSignals.on_give_large_invent_large_item.emit(item, 1)
 			if !item.hazardous: GlobalSignals.on_score_update.emit(1)
 			if item.hazardous: GlobalSignals.on_score_update.emit(-1)

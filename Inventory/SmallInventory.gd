@@ -10,6 +10,11 @@ var medium_slots : Array[InventorySlotMedium]
 @export var starter_small_items : Array[Item]
 @export var starter_medium_items : Array[Item]
 
+var small_max = 4
+var med_max = 1
+static var small_maxed = false
+static var med_maxed = false
+
 func _ready ():
 	toggle_window(false)
 	
@@ -71,6 +76,10 @@ func add_small_item (item : Item):
 	if slot == null:
 		return
 		
+	var count = 0
+	count += 1
+	if count >= small_max: small_maxed = true
+	
 	if slot.item == null:
 		slot.set_item(item)
 	elif slot.item == item:
@@ -111,6 +120,10 @@ func add_medium_item (item : Item):
 	
 	if slot == null:
 		return
+		
+	var count = 0
+	count += 1
+	if count >= med_max: med_maxed = true
 		
 	if slot.item == null:
 		slot.set_item(item)

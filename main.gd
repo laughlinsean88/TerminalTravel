@@ -8,7 +8,6 @@ func _ready():
 	menu_instance = menu_scene # Store the menu instance for later use
 	menu_instance.hide() # Hide the menu initially
 	
-
 func _input(event):
 	if event is InputEventKey and event.is_action_pressed("pause") and event.pressed:
 		toggle_menu()
