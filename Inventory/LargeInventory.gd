@@ -34,6 +34,7 @@ func _ready ():
 	GlobalSignals.on_give_large_invent_medium_item.connect(on_give_player_medium_item)
 	GlobalSignals.on_give_large_invent_large_item.connect(on_give_player_large_item)
 	GlobalSignals.on_large_suitcase_open.connect(open_suitcase)
+	GlobalSignals.on_reset_large_suitcase.connect(reset_suitcase)
 	
 	for item in starter_small_items:
 		add_small_item(item)
@@ -43,7 +44,27 @@ func _ready ():
 	
 	for item in starter_large_items:
 		add_large_item(item)
-
+func reset_suitcase():
+	toggle_window(false)
+	
+	for child in get_node("LargeInventoryWindow/SlotContainerSmall").get_children():
+		small_slots.append(child)
+		child.set_item(null)
+		child.inventory = self
+	
+	for child in get_node("LargeInventoryWindow/SlotContainerMedium").get_children():
+		medium_slots.append(child)
+		child.set_item(null)
+		child.inventory = self
+	
+	for child in get_node("LargeInventoryWindow/SlotContainerLarge").get_children():
+		large_slots.append(child)
+		child.set_item(null)
+		child.inventory = self
+		
+	print("RESET large inventory")
+	
+	
 func open_suitcase():
 	toggle_window(!window.visible)
 

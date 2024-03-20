@@ -17,4 +17,10 @@ func close_case(case : int):
 		await anim.animation_finished
 		anim.play("Action_001")
 	else: return
+	
+func open_case():
+	anim.play_backwards("Action_001")
+	await anim.animation_finished
+	anim.play_backwards("Action_002")
+	
 

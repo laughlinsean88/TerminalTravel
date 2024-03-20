@@ -11,3 +11,7 @@ func close_case(case : int):
 	if case == case_num:
 		anim.play("closeXL")
 	else: return
+
+func open_case():
+	anim.play_backwards("closeXL")
+	

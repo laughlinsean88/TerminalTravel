@@ -12,6 +12,12 @@ var large_complete_case = false
 var small_max_count = 5
 var med_max_count = 8
 var large_max_count = 10
+@onready var score_system = $"../ScoreSystem"
+
+@onready var briefcase = $"../Briefcase"
+@onready var medium_suitcase = $"../Medium Suitcase"
+@onready var large_suitcase = $"../Large Suitcase"
+
 
 func _ready():
 	GlobalSignals.on_give_small_invent_small_item.connect(smallInvent)
@@ -23,14 +29,13 @@ func _ready():
 	GlobalSignals.on_give_large_invent_small_item.connect(largeInvent)
 	GlobalSignals.on_give_large_invent_medium_item.connect(largeInvent)
 	GlobalSignals.on_give_large_invent_large_item.connect(largeInvent)
-	GlobalSignals.on_complete_case.connect(complete_case)
 
 func smallInvent(_item : Item, count : int):
 	small_invent_full_count += count
 	if small_invent_full_count >= small_max_count:
 		small_complete_case = true
 		GlobalSignals.on_score_update.emit(10)
-		GlobalSignals.on_complete_case.emit(1)
+		complete_case(1)
 	
 	else: print("Small Invent Count: " + str(small_invent_full_count))
 	
@@ -39,7 +44,7 @@ func medInvent(_item : Item, count : int):
 	if med_invent_full_count >= med_max_count:
 		med_complete_case = true
 		GlobalSignals.on_score_update.emit(25)
-		GlobalSignals.on_complete_case.emit(2)
+		complete_case(2)
 		
 	else: print("Medium Invent Count: " + str(med_invent_full_count))
 func largeInvent(_item : Item, count : int):
@@ -47,17 +52,32 @@ func largeInvent(_item : Item, count : int):
 	if large_invent_full_count >= large_max_count:
 		large_complete_case = true
 		GlobalSignals.on_score_update.emit(50)
-		GlobalSignals.on_complete_case.emit(3)
+		complete_case(3)
 	
 	else: print("Large Invent Count: " + str(large_invent_full_count))
 func complete_case(case : int):
-	if case == 1:
-		print("SMALL INVENTORY COMPLETLEY FULL")
-	if case == 2:
-		print("MEDIUM INVENTORY COMPLETLEY FULL")
-	if case == 3:
-		print("LARGE INVENTORY COMPLETLEY FULL")
-		
 	
+	score_system.complete_case()
+	
+	if case == 1:
+		print("SMALL INVENTORY COMPLETED")
+		await get_tree().create_timer(2.0).timeout
+		briefcase.get_node("AnimNode").open_case()
+		GlobalSignals.on_reset_small_suitcase.emit()
+		small_invent_full_count = 0
+	if case == 2:
+		print("MEDIUM INVENTORY COMPLETED")
+		await get_tree().create_timer(2.0).timeout
+		medium_suitcase.get_node("AnimNode").open_case()
+		GlobalSignals.on_reset_med_suitcase.emit()
+		med_invent_full_count = 0
+	if case == 3:
+		print("LARGE INVENTORY COMPLETED")
+		await get_tree().create_timer(2.0).timeout
+		large_suitcase.get_node("AnimNode").open_case()
+		GlobalSignals.on_reset_large_suitcase.emit()
+		large_invent_full_count = 0
+	
+
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=52 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="PackedScene" uid="uid://rdq23efftxn0" path="res://Panels/panel.tscn" id="1_fdt3l"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Control.gd" id="35_l82oj"]
 [ext_resource type="PackedScene" uid="uid://dkfvkmmyyllq4" path="res://Panels/panel12.tscn" id="35_raf2e"]
 [ext_resource type="PackedScene" uid="uid://2jhbdvfgae4j" path="res://Panels/panel13.tscn" id="36_6qoq7"]
+[ext_resource type="PackedScene" uid="uid://hs67h7ehr0gq" path="res://Items/Animation/guard.tscn" id="37_vxbe6"]
 [ext_resource type="PackedScene" uid="uid://b5h5nhfsijrqn" path="res://Panels/panel14.tscn" id="37_w1m3v"]
 [ext_resource type="PackedScene" uid="uid://kixx6fu8eytg" path="res://Panels/panel16.tscn" id="38_1epgl"]
 [ext_resource type="PackedScene" uid="uid://bk8t1pmlbqcra" path="res://Panels/panel17.tscn" id="39_dxjk5"]
@@ -81,6 +82,9 @@ point_count = 3
 [sub_resource type="SystemFont" id="SystemFont_j0rtm"]
 font_names = PackedStringArray("Fantasy")
 
+[sub_resource type="SystemFont" id="SystemFont_3a652"]
+font_names = PackedStringArray("Cambria")
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_vyxsf")
 
@@ -96,7 +100,7 @@ bus = &"Music"
 script = ExtResource("4_w25aj")
 
 [node name="Player" parent="." instance=ExtResource("2_i7qy0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128828, 3.8093, 9.8169)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41704, 3.24291, 14.1562)
 collision_mask = 3858
 max_speed = 10.0
 max_run_speed = 10.0
@@ -217,6 +221,10 @@ shape = SubResource("ConcavePolygonShape3D_rs0aj")
 [node name="Path3D" parent="." instance=ExtResource("24_cg040")]
 transform = Transform3D(0.998795, 0.0490763, 0, -0.0490763, 0.998795, 0, 0, 0, 1, -15.6885, 2.0115, 26.6875)
 
+[node name="Timer" type="Timer" parent="Path3D"]
+wait_time = 13.0
+autostart = true
+
 [node name="Path3D_Conveyor" type="Path3D" parent="."]
 curve = SubResource("Curve3D_euhi7")
 script = ExtResource("25_p7yc3")
@@ -226,7 +234,7 @@ panel = Array[PackedScene]([ExtResource("1_fdt3l"), ExtResource("25_aivqi"), Ext
 wait_time = 3.0
 
 [node name="Trash" parent="." instance=ExtResource("33_u4yuu")]
-transform = Transform3D(0.891323, 0, 0.453369, 0, 1, 0, -0.453369, 0, 0.891323, -4.41555, -0.6264, 6.2541)
+transform = Transform3D(0.752, 0, 0.659163, 0, 1, 0, -0.659163, 0, 0.752, -5.11439, -0.930182, 6.40884)
 is_luggage = true
 
 [node name="Control" type="Control" parent="."]
@@ -239,28 +247,66 @@ offset_right = 128.536
 offset_bottom = 141.0
 script = ExtResource("35_l82oj")
 
-[node name="Tutorial" type="Label" parent="Control"]
+[node name="Gameplay" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.595
-anchor_right = 0.5
-anchor_bottom = 0.595
-offset_left = -146.5
-offset_top = 68.515
-offset_right = 273.5
-offset_bottom = 147.515
-theme_override_colors/font_color = Color(0.305882, 1, 0, 1)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -10.5
+offset_right = 216.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.372549, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_j0rtm")
-theme_override_font_sizes/font_size = 37
+theme_override_font_sizes/font_size = 38
 text = "Bring the items to the luggage! 
-Be fast... passengers don't like to wait!"
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color(1, 0.0901961, 0.0588235, 1)
+layout_mode = 0
+offset_left = -85.0
+offset_top = 64.5
+offset_right = 381.0
+offset_bottom = 89.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_3a652")
+theme_override_font_sizes/font_size = 21
+text = "REMEMBER TO THROW AWAY HAZARDOUS ITEMS!"
+
+[node name="BeFast" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 64.5
+offset_right = 223.0
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_j0rtm")
+theme_override_font_sizes/font_size = 40
+text = "Be fast... passengers don't like to wait!"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="Control"]
 wait_time = 5.0
 autostart = true
 
+[node name="guard" parent="." instance=ExtResource("37_vxbe6")]
+transform = Transform3D(3.02393, 0, -0.682526, 0, 3.1, 0, 0.682526, 0, 3.02393, -12.014, 0, -5.89366)
+
+[connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path3D_Conveyor/Timer" to="Path3D_Conveyor" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

@@ -1,33 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2hh0il70ermd"]
+[gd_scene load_steps=6 format=3 uid="uid://d2hh0il70ermd"]
 
 [ext_resource type="Script" path="res://score.gd" id="1_mmdfo"]
 [ext_resource type="AudioStream" uid="uid://cfhe741iicyud" path="res://Audio/Positive.wav" id="2_ttxny"]
 [ext_resource type="AudioStream" uid="uid://bekctsdgnw2th" path="res://Audio/Negative.wav" id="3_luxi7"]
 [ext_resource type="AudioStream" uid="uid://be118mb5poy04" path="res://Audio/Complete.wav" id="4_q3vld"]
+[ext_resource type="AudioStream" uid="uid://c6kg02ygn0m5j" path="res://Art/Reset.wav" id="5_ml5y3"]
 
 [node name="ScoreSystem" type="Node3D"]
 script = ExtResource("1_mmdfo")
 
 [node name="Score" type="Label" parent="."]
-offset_left = 500.0
-offset_top = 54.0
-offset_right = 598.0
-offset_bottom = 77.0
+offset_left = 881.0
+offset_top = 17.0
+offset_right = 979.0
+offset_bottom = 40.0
 text = "SCORE:"
 
 [node name="Satisfaction" type="Label" parent="."]
-offset_left = 366.0
+offset_left = 122.0
 offset_top = 14.0
-offset_right = 571.0
+offset_right = 327.0
 offset_bottom = 37.0
-text = "TRAVELLER SATISFACTION:"
+text = "TRAVELERS SATISFACTION:"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 580.0
-offset_top = 13.0
-offset_right = 780.0
-offset_bottom = 40.0
+modulate = Color(0, 1, 1, 1)
+custom_minimum_size = Vector2(500, 0)
+offset_left = 336.0
+offset_top = 15.0
+offset_right = 836.0
+offset_bottom = 42.0
+max_value = 1000.0
 step = 0.1
 show_percentage = false
 
@@ -41,4 +44,8 @@ volume_db = -20.0
 
 [node name="Complete" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q3vld")
+volume_db = -20.0
+
+[node name="Reset" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ml5y3")
 volume_db = -20.0

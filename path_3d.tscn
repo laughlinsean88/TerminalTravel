@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0k6dcr73c24e"]
+[gd_scene load_steps=7 format=3 uid="uid://d0k6dcr73c24e"]
 
 [ext_resource type="Script" path="res://path_3d.gd" id="1_wak68"]
 [ext_resource type="PackedScene" uid="uid://bxeeoga0mji2c" path="res://Items/Animation/npcOne.glb" id="1_xc0gj"]
+[ext_resource type="PackedScene" uid="uid://07jm4eyebwsm" path="res://Items/Animation/npcfourl.tscn" id="3_5k2wv"]
+[ext_resource type="PackedScene" uid="uid://cqk45lk33nom5" path="res://Items/Animation/npctwo.tscn" id="4_a1kf6"]
+[ext_resource type="PackedScene" uid="uid://c8gk4vr2nxnmw" path="res://Items/Animation/npcthree.tscn" id="5_obdak"]
 
 [sub_resource type="Curve3D" id="Curve3D_uwovd"]
 _data = {
@@ -10,10 +13,11 @@ _data = {
 }
 point_count = 3
 
-[node name="Path3D" type="Path3D"]
+[node name="Path3D" type="Path3D" node_paths=PackedStringArray("character")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3647, 2.28429, 26.6967)
 curve = SubResource("Curve3D_uwovd")
 script = ExtResource("1_wak68")
+character = [NodePath("PathFollow3D/npcOne"), NodePath("PathFollow3D/npcfourl"), NodePath("PathFollow3D/npctwo"), NodePath("PathFollow3D/npcthree")]
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 transform = Transform3D(0.995069, 0, -0.0991616, 0, 1, 0, 0.0991616, 0, 0.995069, 1.45194, -0.00296975, -3.53402)
@@ -23,3 +27,15 @@ rotation_mode = 1
 [node name="npcOne" parent="PathFollow3D" instance=ExtResource("1_xc0gj")]
 transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 0.189226, -1.98559, 2.11084)
 rotation_order = 0
+
+[node name="npcfourl" parent="PathFollow3D" instance=ExtResource("3_5k2wv")]
+transform = Transform3D(-3, 0, -4.47035e-07, 0, 3, 0, 4.47035e-07, 0, -3, 0.214745, -1.85836, 1.50907)
+visible = false
+
+[node name="npctwo" parent="PathFollow3D" instance=ExtResource("4_a1kf6")]
+transform = Transform3D(-3, 0, 3.27826e-07, 0, 3, 0, -3.27826e-07, 0, -3, 0.201769, -2.12812, 2.02471)
+visible = false
+
+[node name="npcthree" parent="PathFollow3D" instance=ExtResource("5_obdak")]
+transform = Transform3D(-3, 0, 3.8743e-07, 0, 3, 0, -3.8743e-07, 0, -3, 0.378216, -1.84928, 1.98277)
+visible = false
