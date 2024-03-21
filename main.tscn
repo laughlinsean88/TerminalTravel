@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://48ruapiiod4a"]
+[gd_scene load_steps=53 format=3 uid="uid://48ruapiiod4a"]
 
 [ext_resource type="AudioStream" uid="uid://bvxtotamo5r6q" path="res://Audio/Take it Quick.mp3" id="1_ef5ab"]
 [ext_resource type="PackedScene" uid="uid://rdq23efftxn0" path="res://Panels/panel.tscn" id="1_fdt3l"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://3tgr34n0qo3o" path="res://Panels/panel10.tscn" id="33_8oeyh"]
 [ext_resource type="PackedScene" uid="uid://bm0npm7v3bc7f" path="res://trash.tscn" id="33_u4yuu"]
 [ext_resource type="PackedScene" uid="uid://dccs3l8ec4iho" path="res://Panels/panel11.tscn" id="34_vc2j1"]
+[ext_resource type="PackedScene" uid="uid://buekm3nrnmv3x" path="res://Panels/panel18.tscn" id="35_31bp0"]
 [ext_resource type="Script" path="res://Control.gd" id="35_l82oj"]
 [ext_resource type="PackedScene" uid="uid://dkfvkmmyyllq4" path="res://Panels/panel12.tscn" id="35_raf2e"]
 [ext_resource type="PackedScene" uid="uid://2jhbdvfgae4j" path="res://Panels/panel13.tscn" id="36_6qoq7"]
@@ -227,7 +228,7 @@ autostart = true
 [node name="Path3D_Conveyor" type="Path3D" parent="."]
 curve = SubResource("Curve3D_euhi7")
 script = ExtResource("25_p7yc3")
-panel = Array[PackedScene]([ExtResource("1_fdt3l"), ExtResource("25_aivqi"), ExtResource("26_xarsv"), ExtResource("27_wjqks"), ExtResource("28_j537y"), ExtResource("29_hx1cv"), ExtResource("30_krkyo"), ExtResource("31_lw0fg"), ExtResource("32_2rrw0"), ExtResource("33_8oeyh"), ExtResource("34_vc2j1"), ExtResource("35_raf2e"), ExtResource("36_6qoq7"), ExtResource("37_w1m3v"), ExtResource("38_1epgl"), ExtResource("39_dxjk5")])
+panel = Array[PackedScene]([ExtResource("1_fdt3l"), ExtResource("25_aivqi"), ExtResource("26_xarsv"), ExtResource("27_wjqks"), ExtResource("28_j537y"), ExtResource("29_hx1cv"), ExtResource("30_krkyo"), ExtResource("31_lw0fg"), ExtResource("32_2rrw0"), ExtResource("33_8oeyh"), ExtResource("34_vc2j1"), ExtResource("35_raf2e"), ExtResource("36_6qoq7"), ExtResource("37_w1m3v"), ExtResource("38_1epgl"), ExtResource("39_dxjk5"), ExtResource("35_31bp0")])
 
 [node name="Timer" type="Timer" parent="Path3D_Conveyor"]
 wait_time = 3.0

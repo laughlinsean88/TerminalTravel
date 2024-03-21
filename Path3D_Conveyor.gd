@@ -4,7 +4,7 @@ extends Path3D
 @onready var timer = $Timer
 
 var j = 1
-@export var panel_max = 16
+@export var panel_max = 17
 
 func _ready():
 	start_system()

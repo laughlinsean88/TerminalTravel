@@ -21,6 +21,3 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_eiilm")
 
 [node name="WorldItem_Trousers" parent="." instance=ExtResource("2_gdejh")]
-can_interact = true
-is_luggage = false
-has_picked_up = false

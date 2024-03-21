@@ -16,9 +16,9 @@ item_name = "T-Shirt"
 interact_prompt = "Pickup Tshirt"
 
 [node name="Tshirt" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 mesh = ExtResource("2_0fbaf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.75, 0, 0, 0, 0.00933292, -0.749942, 0, 0.749942, 0.00933292, 0, 0.304407, 0)
+transform = Transform3D(1, 0, 0, 0, 0.0124439, -0.999923, 0, 0.999923, 0.0124439, 0.0849184, 0.525499, 0)
 shape = SubResource("CapsuleShape3D_i51jg")

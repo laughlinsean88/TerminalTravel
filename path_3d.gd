@@ -17,7 +17,7 @@ func change_character():
 	#$Timer.start
 
 func _on_timer_timeout():
-	$Timer.stop
+	#$Timer.stop
 	character[i].visible = false
 	change_character()
 
