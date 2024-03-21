@@ -50,6 +50,7 @@ func _ready ():
 	
 	for item in starter_large_items:
 		add_large_item(item)
+		
 func reset_suitcase():
 	toggle_window(false)
 	

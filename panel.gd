@@ -1,7 +1,7 @@
 extends PathFollow3D
 
 @export var item : WorldItem
-var move_speed = 2.0
+var move_speed = 1.0
 
 func _ready():
 	GlobalSignals.on_pick_up.connect(check_item)

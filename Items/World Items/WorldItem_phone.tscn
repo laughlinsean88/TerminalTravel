@@ -20,7 +20,7 @@ item_name = "Phone"
 interact_prompt = "Pickup Phone"
 
 [node name="Phone" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.110993, -0.567254)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.110993, -0.567254)
 material_override = SubResource("StandardMaterial3D_smylc")
 mesh = ExtResource("2_wjnds")
 

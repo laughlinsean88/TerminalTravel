@@ -17,10 +17,15 @@ var current_bar_value = 1000
 var happiness: int = 1000
 var end = false
 
+
 @onready var positive_pay = $"../Popups/Positive_Pay" as Label
 @onready var negative_pay = $"../Popups/Negative_Pay" as Label
 @onready var positive_satisfaction = $"../Popups/Positive_Satisfaction" as Label
 @onready var negative_satisfaction = $"../Popups/Negative_Satisfaction" as Label
+
+var speed_inc = 50
+@onready var conveyor = $"../Path3D_Conveyor"
+@onready var audio = $"../AudioStreamPlayer"
 
 func _ready():
 	positive_pay.visible = false
@@ -59,6 +64,14 @@ func update_score(amount: int):
 	score_label.text = "Paycheck: $" + str(score_value)
 	update_pay_popup(amount)
 	
+	if score_value >= speed_inc:  
+		speed_inc += 50
+		conveyor.speed_up()
+		audio.pitch_scale += 0.01
+		return
+	
+	
+		
 func update_pay_popup(amount : int):
 	
 	if amount > 0: 
